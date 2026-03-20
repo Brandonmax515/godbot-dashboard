@@ -1,6 +1,6 @@
 {
-  "mode": "LIVE",
-  "generated_at": "2026-03-20T18:35:51.472121Z",
+  "mode": "DRY RUN",
+  "generated_at": "2026-03-20T18:37:08.738868Z",
   "total_runs": 7,
   "total_bets": 4,
   "wins": 0,
@@ -23,8 +23,8 @@
       "bracket_low": 84.0,
       "bracket_high": null,
       "strike_type": "greater",
-      "side": "NO",
-      "bet_type": "NO_DISPLACED",
+      "side": "YES",
+      "bet_type": "YES_BEST_BRACKET",
       "our_prob": 0.97,
       "market_prob": 0.74,
       "edge_pct": 0.22999999999999998,
@@ -135,13 +135,13 @@
   ],
   "by_side": {
     "YES": {
-      "bets": 3,
+      "bets": 4,
       "wins": 0,
       "settled": 0,
       "pnl": 0
     },
     "NO": {
-      "bets": 1,
+      "bets": 0,
       "wins": 0,
       "settled": 0,
       "pnl": 0
