@@ -388,6 +388,56 @@
   .fade-in-delay-2 { animation-delay: 0.2s; }
   .fade-in-delay-3 { animation-delay: 0.3s; }
   .fade-in-delay-4 { animation-delay: 0.4s; }
+
+  /* ── PORTFOLIO BAR ── */
+  .portfolio-bar {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(7, 8, 10, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 10px 24px;
+  }
+  .portfolio-inner {
+    max-width: 1400px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px; flex-wrap: wrap;
+  }
+  .portfolio-item { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+  .portfolio-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px; text-transform: uppercase;
+    letter-spacing: 1.5px; color: var(--text-muted);
+  }
+  .portfolio-value {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700; font-size: 16px; color: var(--text-primary);
+  }
+  .portfolio-value.pv-green { color: var(--accent-green); }
+  .portfolio-value.pv-red { color: var(--accent-red); }
+  .portfolio-value.pv-cyan { color: var(--accent-cyan); }
+  .portfolio-value.pv-gray { color: var(--text-muted); }
+
+  /* ── NAV BAR ── */
+  .nav-bar {
+    display: flex; align-items: center; gap: 6px;
+    padding: 12px 0; margin-bottom: 4px;
+    border-bottom: 1px solid var(--border-subtle);
+    flex-wrap: wrap;
+  }
+  .nav-link {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; font-weight: 500;
+    color: var(--text-muted); text-decoration: none;
+    padding: 6px 14px; border-radius: 100px;
+    transition: all 0.15s ease;
+    border: 1px solid transparent;
+  }
+  .nav-link:hover { color: var(--text-secondary); background: var(--bg-card); }
+  .nav-link.active {
+    color: var(--accent-green);
+    background: var(--accent-green-dim);
+    border-color: rgba(0, 255, 136, 0.15);
+  }
 </style>
 <script>
 // ── EMBEDDED DATA (injected by godbot_export.py) ──
@@ -574,6 +624,17 @@ window.GODBOT_DATA = {
 </head>
 <body>
 
+<!-- PORTFOLIO BAR -->
+<div class="portfolio-bar" id="portfolioBar">
+  <div class="portfolio-inner">
+    <div class="portfolio-item"><div class="portfolio-label">Balance</div><div class="portfolio-value" id="pBalance">--</div></div>
+    <div class="portfolio-item"><div class="portfolio-label">Portfolio</div><div class="portfolio-value" id="pPortfolio">--</div></div>
+    <div class="portfolio-item"><div class="portfolio-label">Equity</div><div class="portfolio-value pv-cyan" id="pEquity">--</div></div>
+    <div class="portfolio-item"><div class="portfolio-label">Positions</div><div class="portfolio-value" id="pPositions">--</div></div>
+    <div class="portfolio-item"><div class="portfolio-label">Today P&amp;L</div><div class="portfolio-value pv-gray" id="pTodayPnl">--</div></div>
+  </div>
+</div>
+
 <div class="bg-mesh"></div>
 
 <svg style="position:absolute;height:0;width:0" aria-hidden="true">
@@ -586,6 +647,12 @@ window.GODBOT_DATA = {
 </svg>
 
 <div class="app-container">
+  <!-- NAV BAR -->
+  <nav class="nav-bar">
+    <a class="nav-link active" href="/godbot">GodBot</a>
+    <a class="nav-link" href="/crypto-v2">Crypto v2</a>
+  </nav>
+
   <header class="header fade-in">
     <div class="header-left">
       <div class="logo-mark">G</div>
@@ -989,6 +1056,33 @@ function switchTab(name) {
 /* ═══ INIT ═══ */
 loadData();
 if (!window.GODBOT_DATA) { refreshTimer = setInterval(loadData, 5*60*1000); }
+
+/* ── Portfolio bar ── */
+// When served via dashboard_server (port 8378), relative URLs work.
+// When opened as a file or from another origin, try localhost:8378.
+var DASHBOARD_BASE = (location.protocol === 'file:' || location.port !== '8378')
+  ? 'http://localhost:8378' : '';
+
+async function fetchPortfolio() {
+  try {
+    var r = await fetch(DASHBOARD_BASE + '/api/portfolio-summary.json?t=' + Date.now());
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    var d = await r.json();
+    document.getElementById('pBalance').textContent = '$' + (d.balance || 0).toFixed(2);
+    document.getElementById('pPortfolio').textContent = '$' + (d.portfolio_value || 0).toFixed(2);
+    document.getElementById('pEquity').textContent = '$' + (d.equity || 0).toFixed(2);
+    document.getElementById('pPositions').textContent = d.positions_count || 0;
+    var pnl = d.today_pnl || 0;
+    var el = document.getElementById('pTodayPnl');
+    el.textContent = (pnl >= 0 ? '+$' : '-$') + Math.abs(pnl).toFixed(2);
+    el.className = 'portfolio-value ' + (pnl > 0 ? 'pv-green' : pnl < 0 ? 'pv-red' : 'pv-gray');
+  } catch(e) {
+    // Hide bar if dashboard server is not running
+    console.warn('portfolio fetch failed (dashboard server running?)', e.message);
+  }
+}
+fetchPortfolio();
+setInterval(fetchPortfolio, 30000);
 </script>
 </body>
 </html>

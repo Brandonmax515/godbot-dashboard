@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kalshi Weather Trading Terminal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #00ff88;
+    --green-dim: #00cc6a;
+    --green-dark: #004d28;
+    --cyan: #00e5ff;
+    --yellow: #ffd700;
+    --red: #ff4444;
+    --magenta: #ff44ff;
+    --bg: #0a0e14;
+    --bg-panel: #0d1117;
+    --bg-card: #111922;
+    --border: #1a2733;
+    --text: #c0d0e0;
+    --text-dim: #5a6a7a;
+    --glow: 0 0 10px rgba(0, 255, 136, 0.3);
+    --glow-strong: 0 0 20px rgba(0, 255, 136, 0.5);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* CRT scanline overlay */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      transparent 0px,
+      transparent 2px,
+      rgba(0, 0, 0, 0.08) 2px,
+      rgba(0, 0, 0, 0.08) 4px
+    );
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  /* Ambient glow */
+  body::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at 50% 0%, rgba(0, 255, 136, 0.03) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 16px;
+  }
+
+  /* ─── Header ─── */
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding: 16px 20px;
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--green), transparent);
+  }
+
+  .logo {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--green);
+    text-shadow: var(--glow);
+    letter-spacing: 4px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .header-info {
+    font-size: 11px;
+    color: var(--text-dim);
+    line-height: 1.5;
+  }
+
+  .header-info .version { color: var(--cyan); }
+
+  .mode-badge {
+    margin-left: auto;
+    padding: 4px 12px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .mode-LIVE { background: rgba(0, 255, 136, 0.15); color: var(--green); border: 1px solid var(--green-dark); }
+  .mode-DRY_RUN { background: rgba(0, 229, 255, 0.15); color: var(--cyan); border: 1px solid rgba(0, 229, 255, 0.3); }
+  .mode-HALTED { background: rgba(255, 68, 68, 0.15); color: var(--red); border: 1px solid rgba(255, 68, 68, 0.3); }
+  .mode-OFFLINE { background: rgba(90, 106, 122, 0.15); color: var(--text-dim); border: 1px solid var(--border); animation: none; }
+
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  /* ─── Terminal Console ─── */
+  .console-panel {
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+
+  .panel-header {
+    padding: 8px 16px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--cyan);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .panel-header .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 6px var(--green);
+  }
+
+  .panel-header .dot.offline { background: var(--text-dim); box-shadow: none; }
+
+  .console-body {
+    padding: 16px;
+    font-size: 13px;
+    line-height: 1.7;
+    min-height: 200px;
+    max-height: 500px;
+    overflow-y: auto;
+  }
+
+  .console-line {
+    white-space: pre;
+    font-variant-ligatures: none;
+  }
+
+  /* Trade line colors */
+  .line-header { color: var(--green); font-weight: 700; }
+  .line-separator { color: var(--green-dark); }
+  .line-waiting { color: var(--text-dim); font-style: italic; }
+  .line-prompt { color: var(--green); }
+  .line-trade { color: var(--text); }
+
+  /* Inline highlights */
+  .c-time { color: var(--cyan); }
+  .c-ticker { color: var(--yellow); font-weight: 700; }
+  .c-profit { color: var(--green); font-weight: 700; }
+  .c-loss { color: var(--red); font-weight: 700; }
+  .c-resting { color: var(--yellow); }
+  .c-edge { color: var(--text-dim); }
+  .c-action { color: var(--text); }
+  .c-icon-win { color: var(--green); }
+  .c-icon-loss { color: var(--red); }
+  .c-icon-pending { color: var(--yellow); }
+
+  .cursor-blink {
+    display: inline-block;
+    width: 8px;
+    height: 15px;
+    background: var(--green);
+    margin-left: 4px;
+    animation: blink 1s step-end infinite;
+    vertical-align: text-bottom;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  /* ─── Stats Grid ─── */
+  .stats-panel {
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    padding: 1px;
+  }
+
+  .stat-card {
+    background: var(--bg-card);
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--text-dim);
+    text-transform: uppercase;
+  }
+
+  .stat-value {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--green);
+    text-shadow: 0 0 8px rgba(0, 255, 136, 0.2);
+  }
+
+  .stat-value.neutral { color: var(--cyan); text-shadow: none; }
+  .stat-value.negative { color: var(--red); text-shadow: 0 0 8px rgba(255, 68, 68, 0.2); }
+
+  .stat-bar {
+    height: 2px;
+    background: var(--green-dark);
+    margin-top: 4px;
+    border-radius: 1px;
+    overflow: hidden;
+  }
+
+  .stat-bar-fill {
+    height: 100%;
+    background: var(--green);
+    box-shadow: 0 0 4px var(--green);
+    transition: width 0.5s ease;
+  }
+
+  /* ─── Footer ─── */
+  .footer {
+    text-align: center;
+    padding: 16px;
+    font-size: 10px;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+  }
+
+  .footer .status-dot {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+
+  .footer .status-dot.connected { background: var(--green); box-shadow: 0 0 4px var(--green); }
+  .footer .status-dot.disconnected { background: var(--red); }
+
+  /* ─── Recent Trades Table ─── */
+  .trades-panel {
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+
+  .trades-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+
+  .trades-table th {
+    padding: 8px 12px;
+    text-align: left;
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: var(--text-dim);
+    border-bottom: 1px solid var(--border);
+    text-transform: uppercase;
+  }
+
+  .trades-table td {
+    padding: 6px 12px;
+    border-bottom: 1px solid rgba(26, 39, 51, 0.5);
+  }
+
+  .trades-table tr:last-child td { border-bottom: none; }
+  .trades-table tr:hover { background: rgba(0, 255, 136, 0.02); }
+
+  .trade-status {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-right: 6px;
+  }
+
+  .trade-status.filled { background: var(--green); box-shadow: 0 0 4px var(--green); }
+  .trade-status.resting { background: var(--yellow); box-shadow: 0 0 4px var(--yellow); }
+  .trade-status.canceled { background: var(--red); }
+  .trade-status.timeout { background: var(--red); opacity: 0.6; }
+
+  /* ─── Responsive ─── */
+  @media (max-width: 640px) {
+    .container { padding: 12px 8px; }
+    .header { flex-wrap: wrap; gap: 8px; }
+    .logo { font-size: 20px; }
+    .mode-badge { margin-left: 0; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .console-body { font-size: 11px; padding: 10px; }
+    .stat-value { font-size: 18px; }
+  }
+
+  /* Scrollbar */
+  .console-body::-webkit-scrollbar { width: 4px; }
+  .console-body::-webkit-scrollbar-track { background: var(--bg); }
+  .console-body::-webkit-scrollbar-thumb { background: var(--green-dark); border-radius: 2px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">KALSHI</div>
+    <div class="header-info">
+      WEATHER TRADING TERMINAL<br>
+      Real-time Analysis <span class="version">v1.0.0</span>
+    </div>
+    <div class="mode-badge mode-OFFLINE" id="modeBadge">OFFLINE</div>
+  </div>
+
+  <!-- Trading Console -->
+  <div class="console-panel">
+    <div class="panel-header">
+      <span class="dot offline" id="consoleDot"></span>
+      TRADING CONSOLE
+    </div>
+    <div class="console-body" id="consoleBody">
+      <div class="console-line line-waiting">  Connecting to scanner...</div>
+    </div>
+  </div>
+
+  <!-- Stats Grid -->
+  <div class="stats-panel">
+    <div class="panel-header">
+      <span class="dot offline" id="statsDot"></span>
+      RUNTIME STATS
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Events</div>
+        <div class="stat-value neutral" id="statEvents">—</div>
+        <div class="stat-bar"><div class="stat-bar-fill" style="width:0%"></div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Signals</div>
+        <div class="stat-value neutral" id="statSignals">—</div>
+        <div class="stat-bar"><div class="stat-bar-fill" style="width:0%"></div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Trades</div>
+        <div class="stat-value neutral" id="statTrades">—</div>
+        <div class="stat-bar"><div class="stat-bar-fill" style="width:0%"></div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Resting</div>
+        <div class="stat-value neutral" id="statResting">—</div>
+        <div class="stat-bar"><div class="stat-bar-fill" style="width:0%"></div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Profit</div>
+        <div class="stat-value" id="statProfit">—</div>
+        <div class="stat-bar"><div class="stat-bar-fill" style="width:0%"></div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Win Rate</div>
+        <div class="stat-value" id="statWinRate">—</div>
+        <div class="stat-bar"><div class="stat-bar-fill" id="winRateBar" style="width:0%"></div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Uptime</div>
+        <div class="stat-value neutral" id="statUptime">—</div>
+        <div class="stat-bar"><div class="stat-bar-fill" style="width:0%"></div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">NBM Age</div>
+        <div class="stat-value neutral" id="statNbmAge">—</div>
+        <div class="stat-bar"><div class="stat-bar-fill" style="width:0%"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recent Trades -->
+  <div class="trades-panel">
+    <div class="panel-header">
+      <span class="dot offline" id="tradesDot"></span>
+      RECENT TRADES
+    </div>
+    <table class="trades-table">
+      <thead>
+        <tr>
+          <th>Time</th>
+          <th>Action</th>
+          <th>Market</th>
+          <th>Size</th>
+          <th>Edge</th>
+          <th>P&L</th>
+        </tr>
+      </thead>
+      <tbody id="tradesBody">
+        <tr><td colspan="6" style="color:var(--text-dim);text-align:center;padding:20px;">Waiting for trades...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <span class="status-dot disconnected" id="footerDot"></span>
+    <span id="footerStatus">DISCONNECTED</span>
+    &nbsp;·&nbsp; READ-ONLY VIEW &nbsp;·&nbsp;
+    <span id="lastUpdate">—</span>
+  </div>
+
+</div>
+
+<script>
+const POLL_INTERVAL = 5000;
+let connected = false;
+
+async function fetchTerminal() {
+  try {
+    const resp = await fetch('/api/terminal', { cache: 'no-store' });
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    const data = await resp.json();
+    setConnected(true);
+    updateMode(data.mode || 'OFFLINE');
+    updateConsole(data.console_lines || []);
+    updateStats(data.stats || {});
+    updateTrades(data.trade_log || []);
+    updateFooter(data.updated_at);
+  } catch (err) {
+    console.warn('Fetch failed:', err);
+    setConnected(false);
+    updateMode('OFFLINE');
+  }
+}
+
+function setConnected(state) {
+  connected = state;
+  const cls = state ? 'dot' : 'dot offline';
+  document.getElementById('consoleDot').className = cls;
+  document.getElementById('statsDot').className = cls;
+  document.getElementById('tradesDot').className = cls;
+  const footerDot = document.getElementById('footerDot');
+  footerDot.className = state ? 'status-dot connected' : 'status-dot disconnected';
+  document.getElementById('footerStatus').textContent = state ? 'CONNECTED' : 'DISCONNECTED';
+}
+
+function updateMode(mode) {
+  const badge = document.getElementById('modeBadge');
+  badge.textContent = mode.replace('_', ' ');
+  badge.className = `mode-badge mode-${mode}`;
+}
+
+function updateConsole(lines) {
+  const body = document.getElementById('consoleBody');
+  if (!lines.length) {
+    body.innerHTML = '<div class="console-line line-waiting">  Waiting for signals...</div>';
+    return;
+  }
+
+  let html = '';
+  for (const line of lines) {
+    const classified = classifyLine(line);
+    html += `<div class="console-line ${classified.cls}">${classified.html}</div>`;
+  }
+  // Add prompt
+  html += '<div class="console-line line-prompt">kalshi@weather:~$ <span class="cursor-blink"></span></div>';
+  body.innerHTML = html;
+
+  // Auto-scroll
+  body.scrollTop = body.scrollHeight;
+}
+
+function classifyLine(raw) {
+  // Strip ANSI codes for classification
+  const clean = raw.replace(/\u001b\[[0-9;]*m/g, '');
+
+  if (clean.includes('╔══')) return { cls: 'line-header', html: escHtml(clean) };
+  if (clean.includes('───')) return { cls: 'line-separator', html: escHtml(clean) };
+  if (clean.includes('Waiting for')) return { cls: 'line-waiting', html: escHtml(clean) };
+  if (clean.includes('kalshi@')) return { cls: 'line-prompt', html: '' }; // skip, we add our own
+  if (clean.includes('Real-time')) return { cls: 'line-header', html: escHtml(clean) };
+
+  // Trade line — parse and colorize
+  if (clean.includes('BUY') || clean.includes('SELL') || clean.includes('RESTING')) {
+    return { cls: 'line-trade', html: colorizeTrade(clean) };
+  }
+
+  return { cls: '', html: escHtml(clean) };
+}
+
+function colorizeTrade(line) {
+  // Pattern: [HH:MM:SS] ✓/✗/⏳ ACTION TICKER NxN @NNc e:N% $+N.NN
+  const parts = line.match(/^\[(\d{2}:\d{2}:\d{2})\]\s*(.*)/);
+  if (!parts) return escHtml(line);
+
+  const time = parts[1];
+  let rest = parts[2];
+
+  // Extract PnL at end
+  const pnlMatch = rest.match(/(\$[+-]?\d+\.\d+)\s*$/);
+  let pnlHtml = '';
+  if (pnlMatch) {
+    rest = rest.slice(0, -pnlMatch[0].length);
+    const val = parseFloat(pnlMatch[1].replace('$', ''));
+    pnlHtml = `<span class="${val >= 0 ? 'c-profit' : 'c-loss'}">${escHtml(pnlMatch[1])}</span>`;
+  }
+
+  // Icon
+  let icon = '';
+  if (rest.startsWith('✓')) { icon = '<span class="c-icon-win">✓</span>'; rest = rest.slice(1).trim(); }
+  else if (rest.startsWith('✗')) { icon = '<span class="c-icon-loss">✗</span>'; rest = rest.slice(1).trim(); }
+  else if (rest.includes('⏳')) { icon = '<span class="c-icon-pending">⏳</span>'; rest = rest.replace('⏳', '').trim(); }
+
+  // Ticker (caps with dash, e.g. HIGHNY-B38)
+  const tickerMatch = rest.match(/([A-Z]{3,}-[A-Z0-9]+)/);
+  if (tickerMatch) {
+    rest = rest.replace(tickerMatch[0], `<span class="c-ticker">${escHtml(tickerMatch[0])}</span>`);
+  }
+
+  // Edge
+  rest = rest.replace(/(e:\d+%)/, '<span class="c-edge">$1</span>');
+
+  return `<span class="c-time">[${time}]</span> ${icon} ${rest} ${pnlHtml}`;
+}
+
+function updateStats(stats) {
+  setStatValue('statEvents', stats.events, 'neutral');
+  setStatValue('statSignals', stats.signals, 'neutral');
+  setStatValue('statTrades', stats.trades, 'neutral');
+  setStatValue('statResting', stats.resting, 'neutral');
+
+  // Profit - color by value
+  const profitStr = stats.profit || '$+0.00';
+  const profitVal = parseFloat(profitStr.replace('$', '').replace('+', ''));
+  const profitCls = profitVal > 0 ? '' : profitVal < 0 ? 'negative' : 'neutral';
+  setStatValue('statProfit', profitStr, profitCls);
+
+  // Win rate
+  const winStr = stats.win_rate || '0%';
+  setStatValue('statWinRate', winStr, '');
+  const winPct = parseInt(winStr) || 0;
+  document.getElementById('winRateBar').style.width = `${winPct}%`;
+
+  setStatValue('statUptime', stats.uptime || '—', 'neutral');
+  setStatValue('statNbmAge', stats.nbm_age || '—', 'neutral');
+}
+
+function setStatValue(id, value, cls) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.textContent = value ?? '—';
+    el.className = `stat-value ${cls || ''}`;
+  }
+}
+
+function updateTrades(trades) {
+  const tbody = document.getElementById('tradesBody');
+  if (!trades.length) {
+    tbody.innerHTML = '<tr><td colspan="6" style="color:var(--text-dim);text-align:center;padding:20px;">Waiting for trades...</td></tr>';
+    return;
+  }
+
+  let html = '';
+  // Show newest first
+  const recent = trades.slice().reverse().slice(0, 20);
+  for (const t of recent) {
+    const pnlVal = (t.pnl_cents || 0) / 100;
+    const pnlCls = pnlVal > 0 ? 'c-profit' : pnlVal < 0 ? 'c-loss' : '';
+    const statusCls = t.status || 'filled';
+
+    html += `<tr>
+      <td><span class="c-time">${escHtml(t.timestamp || '')}</span></td>
+      <td><span class="trade-status ${statusCls}"></span>${escHtml(t.action || '')}</td>
+      <td><span class="c-ticker">${escHtml(shortTicker(t.ticker || ''))}</span></td>
+      <td>${t.contracts || 0}x @${t.price_cents || 0}¢</td>
+      <td><span class="c-edge">${(t.edge_pct || 0).toFixed(0)}%</span></td>
+      <td><span class="${pnlCls}">$${pnlVal >= 0 ? '+' : ''}${pnlVal.toFixed(2)}</span></td>
+    </tr>`;
+  }
+  tbody.innerHTML = html;
+}
+
+function shortTicker(ticker) {
+  const parts = ticker.split('-');
+  if (parts.length >= 3) {
+    return parts[0].replace('KX', '') + '-' + parts[parts.length - 1];
+  }
+  return ticker.slice(0, 12);
+}
+
+function updateFooter(updatedAt) {
+  const el = document.getElementById('lastUpdate');
+  if (updatedAt) {
+    const d = new Date(updatedAt);
+    el.textContent = `Updated ${d.toLocaleTimeString()}`;
+  } else {
+    el.textContent = '—';
+  }
+}
+
+function escHtml(s) {
+  const d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
+
+// Poll loop
+fetchTerminal();
+setInterval(fetchTerminal, POLL_INTERVAL);
+</script>
+</body>
+</html>
