@@ -740,6 +740,50 @@
 </div>
 
 <script>
+/* ── Dual-mode detection ── */
+var IS_LOCAL = false;
+var LOCAL_BASE = '';
+
+async function detectMode() {
+  if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+    try {
+      var r = await fetch('/api/crypto-v2-status.json?t=' + Date.now());
+      if (r.ok) { IS_LOCAL = true; LOCAL_BASE = ''; return; }
+    } catch(e) {}
+  }
+  try {
+    var r = await fetch('http://localhost:8378/api/crypto-v2-status.json?t=' + Date.now());
+    if (r.ok) { IS_LOCAL = true; LOCAL_BASE = 'http://localhost:8378'; return; }
+  } catch(e) {}
+  IS_LOCAL = false;
+  showStaticBanner();
+}
+
+function showStaticBanner() {
+  if (document.getElementById('staticBanner')) return;
+  var banner = document.createElement('div');
+  banner.id = 'staticBanner';
+  banner.style.cssText = 'background:rgba(255,183,0,0.12);border-bottom:1px solid rgba(255,183,0,0.2);padding:8px 24px;text-align:center;font-family:"JetBrains Mono",monospace;font-size:11px;color:#ffb700;position:fixed;top:0;left:0;right:0;z-index:9999;';
+  banner.innerHTML = 'Static snapshot \u2014 live dashboard at <a href="http://localhost:8378/crypto-v2" style="color:inherit;text-decoration:underline">localhost:8378</a>';
+  document.body.insertBefore(banner, document.body.firstChild);
+  document.body.style.paddingTop = '32px';
+}
+
+function apiUrl(path) {
+  if (IS_LOCAL) return LOCAL_BASE + path;
+  // Static mode: use local JSON files
+  var map = {
+    '/api/crypto-v2-status.json': './crypto-v2-status.json',
+    '/api/crypto-v2-signals.json': './crypto-v2-signals.json',
+    '/api/crypto-v2-trades.json': './crypto-v2-trades.json',
+    '/api/crypto-v2-settlements.json': './crypto-v2-settlements.json',
+    '/api/crypto-v2-performance.json': './crypto-v2-performance.json',
+    '/api/crypto-v2-daily-pnl.json': './crypto-v2-daily-pnl.json',
+    '/api/portfolio-summary.json': './portfolio-summary.json'
+  };
+  return map[path] || ('.' + path);
+}
+
 var STATUS_URL = '/api/crypto-v2-status.json';
 var SIGNALS_URL = '/api/crypto-v2-signals.json';
 var TRADES_URL = '/api/crypto-v2-trades.json';
@@ -773,7 +817,7 @@ document.querySelectorAll('.tab').forEach(function(tab) {
 // ── Status polling (10s) ──
 async function fetchStatus() {
   try {
-    var r = await fetch(STATUS_URL + '?t=' + Date.now());
+    var r = await fetch(apiUrl(STATUS_URL) + '?t=' + Date.now());
     if (!r.ok) throw new Error(r.status);
     var data = await r.json();
     failCount = 0;
@@ -928,7 +972,7 @@ function setBadge(id, text, cls) {
 // ── Portfolio polling (30s) ──
 async function fetchPortfolio() {
   try {
-    var r = await fetch(PORTFOLIO_URL + '?t=' + Date.now());
+    var r = await fetch(apiUrl(PORTFOLIO_URL) + '?t=' + Date.now());
     if (!r.ok) return;
     var d = await r.json();
     document.getElementById('portBalance').textContent = '$' + (d.balance || 0).toFixed(2);
@@ -952,7 +996,7 @@ async function loadTabData() {
 
 async function loadSignals() {
   try {
-    var r = await fetch(SIGNALS_URL + '?t=' + Date.now());
+    var r = await fetch(apiUrl(SIGNALS_URL) + '?t=' + Date.now());
     var rows = await r.json();
     var tbody = document.getElementById('signalsBody');
     if (!rows.length) { tbody.innerHTML = '<tr><td colspan="12" class="empty-state">No signals yet</td></tr>'; return; }
@@ -977,7 +1021,7 @@ async function loadSignals() {
 
 async function loadTrades() {
   try {
-    var r = await fetch(TRADES_URL + '?t=' + Date.now());
+    var r = await fetch(apiUrl(TRADES_URL) + '?t=' + Date.now());
     var rows = await r.json();
     var tbody = document.getElementById('tradesBody');
     if (!rows.length) { tbody.innerHTML = '<tr><td colspan="12" class="empty-state">No trades yet</td></tr>'; return; }
@@ -1007,8 +1051,8 @@ async function loadTrades() {
 async function loadPerformance() {
   try {
     var results = await Promise.all([
-      fetch(PERFORMANCE_URL + '?t=' + Date.now()),
-      fetch(DAILY_PNL_URL + '?t=' + Date.now()),
+      fetch(apiUrl(PERFORMANCE_URL) + '?t=' + Date.now()),
+      fetch(apiUrl(DAILY_PNL_URL) + '?t=' + Date.now()),
     ]);
     var perf = await results[0].json();
     var dailyPnl = await results[1].json();
@@ -1045,7 +1089,7 @@ async function loadPerformance() {
 
 async function loadSettlements() {
   try {
-    var r = await fetch(SETTLEMENTS_URL + '?t=' + Date.now());
+    var r = await fetch(apiUrl(SETTLEMENTS_URL) + '?t=' + Date.now());
     var rows = await r.json();
     var tbody = document.getElementById('settlementsBody');
     if (!rows.length) { tbody.innerHTML = '<tr><td colspan="8" class="empty-state">No settlements yet</td></tr>'; return; }
@@ -1133,13 +1177,22 @@ function drawDailyPnl(days) {
 }
 
 // ── Init ──
-fetchStatus();
-fetchPortfolio();
-loadTabData();
-
-setInterval(fetchStatus, 10000);
-setInterval(fetchPortfolio, 30000);
-setInterval(loadTabData, 30000);
+(async function init() {
+  await detectMode();
+  fetchStatus();
+  loadTabData();
+  if (IS_LOCAL) {
+    fetchPortfolio();
+    setInterval(fetchStatus, 10000);
+    setInterval(fetchPortfolio, 30000);
+    setInterval(loadTabData, 30000);
+  } else {
+    // Static mode: slower refresh, no portfolio API
+    document.querySelectorAll('.portfolio-value').forEach(function(el) { el.textContent = '--'; });
+    setInterval(fetchStatus, 5*60*1000);
+    setInterval(loadTabData, 5*60*1000);
+  }
+})();
 </script>
 
 </body>

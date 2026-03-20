@@ -6,430 +6,432 @@
   "wins": 0,
   "losses": 0,
   "trades_today": 0,
-  "signals_today": 86,
+  "signals_today": 159,
   "bankroll": 57.32,
   "exposure": 0.0,
   "open_positions": 0,
   "events": [
     {
-      "time": "7:33 PM",
+      "time": "7:50 PM",
       "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201945-45",
+      "ticker": "KXBTC15M-26MAR202000-00",
       "side": "no",
-      "price": 33,
-      "edge": 15
-    },
-    {
-      "time": "7:32 PM",
-      "action": "BLOCKED: no_only",
-      "ticker": "KXETH15M-26MAR201945-45",
-      "side": "yes",
-      "price": 33,
-      "edge": 14
-    },
-    {
-      "time": "7:32 PM",
-      "action": "BLOCKED: no_only",
-      "ticker": "KXETH15M-26MAR201945-45",
-      "side": "yes",
-      "price": 34,
-      "edge": 13
-    },
-    {
-      "time": "7:32 PM",
-      "action": "BLOCKED: no_only",
-      "ticker": "KXETH15M-26MAR201945-45",
-      "side": "yes",
-      "price": 29,
+      "price": 31,
       "edge": 18
     },
     {
-      "time": "7:32 PM",
+      "time": "7:49 PM",
       "action": "BLOCKED: no_only",
-      "ticker": "KXETH15M-26MAR201945-45",
+      "ticker": "KXETH15M-26MAR202000-00",
       "side": "yes",
-      "price": 35,
-      "edge": 12
+      "price": 27,
+      "edge": 19
     },
     {
-      "time": "7:32 PM",
+      "time": "7:49 PM",
       "action": "BLOCKED: no_only",
-      "ticker": "KXETH15M-26MAR201945-45",
+      "ticker": "KXETH15M-26MAR202000-00",
       "side": "yes",
-      "price": 35,
-      "edge": 17
-    },
-    {
-      "time": "7:31 PM",
-      "action": "BLOCKED: no_only",
-      "ticker": "KXETH15M-26MAR201945-45",
-      "side": "yes",
-      "price": 35,
-      "edge": 13
-    },
-    {
-      "time": "7:28 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 30,
+      "price": 26,
       "edge": 20
     },
     {
-      "time": "7:27 PM",
+      "time": "7:48 PM",
       "action": "BLOCKED: no_only",
-      "ticker": "KXBTC15M-26MAR201930-30",
+      "ticker": "KXETH15M-26MAR202000-00",
       "side": "yes",
-      "price": 10,
-      "edge": 34
-    },
-    {
-      "time": "7:27 PM",
-      "action": "BLOCKED: no_only",
-      "ticker": "KXBTC15M-26MAR201930-30",
-      "side": "yes",
-      "price": 10,
-      "edge": 34
-    },
-    {
-      "time": "7:27 PM",
-      "action": "BLOCKED: no_only",
-      "ticker": "KXBTC15M-26MAR201930-30",
-      "side": "yes",
-      "price": 21,
-      "edge": 29
-    },
-    {
-      "time": "7:27 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 15,
-      "edge": 26
-    },
-    {
-      "time": "7:27 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 18,
-      "edge": 23
-    },
-    {
-      "time": "7:26 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 16,
-      "edge": 32
-    },
-    {
-      "time": "7:26 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 27,
-      "edge": 16
-    },
-    {
-      "time": "7:26 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 9,
-      "edge": 32
-    },
-    {
-      "time": "7:26 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 11,
-      "edge": 32
-    },
-    {
-      "time": "7:26 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 15,
-      "edge": 27
-    },
-    {
-      "time": "7:25 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 15,
-      "edge": 31
-    },
-    {
-      "time": "7:25 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 25,
-      "edge": 21
-    },
-    {
-      "time": "7:25 PM",
-      "action": "BLOCKED: no_only",
-      "ticker": "KXBTC15M-26MAR201930-30",
-      "side": "yes",
-      "price": 32,
-      "edge": 16
-    },
-    {
-      "time": "7:25 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 27,
-      "edge": 19
-    },
-    {
-      "time": "7:25 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 21,
-      "edge": 23
-    },
-    {
-      "time": "7:24 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 13,
-      "edge": 30
-    },
-    {
-      "time": "7:24 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 14,
-      "edge": 30
-    },
-    {
-      "time": "7:24 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 15,
-      "edge": 29
-    },
-    {
-      "time": "7:24 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 17,
-      "edge": 27
-    },
-    {
-      "time": "7:24 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 18,
-      "edge": 26
-    },
-    {
-      "time": "7:23 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 18,
-      "edge": 24
-    },
-    {
-      "time": "7:23 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 16,
-      "edge": 26
-    },
-    {
-      "time": "7:23 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 16,
-      "edge": 26
-    },
-    {
-      "time": "7:23 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 16,
-      "edge": 29
-    },
-    {
-      "time": "7:23 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 24,
-      "edge": 21
-    },
-    {
-      "time": "7:22 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 25,
+      "price": 28,
       "edge": 18
     },
     {
-      "time": "7:22 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 15,
-      "edge": 26
+      "time": "7:48 PM",
+      "action": "BLOCKED: no_only",
+      "ticker": "KXETH15M-26MAR202000-00",
+      "side": "yes",
+      "price": 28,
+      "edge": 18
     },
     {
-      "time": "7:22 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 15,
-      "edge": 27
+      "time": "7:48 PM",
+      "action": "BLOCKED: no_only",
+      "ticker": "KXETH15M-26MAR202000-00",
+      "side": "yes",
+      "price": 25,
+      "edge": 23
     },
     {
-      "time": "7:22 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 16,
-      "edge": 28
-    },
-    {
-      "time": "7:22 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 20,
-      "edge": 24
-    },
-    {
-      "time": "7:22 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 26,
-      "edge": 19
-    },
-    {
-      "time": "7:21 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
+      "time": "7:48 PM",
+      "action": "BLOCKED: no_only",
+      "ticker": "KXBTC15M-26MAR202000-00",
+      "side": "yes",
       "price": 21,
       "edge": 24
     },
     {
-      "time": "7:21 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
+      "time": "7:48 PM",
+      "action": "BLOCKED: no_only",
+      "ticker": "KXBTC15M-26MAR202000-00",
+      "side": "yes",
       "price": 22,
-      "edge": 22
+      "edge": 24
     },
     {
-      "time": "7:21 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 23,
-      "edge": 22
+      "time": "7:48 PM",
+      "action": "BLOCKED: no_only",
+      "ticker": "KXBTC15M-26MAR202000-00",
+      "side": "yes",
+      "price": 18,
+      "edge": 28
     },
     {
-      "time": "7:21 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 23,
-      "edge": 21
+      "time": "7:47 PM",
+      "action": "BLOCKED: no_only",
+      "ticker": "KXBTC15M-26MAR202000-00",
+      "side": "yes",
+      "price": 20,
+      "edge": 26
     },
     {
-      "time": "7:21 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
+      "time": "7:47 PM",
+      "action": "BLOCKED: no_only",
+      "ticker": "KXBTC15M-26MAR202000-00",
+      "side": "yes",
+      "price": 21,
+      "edge": 25
+    },
+    {
+      "time": "7:47 PM",
+      "action": "BLOCKED: no_only",
+      "ticker": "KXBTC15M-26MAR202000-00",
+      "side": "yes",
+      "price": 24,
+      "edge": 24
+    },
+    {
+      "time": "7:47 PM",
+      "action": "BLOCKED: no_only",
+      "ticker": "KXBTC15M-26MAR202000-00",
+      "side": "yes",
+      "price": 26,
+      "edge": 20
+    },
+    {
+      "time": "7:47 PM",
+      "action": "BLOCKED: no_only",
+      "ticker": "KXBTC15M-26MAR202000-00",
+      "side": "yes",
+      "price": 29,
+      "edge": 18
+    },
+    {
+      "time": "7:46 PM",
+      "action": "BLOCKED: no_only",
+      "ticker": "KXBTC15M-26MAR202000-00",
+      "side": "yes",
+      "price": 35,
+      "edge": 13
+    },
+    {
+      "time": "7:46 PM",
+      "action": "BLOCKED: no_only",
+      "ticker": "KXETH15M-26MAR202000-00",
+      "side": "yes",
       "price": 29,
       "edge": 17
     },
     {
-      "time": "7:20 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 30,
-      "edge": 16
-    },
-    {
-      "time": "7:20 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 31,
+      "time": "7:46 PM",
+      "action": "BLOCKED: no_only",
+      "ticker": "KXBTC15M-26MAR202000-00",
+      "side": "yes",
+      "price": 33,
       "edge": 15
     },
     {
-      "time": "7:20 PM",
-      "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
-      "side": "no",
-      "price": 35,
-      "edge": 12
+      "time": "7:46 PM",
+      "action": "BLOCKED: no_only",
+      "ticker": "KXBTC15M-26MAR202000-00",
+      "side": "yes",
+      "price": 34,
+      "edge": 14
     },
     {
-      "time": "7:19 PM",
+      "time": "7:43 PM",
       "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
+      "ticker": "KXBTC15M-26MAR201945-45",
       "side": "no",
+      "price": 10,
+      "edge": 36
+    },
+    {
+      "time": "7:43 PM",
+      "action": "BLOCKED: trading_enabled",
+      "ticker": "KXBTC15M-26MAR201945-45",
+      "side": "no",
+      "price": 13,
+      "edge": 33
+    },
+    {
+      "time": "7:43 PM",
+      "action": "BLOCKED: trading_enabled",
+      "ticker": "KXBTC15M-26MAR201945-45",
+      "side": "no",
+      "price": 19,
+      "edge": 27
+    },
+    {
+      "time": "7:42 PM",
+      "action": "BLOCKED: trading_enabled",
+      "ticker": "KXBTC15M-26MAR201945-45",
+      "side": "no",
+      "price": 16,
+      "edge": 30
+    },
+    {
+      "time": "7:42 PM",
+      "action": "BLOCKED: trading_enabled",
+      "ticker": "KXBTC15M-26MAR201945-45",
+      "side": "no",
+      "price": 16,
+      "edge": 30
+    },
+    {
+      "time": "7:42 PM",
+      "action": "BLOCKED: trading_enabled",
+      "ticker": "KXBTC15M-26MAR201945-45",
+      "side": "no",
+      "price": 17,
+      "edge": 30
+    },
+    {
+      "time": "7:42 PM",
+      "action": "BLOCKED: trading_enabled",
+      "ticker": "KXBTC15M-26MAR201945-45",
+      "side": "no",
+      "price": 20,
+      "edge": 27
+    },
+    {
+      "time": "7:42 PM",
+      "action": "BLOCKED: trading_enabled",
+      "ticker": "KXBTC15M-26MAR201945-45",
+      "side": "no",
+      "price": 20,
+      "edge": 27
+    },
+    {
+      "time": "7:41 PM",
+      "action": "BLOCKED: trading_enabled",
+      "ticker": "KXBTC15M-26MAR201945-45",
+      "side": "no",
+      "price": 23,
+      "edge": 25
+    },
+    {
+      "time": "7:41 PM",
+      "action": "BLOCKED: no_only",
+      "ticker": "KXETH15M-26MAR201945-45",
+      "side": "yes",
+      "price": 28,
+      "edge": 22
+    },
+    {
+      "time": "7:41 PM",
+      "action": "BLOCKED: trading_enabled",
+      "ticker": "KXBTC15M-26MAR201945-45",
+      "side": "no",
+      "price": 26,
+      "edge": 22
+    },
+    {
+      "time": "7:41 PM",
+      "action": "BLOCKED: trading_enabled",
+      "ticker": "KXETH15M-26MAR201945-45",
+      "side": "no",
+      "price": 30,
+      "edge": 22
+    },
+    {
+      "time": "7:41 PM",
+      "action": "BLOCKED: no_only",
+      "ticker": "KXETH15M-26MAR201945-45",
+      "side": "yes",
+      "price": 25,
+      "edge": 27
+    },
+    {
+      "time": "7:40 PM",
+      "action": "BLOCKED: no_only",
+      "ticker": "KXETH15M-26MAR201945-45",
+      "side": "yes",
+      "price": 28,
+      "edge": 24
+    },
+    {
+      "time": "7:40 PM",
+      "action": "BLOCKED: trading_enabled",
+      "ticker": "KXBTC15M-26MAR201945-45",
+      "side": "no",
+      "price": 31,
+      "edge": 17
+    },
+    {
+      "time": "7:40 PM",
+      "action": "BLOCKED: no_only",
+      "ticker": "KXETH15M-26MAR201945-45",
+      "side": "yes",
       "price": 34,
+      "edge": 18
+    },
+    {
+      "time": "7:40 PM",
+      "action": "BLOCKED: no_only",
+      "ticker": "KXETH15M-26MAR201945-45",
+      "side": "yes",
+      "price": 26,
+      "edge": 20
+    },
+    {
+      "time": "7:40 PM",
+      "action": "BLOCKED: no_only",
+      "ticker": "KXETH15M-26MAR201945-45",
+      "side": "yes",
+      "price": 28,
+      "edge": 19
+    },
+    {
+      "time": "7:39 PM",
+      "action": "BLOCKED: no_only",
+      "ticker": "KXETH15M-26MAR201945-45",
+      "side": "yes",
+      "price": 25,
+      "edge": 21
+    },
+    {
+      "time": "7:39 PM",
+      "action": "BLOCKED: no_only",
+      "ticker": "KXETH15M-26MAR201945-45",
+      "side": "yes",
+      "price": 24,
+      "edge": 22
+    },
+    {
+      "time": "7:39 PM",
+      "action": "BLOCKED: no_only",
+      "ticker": "KXETH15M-26MAR201945-45",
+      "side": "yes",
+      "price": 29,
+      "edge": 18
+    },
+    {
+      "time": "7:39 PM",
+      "action": "BLOCKED: no_only",
+      "ticker": "KXETH15M-26MAR201945-45",
+      "side": "yes",
+      "price": 32,
+      "edge": 20
+    },
+    {
+      "time": "7:39 PM",
+      "action": "BLOCKED: trading_enabled",
+      "ticker": "KXBTC15M-26MAR201945-45",
+      "side": "no",
+      "price": 35,
       "edge": 13
     },
     {
-      "time": "7:18 PM",
+      "time": "7:38 PM",
       "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
+      "ticker": "KXBTC15M-26MAR201945-45",
       "side": "no",
-      "price": 29,
-      "edge": 19
+      "price": 34,
+      "edge": 11
     },
     {
-      "time": "7:18 PM",
+      "time": "7:38 PM",
       "action": "BLOCKED: trading_enabled",
-      "ticker": "KXETH15M-26MAR201930-30",
+      "ticker": "KXBTC15M-26MAR201945-45",
       "side": "no",
       "price": 29,
-      "edge": 19
+      "edge": 16
+    },
+    {
+      "time": "7:38 PM",
+      "action": "BLOCKED: trading_enabled",
+      "ticker": "KXBTC15M-26MAR201945-45",
+      "side": "no",
+      "price": 32,
+      "edge": 13
+    },
+    {
+      "time": "7:38 PM",
+      "action": "BLOCKED: trading_enabled",
+      "ticker": "KXETH15M-26MAR201945-45",
+      "side": "no",
+      "price": 27,
+      "edge": 22
+    },
+    {
+      "time": "7:38 PM",
+      "action": "BLOCKED: trading_enabled",
+      "ticker": "KXBTC15M-26MAR201945-45",
+      "side": "no",
+      "price": 28,
+      "edge": 18
+    },
+    {
+      "time": "7:37 PM",
+      "action": "BLOCKED: trading_enabled",
+      "ticker": "KXBTC15M-26MAR201945-45",
+      "side": "no",
+      "price": 30,
+      "edge": 14
+    },
+    {
+      "time": "7:37 PM",
+      "action": "BLOCKED: trading_enabled",
+      "ticker": "KXETH15M-26MAR201945-45",
+      "side": "no",
+      "price": 20,
+      "edge": 27
+    },
+    {
+      "time": "7:37 PM",
+      "action": "BLOCKED: trading_enabled",
+      "ticker": "KXBTC15M-26MAR201945-45",
+      "side": "no",
+      "price": 19,
+      "edge": 24
+    },
+    {
+      "time": "7:37 PM",
+      "action": "BLOCKED: trading_enabled",
+      "ticker": "KXETH15M-26MAR201945-45",
+      "side": "no",
+      "price": 21,
+      "edge": 29
     }
   ],
   "positions": [],
   "prices": {
     "BTC": {
-      "spot": 70498.9,
+      "spot": 70535.4,
       "source": "kraken"
     },
     "ETH": {
-      "spot": 2147.36,
+      "spot": 2147.35,
       "source": "kraken"
     }
   },
   "strategies": {
-    "latency": 77,
-    "calibrated": 50,
+    "latency": 160,
+    "calibrated": 83,
     "arbitrage": 0,
     "skipped": 0
   },
   "bankroll_history": [
+    57.32,
+    57.32,
     57.32,
     57.32
   ],
@@ -437,23 +439,23 @@
     "kraken": {
       "ready": true,
       "stale": false,
-      "btc_age": 4.6,
-      "eth_age": 8.9,
-      "btc": 70498.9,
-      "eth": 2147.36
+      "btc_age": 8.2,
+      "eth_age": 6.4,
+      "btc": 70535.4,
+      "eth": 2147.35
     },
     "binance": {
       "ready": true,
       "stale": false,
-      "btc_age": 2.5,
-      "eth_age": 2.5,
-      "btc": 70485.47,
-      "eth": 2147.86
+      "btc_age": 4.4,
+      "eth_age": 1.6,
+      "btc": 70514.0,
+      "eth": 2145.87
     },
     "active_source": {
       "BTC": "kraken",
       "ETH": "kraken"
     }
   },
-  "updated_at": "2026-03-20T23:33:34.410438+00:00"
+  "updated_at": "2026-03-20T23:50:08.640837+00:00"
 }

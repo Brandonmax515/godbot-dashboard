@@ -1002,6 +1002,56 @@ document.addEventListener('visibilitychange', function() {
 
 
 /* ═══════════════════════════════════════════════════════════════════
+   MODE DETECTION: Local (dashboard_server) vs GitHub Pages (static)
+   ═══════════════════════════════════════════════════════════════════ */
+var IS_LOCAL = false;          // set true once local API responds
+var LOCAL_BASE = '';           // '' when served from dashboard_server, full URL otherwise
+var LOCAL_API_CHECKED = false;
+
+// Try dashboard_server on common ports. If we're already on it, use relative.
+// Otherwise try localhost:8378 (default dashboard port).
+async function detectMode() {
+  // Already on dashboard_server
+  if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+    try {
+      var r = await fetch('/api/portfolio-summary.json?t=' + Date.now());
+      if (r.ok) { IS_LOCAL = true; LOCAL_BASE = ''; LOCAL_API_CHECKED = true; return; }
+    } catch(e) {}
+  }
+
+  // Try default dashboard port
+  try {
+    var r = await fetch('http://localhost:8378/api/portfolio-summary.json?t=' + Date.now());
+    if (r.ok) { IS_LOCAL = true; LOCAL_BASE = 'http://localhost:8378'; LOCAL_API_CHECKED = true; return; }
+  } catch(e) {}
+
+  // GitHub Pages / static mode
+  IS_LOCAL = false;
+  LOCAL_API_CHECKED = true;
+  showStaticBanner();
+}
+
+function showStaticBanner() {
+  if (document.getElementById('staticBanner')) return;
+  var banner = document.createElement('div');
+  banner.id = 'staticBanner';
+  banner.style.cssText = 'background:var(--accent-amber-dim,rgba(255,183,0,0.12));border-bottom:1px solid rgba(255,183,0,0.2);padding:8px 24px;text-align:center;font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--accent-amber,#ffb700);position:relative;z-index:60;';
+  banner.innerHTML = 'Static snapshot \u2014 live dashboard at <a href="http://localhost:8378/godbot" style="color:inherit;text-decoration:underline">localhost:8378</a>';
+  document.body.insertBefore(banner, document.body.firstChild);
+}
+
+function showLastUpdated(ts) {
+  if (!ts) return;
+  var el = document.getElementById('statusText');
+  if (el) {
+    try {
+      var d = new Date(ts);
+      el.textContent = 'Updated ' + d.toLocaleString();
+    } catch(e) { el.textContent = 'STATIC'; }
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
    DATA LAYER
    ═══════════════════════════════════════════════════════════════════ */
 let DATA = null, refreshTimer = null;
@@ -1012,18 +1062,22 @@ async function loadData() {
     DATA = window.GODBOT_DATA;
     renderAll();
     document.getElementById('statusText').textContent = DATA.mode || 'ACTIVE';
-    // FIX #13: no polling needed for embedded data
+    if (!IS_LOCAL) showLastUpdated(DATA.generated_at);
     if (refreshTimer) { clearInterval(refreshTimer); refreshTimer = null; }
     return;
   }
 
-  // Mode 2: Fetch JSON (for --serve mode)
+  // Mode 2: Fetch JSON (works for both local serve and GitHub Pages static files)
   try {
-    const r = await fetch('./godbot_data.json');
+    const r = await fetch('./godbot_data.json?t=' + Date.now());
     if (!r.ok) throw new Error('HTTP ' + r.status);
     DATA = await r.json();
     renderAll();
-    document.getElementById('statusText').textContent = DATA.mode || 'ACTIVE';
+    if (IS_LOCAL) {
+      document.getElementById('statusText').textContent = DATA.mode || 'ACTIVE';
+    } else {
+      showLastUpdated(DATA.generated_at);
+    }
     return;
   } catch(e) {
     if (!DATA) console.warn('godbot_data.json not found:', e.message);
@@ -1236,18 +1290,26 @@ function switchTab(name) {
 }
 
 /* ═══ INIT ═══ */
-loadData();
-if (!window.GODBOT_DATA) { refreshTimer = setInterval(loadData, 5*60*1000); }
-
-/* ── Portfolio bar ── */
-// When served via dashboard_server (port 8378), relative URLs work.
-// When opened as a file or from another origin, try localhost:8378.
-var DASHBOARD_BASE = (location.protocol === 'file:' || location.port !== '8378')
-  ? 'http://localhost:8378' : '';
+(async function init() {
+  await detectMode();
+  await loadData();
+  if (!window.GODBOT_DATA) {
+    var interval = IS_LOCAL ? 15000 : 5*60*1000;
+    refreshTimer = setInterval(loadData, interval);
+  }
+  // Portfolio bar — only fetch live when local API is available
+  if (IS_LOCAL) {
+    fetchPortfolio();
+    setInterval(fetchPortfolio, 30000);
+  } else {
+    // Hide portfolio values in static mode (no API)
+    document.querySelectorAll('.portfolio-value').forEach(function(el) { el.textContent = '--'; });
+  }
+})();
 
 async function fetchPortfolio() {
   try {
-    var r = await fetch(DASHBOARD_BASE + '/api/portfolio-summary.json?t=' + Date.now());
+    var r = await fetch(LOCAL_BASE + '/api/portfolio-summary.json?t=' + Date.now());
     if (!r.ok) throw new Error('HTTP ' + r.status);
     var d = await r.json();
     document.getElementById('pBalance').textContent = '$' + (d.balance || 0).toFixed(2);
@@ -1259,12 +1321,9 @@ async function fetchPortfolio() {
     el.textContent = (pnl >= 0 ? '+$' : '-$') + Math.abs(pnl).toFixed(2);
     el.className = 'portfolio-value ' + (pnl > 0 ? 'pv-green' : pnl < 0 ? 'pv-red' : 'pv-gray');
   } catch(e) {
-    // Hide bar if dashboard server is not running
-    console.warn('portfolio fetch failed (dashboard server running?)', e.message);
+    console.warn('portfolio fetch failed:', e.message);
   }
 }
-fetchPortfolio();
-setInterval(fetchPortfolio, 30000);
 </script>
 </body>
 </html>
