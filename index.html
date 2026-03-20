@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GODBOT — Weather Scanner</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&family=Outfit:wght@200;300;400;500;600;700;800;900&family=Syne:wght@400;500;600;700;800&display=swap');
+
+  :root {
+    --bg-primary: #07080a;
+    --bg-card: #0d0f13;
+    --bg-card-hover: #12151b;
+    --bg-surface: #161a22;
+    --border-subtle: rgba(255,255,255,0.05);
+    --border-active: rgba(0, 255, 136, 0.2);
+    --text-primary: #e8eaed;
+    --text-secondary: #8b9ab5;
+    --text-muted: #4a5568;
+    --accent-green: #00ff88;
+    --accent-green-dim: rgba(0, 255, 136, 0.15);
+    --accent-red: #ff3d5a;
+    --accent-red-dim: rgba(255, 61, 90, 0.12);
+    --accent-amber: #ffb700;
+    --accent-amber-dim: rgba(255, 183, 0, 0.12);
+    --accent-cyan: #00d4ff;
+    --accent-cyan-dim: rgba(0, 212, 255, 0.1);
+    --accent-purple: #a855f7;
+    --glow-green: 0 0 30px rgba(0, 255, 136, 0.08);
+    --glow-red: 0 0 20px rgba(255, 61, 90, 0.06);
+    --radius: 8px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.02;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .bg-mesh {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse 600px 400px at 15% 10%, rgba(0, 255, 136, 0.03), transparent),
+      radial-gradient(ellipse 500px 500px at 85% 80%, rgba(0, 212, 255, 0.02), transparent),
+      radial-gradient(ellipse 400px 300px at 50% 50%, rgba(168, 85, 247, 0.015), transparent);
+  }
+
+  .app-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 24px 24px 80px;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0 40px;
+    border-bottom: 1px solid var(--border-subtle);
+    margin-bottom: 32px;
+  }
+
+  .header-left { display: flex; align-items: center; gap: 16px; }
+
+  .logo-mark {
+    width: 44px; height: 44px;
+    background: linear-gradient(135deg, var(--accent-green) 0%, var(--accent-cyan) 100%);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800; font-size: 18px;
+    color: var(--bg-primary);
+    box-shadow: 0 0 24px rgba(0, 255, 136, 0.15);
+  }
+
+  .header-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800; font-size: 26px; letter-spacing: -0.5px;
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+
+  .header-subtitle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: var(--text-muted);
+    letter-spacing: 2px; text-transform: uppercase; margin-top: 2px;
+  }
+
+  .header-right { display: flex; align-items: center; gap: 12px; }
+
+  .status-badge {
+    display: flex; align-items: center; gap: 6px;
+    padding: 6px 14px; border-radius: 100px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; font-weight: 500;
+  }
+
+  .status-badge.live {
+    background: var(--accent-green-dim);
+    color: var(--accent-green);
+    border: 1px solid rgba(0, 255, 136, 0.15);
+  }
+
+  .status-badge .pulse {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--accent-green);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(0,255,136,0.4); }
+    50% { opacity: 0.6; box-shadow: 0 0 0 6px rgba(0,255,136,0); }
+  }
+
+  .morph-section {
+    position: relative; height: 100px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  .morph-container {
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+    width: 100%; filter: url(#threshold);
+  }
+
+  .morph-text {
+    position: absolute; display: inline-block; user-select: none; text-align: center;
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(36px, 6vw, 72px); letter-spacing: -2px;
+    color: var(--accent-green);
+  }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px; margin-bottom: 28px;
+  }
+
+  .stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    padding: 18px 20px; transition: all 0.2s ease;
+  }
+
+  .stat-card:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-active);
+    box-shadow: var(--glow-green);
+  }
+
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; text-transform: uppercase;
+    letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 8px;
+  }
+
+  .stat-value {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700; font-size: 28px; letter-spacing: -1px;
+    color: var(--text-primary);
+  }
+
+  .stat-value.green { color: var(--accent-green); }
+  .stat-value.red { color: var(--accent-red); }
+  .stat-value.amber { color: var(--accent-amber); }
+  .stat-value.cyan { color: var(--accent-cyan); }
+
+  .tabs {
+    display: flex; gap: 2px;
+    background: var(--bg-card); border-radius: 8px; padding: 3px;
+    border: 1px solid var(--border-subtle); margin-bottom: 20px; width: fit-content;
+  }
+
+  .tab {
+    padding: 8px 20px; border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500;
+    color: var(--text-muted); cursor: pointer; transition: all 0.15s ease;
+    border: none; background: none;
+  }
+
+  .tab:hover { color: var(--text-secondary); }
+
+  .tab.active {
+    background: var(--bg-surface); color: var(--text-primary);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  }
+
+  .table-container {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius); overflow: hidden;
+  }
+
+  .bet-table { width: 100%; border-collapse: collapse; }
+
+  .bet-table th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px;
+    color: var(--text-muted); padding: 14px 16px; text-align: left;
+    border-bottom: 1px solid var(--border-subtle);
+    background: rgba(0,0,0,0.2); position: sticky; top: 0;
+  }
+
+  .bet-table td {
+    padding: 14px 16px; font-size: 13px;
+    border-bottom: 1px solid var(--border-subtle);
+    font-family: 'JetBrains Mono', monospace; font-weight: 400;
+    color: var(--text-secondary); vertical-align: middle;
+  }
+
+  .bet-table tr:hover td { background: var(--bg-card-hover); }
+  .bet-table tr:last-child td { border-bottom: none; }
+
+  .side-tag {
+    display: inline-flex; align-items: center; gap: 5px;
+    padding: 3px 10px; border-radius: 4px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.5px;
+  }
+
+  .side-tag.yes { background: var(--accent-green-dim); color: var(--accent-green); }
+  .side-tag.no { background: var(--accent-red-dim); color: var(--accent-red); }
+
+  .result-tag { padding: 3px 10px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+  .result-tag.win { background: var(--accent-green-dim); color: var(--accent-green); }
+  .result-tag.loss { background: var(--accent-red-dim); color: var(--accent-red); }
+  .result-tag.pending { background: var(--accent-amber-dim); color: var(--accent-amber); }
+  .result-tag.dry { background: var(--accent-cyan-dim); color: var(--accent-cyan); }
+
+  .edge-val { color: var(--accent-green); font-weight: 600; }
+  .pnl-pos { color: var(--accent-green); font-weight: 600; }
+  .pnl-neg { color: var(--accent-red); font-weight: 600; }
+  .pnl-pending { color: var(--text-muted); }
+  .city-name { color: var(--text-primary); font-weight: 500; }
+
+  .reasoning-panel {
+    background: var(--bg-card); border: 1px solid var(--border-subtle);
+    border-radius: var(--radius); padding: 20px 24px; margin-top: 16px;
+    display: none;
+  }
+  .reasoning-panel.open { display: block; }
+
+  .reasoning-header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 14px;
+  }
+  .reasoning-header-left { display: flex; align-items: center; gap: 10px; }
+
+  .reasoning-header-text {
+    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px;
+    color: var(--text-primary);
+  }
+
+  .reasoning-close {
+    background: none; border: 1px solid var(--border-subtle);
+    color: var(--text-muted); border-radius: 4px; padding: 4px 10px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    cursor: pointer; transition: all 0.15s;
+  }
+  .reasoning-close:hover { color: var(--text-primary); border-color: var(--text-muted); }
+
+  .reasoning-body {
+    font-family: 'JetBrains Mono', monospace; font-size: 12px; line-height: 1.7;
+    color: var(--text-secondary); white-space: pre-wrap; padding: 16px;
+    background: rgba(0,0,0,0.2); border-radius: 6px;
+    border: 1px solid var(--border-subtle);
+  }
+
+  .reasoning-meta {
+    display: flex; flex-wrap: wrap; gap: 24px; margin-top: 12px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-muted);
+  }
+  .reasoning-meta span { color: var(--accent-cyan); }
+
+  .chart-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px;
+  }
+  @media (max-width: 768px) { .chart-grid { grid-template-columns: 1fr; } }
+
+  .chart-card {
+    background: var(--bg-card); border: 1px solid var(--border-subtle);
+    border-radius: var(--radius); padding: 20px 24px;
+  }
+
+  .chart-title {
+    font-family: 'Syne', sans-serif; font-weight: 600; font-size: 14px;
+    color: var(--text-primary); margin-bottom: 16px;
+  }
+
+  .bar-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+
+  .bar-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--text-muted); min-width: 52px; text-align: right;
+  }
+
+  .bar-track {
+    flex: 1; height: 22px; background: rgba(255,255,255,0.03);
+    border-radius: 4px; overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%; border-radius: 4px;
+    transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .bar-fill.green { background: linear-gradient(90deg, var(--accent-green-dim), rgba(0,255,136,0.35)); border-right: 2px solid var(--accent-green); }
+  .bar-fill.red { background: linear-gradient(90deg, var(--accent-red-dim), rgba(255,61,90,0.3)); border-right: 2px solid var(--accent-red); }
+  .bar-fill.cyan { background: linear-gradient(90deg, var(--accent-cyan-dim), rgba(0,212,255,0.3)); border-right: 2px solid var(--accent-cyan); }
+  .bar-fill.amber { background: linear-gradient(90deg, var(--accent-amber-dim), rgba(255,183,0,0.3)); border-right: 2px solid var(--accent-amber); }
+
+  .bar-value {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    color: var(--text-secondary); min-width: 50px;
+  }
+
+  .city-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px;
+  }
+
+  .city-chip {
+    background: var(--bg-card); border: 1px solid var(--border-subtle);
+    border-radius: 6px; padding: 12px 14px; transition: all 0.15s ease;
+  }
+  .city-chip:hover { border-color: var(--border-active); background: var(--bg-card-hover); }
+
+  .city-chip-name {
+    font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 13px;
+    color: var(--text-primary); margin-bottom: 4px;
+  }
+
+  .city-chip-stats {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-muted);
+  }
+
+  .empty-state { text-align: center; padding: 60px 20px; color: var(--text-muted); }
+  .empty-icon { font-size: 40px; margin-bottom: 12px; opacity: 0.5; }
+  .empty-title {
+    font-family: 'Syne', sans-serif; font-weight: 600; font-size: 16px;
+    color: var(--text-secondary); margin-bottom: 6px;
+  }
+  .empty-desc {
+    font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    max-width: 400px; margin: 0 auto; line-height: 1.6;
+  }
+
+  .footer {
+    margin-top: 60px; padding: 20px 0;
+    border-top: 1px solid var(--border-subtle);
+    display: flex; align-items: center; justify-content: space-between;
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--text-muted);
+  }
+
+  .bet-row-clickable { cursor: pointer; }
+
+  @media (max-width: 768px) {
+    .header { flex-direction: column; gap: 12px; align-items: flex-start; }
+    .stats-row { grid-template-columns: repeat(2, 1fr); }
+    .bet-table { font-size: 11px; }
+    .bet-table th, .bet-table td { padding: 10px 10px; }
+    .table-container { overflow-x: auto; }
+    .app-container { padding: 16px 12px 60px; }
+  }
+
+  .fade-in { animation: fadeIn 0.6s ease forwards; opacity: 0; }
+  @keyframes fadeIn { to { opacity: 1; } }
+  .fade-in-delay-1 { animation-delay: 0.1s; }
+  .fade-in-delay-2 { animation-delay: 0.2s; }
+  .fade-in-delay-3 { animation-delay: 0.3s; }
+  .fade-in-delay-4 { animation-delay: 0.4s; }
+</style>
+<script>
+// ── EMBEDDED DATA (injected by godbot_export.py) ──
+window.GODBOT_DATA = {
+  "mode": "DRY RUN",
+  "generated_at": "2026-03-20T18:09:30.328539Z",
+  "total_runs": 7,
+  "total_bets": 4,
+  "wins": 0,
+  "losses": 0,
+  "pending": 4,
+  "win_rate": null,
+  "total_pnl_cents": 0,
+  "total_staked_cents": 800,
+  "roi": null,
+  "avg_edge": 0.21499999999999997,
+  "bets": [
+    {
+      "id": 31,
+      "run_date": "2026-03-20",
+      "ticker": "KXHIGHLAX-26MAR20-T84",
+      "event_ticker": "KXHIGHLAX-26MAR20",
+      "station": "KLAX",
+      "city": "Los Angeles",
+      "variable": "HIGH",
+      "bracket_low": 84.0,
+      "bracket_high": null,
+      "strike_type": "greater",
+      "side": "NO",
+      "bet_type": "NO_DISPLACED",
+      "our_prob": 0.97,
+      "market_prob": 0.74,
+      "edge_pct": 0.22999999999999998,
+      "multiplier": 1.35,
+      "bet_cents": 200,
+      "order_id": "513266ca-6532-47fe-b9fd-fdc1d4376272",
+      "status": "PLACED",
+      "ai_reasoning": "NO on displaced bracket: Claude=3.0% YES, market=30\u00a2 YES. The multi-model ensemble mean of 85\u00b0F is heavily skewed by ECMWF's outlier 95\u00b0F forecast, while GFS (79.5\u00b0F) and JMA (80.1\u00b0F) align closely with the NWS official forecast of 79\u00b0F and hourly trajectory peaking at 79\u00b0F. The NWS AFD indicates this is a cooling day with marine layer influence bringing relief from extreme heat, supporting the lower temperature solutions over the ensemble mean. The large model spread warrants some probability in higher brackets, but the convergence of NWS expertise, official forecast, and hourly data strongly favors the 79-80\u00b0F range.",
+      "ai_temp_estimate": 79.0,
+      "data_sources": "NWS_POINT,NWS_AFD,NWS_CLI,NWS_HOURLY,OPEN_METEO_ENSEMBLE,claude-sonnet-4-20250514",
+      "settled_result": null,
+      "pnl_cents": null,
+      "notes": null,
+      "key_factor": "",
+      "uncertainties": "",
+      "confidence": ""
+    },
+    {
+      "id": 30,
+      "run_date": "2026-03-20",
+      "ticker": "KXHIGHAUS-26MAR20-T88",
+      "event_ticker": "KXHIGHAUS-26MAR20",
+      "station": "KAUS",
+      "city": "Austin",
+      "variable": "HIGH",
+      "bracket_low": null,
+      "bracket_high": 88.0,
+      "strike_type": "less",
+      "side": "YES",
+      "bet_type": "YES_BEST_BRACKET",
+      "our_prob": 0.15,
+      "market_prob": 0.02,
+      "edge_pct": 0.13,
+      "multiplier": 50.0,
+      "bet_cents": 200,
+      "order_id": "856ec785-4ddd-4226-b497-1049272dd8d4",
+      "status": "PLACED",
+      "ai_reasoning": "Multi-model ensemble mean of 86\u00b0F appears too cool based on NWS forecaster expertise noting models have a cool bias and adjusting Saturday highs upward. The strong upper-level high and southerly flow support warming, but hourly trajectory shows peak around 90\u00b0F rather than mid-90s. Given the 10.7\u00b0F model spread and conflicting signals, I'm centering probability around 90\u00b0F with wider distribution.",
+      "ai_temp_estimate": 90.0,
+      "data_sources": "NWS_POINT,NWS_AFD,NWS_CLI,NWS_HOURLY,OPEN_METEO_ENSEMBLE,claude-sonnet-4-20250514",
+      "settled_result": null,
+      "pnl_cents": null,
+      "notes": null,
+      "key_factor": "",
+      "uncertainties": "",
+      "confidence": ""
+    },
+    {
+      "id": 29,
+      "run_date": "2026-03-20",
+      "ticker": "KXHIGHLAX-26MAR20-B79.5",
+      "event_ticker": "KXHIGHLAX-26MAR20",
+      "station": "KLAX",
+      "city": "Los Angeles",
+      "variable": "HIGH",
+      "bracket_low": 79.0,
+      "bracket_high": 80.0,
+      "strike_type": "between",
+      "side": "YES",
+      "bet_type": "YES_BEST_BRACKET",
+      "our_prob": 0.35,
+      "market_prob": 0.18,
+      "edge_pct": 0.16999999999999998,
+      "multiplier": 5.56,
+      "bet_cents": 200,
+      "order_id": "9ca1cfc9-6d67-4781-9008-2e10ea534aeb",
+      "status": "PLACED",
+      "ai_reasoning": "The multi-model ensemble mean of 85\u00b0F is heavily skewed by ECMWF's outlier 95\u00b0F forecast, while GFS (79.5\u00b0F) and JMA (80.1\u00b0F) align closely with the NWS official forecast of 79\u00b0F and hourly trajectory peaking at 79\u00b0F. The NWS AFD indicates this is a cooling day with marine layer influence bringing relief from extreme heat, supporting the lower temperature solutions over the ensemble mean. The large model spread warrants some probability in higher brackets, but the convergence of NWS expertise, official forecast, and hourly data strongly favors the 79-80\u00b0F range.",
+      "ai_temp_estimate": 79.0,
+      "data_sources": "NWS_POINT,NWS_AFD,NWS_CLI,NWS_HOURLY,OPEN_METEO_ENSEMBLE,claude-sonnet-4-20250514",
+      "settled_result": null,
+      "pnl_cents": null,
+      "notes": null,
+      "key_factor": "",
+      "uncertainties": "",
+      "confidence": ""
+    },
+    {
+      "id": 28,
+      "run_date": "2026-03-20",
+      "ticker": "KXHIGHMIA-26MAR20-B74.5",
+      "event_ticker": "KXHIGHMIA-26MAR20",
+      "station": "KMIA",
+      "city": "Miami",
+      "variable": "HIGH",
+      "bracket_low": 74.0,
+      "bracket_high": 75.0,
+      "strike_type": "between",
+      "side": "YES",
+      "bet_type": "YES_BEST_BRACKET",
+      "our_prob": 0.5,
+      "market_prob": 0.17,
+      "edge_pct": 0.32999999999999996,
+      "multiplier": 5.88,
+      "bet_cents": 200,
+      "order_id": "abde2ab8-cdb4-477f-a8aa-9e2044f825bc",
+      "status": "PLACED",
+      "ai_reasoning": "The multi-model ensemble mean of 73.7\u00b0F provides a solid baseline, but the NWS forecaster's emphasis on 'efficient daytime heating' and 'decreasing cloud cover' with highs in the 'mid-upper 70s' suggests temperatures could reach 75-76\u00b0F. The hourly trajectory shows a peak around 75\u00b0F at 17:00, which aligns with this slightly warmer assessment than the raw model output.",
+      "ai_temp_estimate": 75.0,
+      "data_sources": "NWS_POINT,NWS_AFD,NWS_CLI,NWS_HOURLY,OPEN_METEO_ENSEMBLE,claude-sonnet-4-20250514",
+      "settled_result": null,
+      "pnl_cents": null,
+      "notes": null,
+      "key_factor": "",
+      "uncertainties": "",
+      "confidence": ""
+    }
+  ],
+  "by_side": {
+    "YES": {
+      "bets": 3,
+      "wins": 0,
+      "settled": 0,
+      "pnl": 0
+    },
+    "NO": {
+      "bets": 1,
+      "wins": 0,
+      "settled": 0,
+      "pnl": 0
+    }
+  },
+  "by_variable": {
+    "HIGH": {
+      "bets": 4,
+      "wins": 0,
+      "settled": 0,
+      "pnl": 0
+    }
+  },
+  "by_city": {
+    "Los Angeles": {
+      "bets": 2,
+      "wins": 0,
+      "settled": 0,
+      "pnl": 0
+    },
+    "Miami": {
+      "bets": 1,
+      "wins": 0,
+      "settled": 0,
+      "pnl": 0
+    },
+    "Austin": {
+      "bets": 1,
+      "wins": 0,
+      "settled": 0,
+      "pnl": 0
+    }
+  },
+  "calibration": []
+};
+</script>
+</head>
+<body>
+
+<div class="bg-mesh"></div>
+
+<svg style="position:absolute;height:0;width:0" aria-hidden="true">
+  <defs>
+    <filter id="threshold">
+      <feColorMatrix in="SourceGraphic" type="matrix"
+        values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 255 -140" />
+    </filter>
+  </defs>
+</svg>
+
+<div class="app-container">
+  <header class="header fade-in">
+    <div class="header-left">
+      <div class="logo-mark">G</div>
+      <div>
+        <div class="header-title">GODBOT</div>
+        <div class="header-subtitle">Weather Scanner v2 · Bracket-Aware</div>
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="status-badge live">
+        <div class="pulse"></div>
+        <span id="statusText">LOADING</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="morph-section fade-in fade-in-delay-1">
+    <div class="morph-container">
+      <span class="morph-text" id="morphText1"></span>
+      <span class="morph-text" id="morphText2"></span>
+    </div>
+  </div>
+
+  <div class="stats-row fade-in fade-in-delay-2">
+    <div class="stat-card"><div class="stat-label">Total Runs</div><div class="stat-value" id="totalRuns">—</div></div>
+    <div class="stat-card"><div class="stat-label">Total Bets</div><div class="stat-value" id="totalBets">—</div></div>
+    <div class="stat-card"><div class="stat-label">Win Rate</div><div class="stat-value" id="winRate">—</div></div>
+    <div class="stat-card"><div class="stat-label">Total P&L</div><div class="stat-value" id="totalPnl">—</div></div>
+    <div class="stat-card"><div class="stat-label">Total Staked</div><div class="stat-value" id="totalStaked">—</div></div>
+    <div class="stat-card"><div class="stat-label">Avg Edge</div><div class="stat-value" id="avgEdge">—</div></div>
+  </div>
+
+  <div class="tabs fade-in fade-in-delay-3">
+    <button class="tab active" data-tab="bets" onclick="switchTab('bets')">Recent Bets</button>
+    <button class="tab" data-tab="analytics" onclick="switchTab('analytics')">Analytics</button>
+    <button class="tab" data-tab="cities" onclick="switchTab('cities')">By City</button>
+  </div>
+
+  <div id="tab-bets" class="fade-in fade-in-delay-4">
+    <div class="table-container">
+      <table class="bet-table">
+        <thead><tr>
+          <th>Date</th><th>City</th><th>Var</th><th>Side</th><th>Ticker</th>
+          <th>Our Prob</th><th>Market</th><th>Edge</th><th>Est °F</th><th>Status</th><th>P&L</th>
+        </tr></thead>
+        <tbody id="betsTableBody">
+          <tr><td colspan="11" class="empty-state"><div class="empty-icon">⛅</div><div class="empty-title">Loading...</div></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="reasoning-panel" id="reasoningPanel">
+      <div class="reasoning-header">
+        <div class="reasoning-header-left">
+          <span>🧠</span>
+          <span class="reasoning-header-text" id="reasoningTitle">AI Reasoning</span>
+        </div>
+        <button class="reasoning-close" onclick="closeReasoning()">✕ Close</button>
+      </div>
+      <div class="reasoning-body" id="reasoningBody"></div>
+      <div class="reasoning-meta" id="reasoningMeta"></div>
+    </div>
+  </div>
+
+  <div id="tab-analytics" style="display:none">
+    <div class="chart-grid">
+      <div class="chart-card"><div class="chart-title">YES vs NO Performance</div><div id="sideChart"></div></div>
+      <div class="chart-card"><div class="chart-title">Calibration (Predicted → Actual Win%)</div><div id="calibrationChart"></div></div>
+      <div class="chart-card"><div class="chart-title">By Variable</div><div id="variableChart"></div></div>
+      <div class="chart-card"><div class="chart-title">Edge Distribution</div><div id="edgeChart"></div></div>
+    </div>
+  </div>
+
+  <div id="tab-cities" style="display:none">
+    <div class="city-grid" id="cityGrid"></div>
+  </div>
+
+  <footer class="footer">
+    <div>GODBOT Weather Scanner · OpenClaw Infrastructure</div>
+    <div>Powered by Claude AI · GEFS Ensemble · NWS Data</div>
+  </footer>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════════════════════
+   UTILITIES
+   ═══════════════════════════════════════════════════════════════════ */
+
+/** FIX #7: HTML-escape to prevent XSS from DB values */
+function esc(str) {
+  if (str == null) return '';
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+/** FIX #8: P&L with sign prefix */
+function fmtPnl(cents) {
+  if (cents == null) return '—';
+  const v = (cents / 100).toFixed(2);
+  return cents >= 0 ? '+$' + v : '-$' + Math.abs(cents / 100).toFixed(2);
+}
+
+/** FIX #9: Edge with correct sign handling */
+function fmtEdge(f) {
+  if (f == null) return '—';
+  const p = f * 100;
+  return (p >= 0 ? '+' : '') + p.toFixed(1) + '%';
+}
+
+function fmtProb(p) { return p != null ? (p * 100).toFixed(1) + '%' : '—'; }
+
+/** FIX #11: Null-safe bracket formatting */
+function fmtBracket(lo, hi) {
+  if (lo != null && hi != null) return lo + '–' + (hi - 1) + '°F';
+  if (lo != null) return '≥' + lo + '°F';
+  if (hi != null) return '≤' + (hi - 1) + '°F';
+  return '—';
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   GOOEY TEXT MORPHING — FIX #10: proper rAF lifecycle
+   ═══════════════════════════════════════════════════════════════════ */
+const MORPH_TEXTS = ["GODBOT","WEATHER","SCANNER","BRACKET","AWARE","AI"];
+const MORPH_DUR = 1.2, COOL_DUR = 0.4;
+let mIdx = MORPH_TEXTS.length - 1, mTs = performance.now(), mProg = 0, mCool = COOL_DUR, mRaf = null;
+const t1 = document.getElementById('morphText1'), t2 = document.getElementById('morphText2');
+
+function morphFrame(now) {
+  mRaf = requestAnimationFrame(morphFrame);
+  const dt = Math.min((now - mTs) / 1000, 0.1); // cap dt to avoid jumps on tab-switch
+  mTs = now;
+  mCool -= dt;
+  if (mCool <= 0) {
+    if (mCool + dt > 0) {
+      mIdx = (mIdx + 1) % MORPH_TEXTS.length;
+      t1.textContent = MORPH_TEXTS[mIdx];
+      t2.textContent = MORPH_TEXTS[(mIdx + 1) % MORPH_TEXTS.length];
+    }
+    mProg -= mCool; mCool = 0;
+    let fr = mProg / MORPH_DUR;
+    if (fr > 1) { mCool = COOL_DUR; mProg = 0; fr = 1; }
+    t2.style.filter = 'blur(' + Math.min(8/fr - 8, 100) + 'px)';
+    t2.style.opacity = (Math.pow(fr, 0.4) * 100) + '%';
+    const f2 = 1 - fr;
+    t1.style.filter = 'blur(' + Math.min(8/f2 - 8, 100) + 'px)';
+    t1.style.opacity = (Math.pow(f2, 0.4) * 100) + '%';
+  } else {
+    mProg = 0;
+    t2.style.filter = ''; t2.style.opacity = '100%';
+    t1.style.filter = ''; t1.style.opacity = '0%';
+  }
+}
+t1.textContent = MORPH_TEXTS[MORPH_TEXTS.length - 1];
+t2.textContent = MORPH_TEXTS[0];
+mRaf = requestAnimationFrame(morphFrame);
+
+// Pause animation when tab is hidden to save CPU
+document.addEventListener('visibilitychange', function() {
+  if (document.hidden) {
+    if (mRaf) { cancelAnimationFrame(mRaf); mRaf = null; }
+  } else {
+    mTs = performance.now();
+    if (!mRaf) mRaf = requestAnimationFrame(morphFrame);
+  }
+});
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   DATA LAYER
+   ═══════════════════════════════════════════════════════════════════ */
+let DATA = null, refreshTimer = null;
+
+async function loadData() {
+  // Mode 1: Embedded data injected by godbot_export.py
+  if (window.GODBOT_DATA && Object.keys(window.GODBOT_DATA).length > 1) {
+    DATA = window.GODBOT_DATA;
+    renderAll();
+    document.getElementById('statusText').textContent = DATA.mode || 'ACTIVE';
+    // FIX #13: no polling needed for embedded data
+    if (refreshTimer) { clearInterval(refreshTimer); refreshTimer = null; }
+    return;
+  }
+
+  // Mode 2: Fetch JSON (for --serve mode)
+  try {
+    const r = await fetch('./godbot_data.json');
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    DATA = await r.json();
+    renderAll();
+    document.getElementById('statusText').textContent = DATA.mode || 'ACTIVE';
+    return;
+  } catch(e) {
+    if (!DATA) console.warn('godbot_data.json not found:', e.message);
+  }
+
+  // Mode 3: No data
+  if (!DATA) {
+    DATA = { mode:'NO DATA', total_runs:0, total_bets:0, wins:0, losses:0, pending:0,
+             win_rate:null, total_pnl_cents:0, total_staked_cents:0, avg_edge:null,
+             bets:[], by_city:{}, by_variable:{}, by_side:{}, calibration:[] };
+    renderAll();
+    document.getElementById('statusText').textContent = 'NO DATA';
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   RENDERERS
+   ═══════════════════════════════════════════════════════════════════ */
+function renderAll() {
+  if (!DATA) return;
+
+  document.getElementById('totalRuns').textContent = DATA.total_runs || '0';
+  document.getElementById('totalBets').textContent = DATA.total_bets || '0';
+
+  const wr = DATA.win_rate;
+  const wrEl = document.getElementById('winRate');
+  wrEl.textContent = wr != null ? fmtProb(wr) : 'N/A';
+  wrEl.className = 'stat-value ' + (wr != null ? (wr >= 0.5 ? 'green' : 'red') : '');
+
+  const pnl = DATA.total_pnl_cents || 0;
+  const pnlEl = document.getElementById('totalPnl');
+  pnlEl.textContent = fmtPnl(pnl);
+  pnlEl.className = 'stat-value ' + (pnl >= 0 ? 'green' : 'red');
+
+  document.getElementById('totalStaked').textContent = '$' + ((DATA.total_staked_cents||0)/100).toFixed(2);
+  document.getElementById('totalStaked').className = 'stat-value cyan';
+
+  const edgeEl = document.getElementById('avgEdge');
+  edgeEl.textContent = DATA.avg_edge != null ? fmtEdge(DATA.avg_edge) : 'N/A';
+  edgeEl.className = 'stat-value green';
+
+  renderBets();
+  renderAnalytics();
+  renderCities();
+}
+
+let openIdx = -1;
+
+function renderBets() {
+  const tbody = document.getElementById('betsTableBody');
+  const bets = DATA.bets || [];
+  if (!bets.length) {
+    tbody.innerHTML = '<tr><td colspan="11"><div class="empty-state">' +
+      '<div class="empty-icon">⛅</div><div class="empty-title">No bets found</div>' +
+      '<div class="empty-desc">Run: python3 godbot_export.py</div></div></td></tr>';
+    return;
+  }
+
+  var filtered = bets.filter(function(b) {
+    return b.status === 'PLACED' || b.status === 'DRY_RUN';
+  });
+
+  tbody.innerHTML = filtered.slice(0, 100).map(function(b, i) {
+    var sc = b.side === 'YES' ? 'yes' : 'no';
+    var rc = b.settled_result === 'WIN' ? 'win' : b.settled_result === 'LOSS' ? 'loss' :
+             b.status === 'DRY_RUN' ? 'dry' : 'pending';
+    var rl = b.settled_result || (b.status === 'DRY_RUN' ? 'DRY RUN' : 'PENDING');
+    var pc = b.pnl_cents > 0 ? 'pnl-pos' : b.pnl_cents < 0 ? 'pnl-neg' : 'pnl-pending';
+    var tk = esc(b.ticker || '');
+    var stk = tk.length > 30 ? tk.slice(0,28) + '…' : tk;
+    return '<tr class="bet-row-clickable" onclick="toggleReasoning(' + i + ')">' +
+      '<td>' + esc(b.run_date) + '</td>' +
+      '<td class="city-name">' + esc(b.city) + '</td>' +
+      '<td>' + esc(b.variable) + '</td>' +
+      '<td><span class="side-tag ' + sc + '">' + esc(b.side) + '</span></td>' +
+      '<td title="' + tk + '">' + stk + '</td>' +
+      '<td>' + fmtProb(b.our_prob) + '</td>' +
+      '<td>' + fmtProb(b.market_prob) + '</td>' +
+      '<td class="edge-val">' + fmtEdge(b.edge_pct) + '</td>' +
+      '<td>' + (b.ai_temp_estimate != null ? b.ai_temp_estimate + '°' : '—') + '</td>' +
+      '<td><span class="result-tag ' + rc + '">' + esc(rl) + '</span></td>' +
+      '<td class="' + pc + '">' + fmtPnl(b.pnl_cents) + '</td>' +
+      '</tr>';
+  }).join('');
+}
+
+/** FIX #12: click same row toggles panel closed */
+function toggleReasoning(idx) {
+  if (openIdx === idx) { closeReasoning(); return; }
+  openIdx = idx;
+  var b = (DATA.bets || [])[idx];
+  if (!b) return;
+
+  document.getElementById('reasoningTitle').textContent =
+    (b.city||'?') + ' ' + (b.variable||'?') + ' — ' + b.side + ' @ ' + (b.ticker||'?');
+
+  var txt = b.ai_reasoning || 'No reasoning recorded.';
+  if (b.key_factor) txt += '\n\nKey Factor: ' + b.key_factor;
+  if (b.uncertainties) txt += '\nUncertainties: ' + b.uncertainties;
+  document.getElementById('reasoningBody').textContent = txt;
+
+  document.getElementById('reasoningMeta').innerHTML =
+    '<div>Confidence: <span>' + esc(b.confidence || 'N/A') + '</span></div>' +
+    '<div>Estimate: <span>' + (b.ai_temp_estimate != null ? b.ai_temp_estimate + '°F' : '?') + '</span></div>' +
+    '<div>Bracket: <span>' + fmtBracket(b.bracket_low, b.bracket_high) + '</span></div>' +
+    '<div>Edge: <span>' + fmtEdge(b.edge_pct) + '</span></div>' +
+    '<div>Type: <span>' + esc(b.bet_type || '?') + '</span></div>';
+
+  var panel = document.getElementById('reasoningPanel');
+  panel.classList.add('open');
+  panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function closeReasoning() {
+  openIdx = -1;
+  document.getElementById('reasoningPanel').classList.remove('open');
+}
+
+function renderAnalytics() {
+  // Side chart
+  var sd = document.getElementById('sideChart'), bs = DATA.by_side || {}, sh = '';
+  ['YES','NO'].forEach(function(s) {
+    var d = bs[s] || {bets:0,wins:0,settled:0,pnl:0};
+    var wr = d.settled > 0 ? d.wins/d.settled*100 : 0;
+    var cl = s === 'YES' ? 'green' : 'red';
+    sh += '<div style="margin-bottom:16px">' +
+      '<div style="display:flex;justify-content:space-between;margin-bottom:6px">' +
+      '<span class="bar-label" style="min-width:auto;text-align:left">' + (s==='YES'?'🟢':'🔴') + ' ' + s + '</span>' +
+      '<span class="bar-value">' + d.bets + ' bets · ' + d.wins + 'W/' + (d.settled-d.wins) + 'L · ' + fmtPnl(d.pnl) + '</span></div>' +
+      '<div class="bar-track"><div class="bar-fill ' + cl + '" style="width:' + Math.max(wr,2) + '%"></div></div>' +
+      '<div style="font-family:JetBrains Mono;font-size:10px;color:var(--text-muted);margin-top:4px">Win rate: ' + wr.toFixed(1) + '%</div></div>';
+  });
+  sd.innerHTML = sh;
+
+  // Calibration (FIX #15: export now separates YES vs NO calibration)
+  var cd = document.getElementById('calibrationChart'), cal = DATA.calibration || [], ch = '';
+  if (cal.length) {
+    cal.forEach(function(c) {
+      var a = (c.actual_wr||0)*100, cl = a >= 50 ? 'cyan' : 'amber';
+      ch += '<div class="bar-row"><span class="bar-label">' + esc(c.bucket) + '</span>' +
+        '<div class="bar-track"><div class="bar-fill ' + cl + '" style="width:' + Math.max(a,2) + '%"></div></div>' +
+        '<span class="bar-value">' + a.toFixed(0) + '% (n=' + c.count + ')</span></div>';
+    });
+  } else {
+    ch = '<div class="empty-state"><div class="empty-desc">No settled bets yet</div></div>';
+  }
+  cd.innerHTML = ch;
+
+  // By variable
+  var vd = document.getElementById('variableChart'), bv = DATA.by_variable || {}, vh = '';
+  var ve = Object.entries(bv);
+  if (ve.length) {
+    ve.forEach(function(e) {
+      var v = e[0], d = e[1];
+      var wr = d.settled > 0 ? d.wins/d.settled*100 : 0;
+      vh += '<div class="bar-row"><span class="bar-label">' + esc(v) + '</span>' +
+        '<div class="bar-track"><div class="bar-fill green" style="width:' + Math.max(wr,2) + '%"></div></div>' +
+        '<span class="bar-value">' + wr.toFixed(0) + '% (' + d.bets + ' bets, ' + fmtPnl(d.pnl) + ')</span></div>';
+    });
+  } else {
+    vh = '<div class="empty-state"><div class="empty-desc">No data yet</div></div>';
+  }
+  vd.innerHTML = vh;
+
+  // Edge distribution (FIX #14: proper 0-5% bucket)
+  var ed = document.getElementById('edgeChart'), bets = DATA.bets || [];
+  var bk = {'0-5%':0,'5-10%':0,'10-15%':0,'15-20%':0,'20-25%':0,'25%+':0};
+  bets.forEach(function(b) {
+    var e = (b.edge_pct||0)*100;
+    if (e >= 25) bk['25%+']++;
+    else if (e >= 20) bk['20-25%']++;
+    else if (e >= 15) bk['15-20%']++;
+    else if (e >= 10) bk['10-15%']++;
+    else if (e >= 5) bk['5-10%']++;
+    else bk['0-5%']++;
+  });
+  var mx = Math.max.apply(null, Object.values(bk).concat([1])), eh = '';
+  Object.entries(bk).forEach(function(e) {
+    var pct = e[1]/mx*100;
+    eh += '<div class="bar-row"><span class="bar-label">' + e[0] + '</span>' +
+      '<div class="bar-track"><div class="bar-fill cyan" style="width:' + Math.max(pct,2) + '%"></div></div>' +
+      '<span class="bar-value">' + e[1] + ' bets</span></div>';
+  });
+  ed.innerHTML = eh;
+}
+
+function renderCities() {
+  var grid = document.getElementById('cityGrid'), bc = DATA.by_city || {};
+  if (!Object.keys(bc).length) {
+    grid.innerHTML = '<div class="empty-state"><div class="empty-icon">🌍</div><div class="empty-title">No city data yet</div></div>';
+    return;
+  }
+  grid.innerHTML = Object.entries(bc).sort(function(a,b){return b[1].bets-a[1].bets;}).map(function(e) {
+    var city = e[0], d = e[1];
+    var wr = d.settled > 0 ? (d.wins/d.settled*100).toFixed(0)+'%' : 'N/A';
+    var pc = d.pnl >= 0 ? 'var(--accent-green)' : 'var(--accent-red)';
+    return '<div class="city-chip"><div class="city-chip-name">' + esc(city) + '</div>' +
+      '<div class="city-chip-stats">' + d.bets + ' bets · WR ' + wr +
+      ' · <span style="color:'+pc+'">' + fmtPnl(d.pnl) + '</span></div></div>';
+  }).join('');
+}
+
+function switchTab(name) {
+  document.querySelectorAll('.tab').forEach(function(t){t.classList.toggle('active', t.dataset.tab===name);});
+  ['bets','analytics','cities'].forEach(function(t){
+    document.getElementById('tab-'+t).style.display = t===name ? 'block' : 'none';
+  });
+}
+
+/* ═══ INIT ═══ */
+loadData();
+if (!window.GODBOT_DATA) { refreshTimer = setInterval(loadData, 5*60*1000); }
+</script>
+</body>
+</html>
