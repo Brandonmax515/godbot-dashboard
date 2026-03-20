@@ -393,7 +393,7 @@
 // ── EMBEDDED DATA (injected by godbot_export.py) ──
 window.GODBOT_DATA = {
   "mode": "DRY RUN",
-  "generated_at": "2026-03-20T18:09:30.328539Z",
+  "generated_at": "2026-03-20T18:30:08.911203Z",
   "total_runs": 7,
   "total_bets": 4,
   "wins": 0,
@@ -834,11 +834,12 @@ function renderBets() {
     return;
   }
 
-  var filtered = bets.filter(function(b) {
+  // Defensive filter: skip FAILED bets even if old cached JSON includes them
+  DATA._filteredBets = bets.filter(function(b) {
     return b.status === 'PLACED' || b.status === 'DRY_RUN';
   });
 
-  tbody.innerHTML = filtered.slice(0, 100).map(function(b, i) {
+  tbody.innerHTML = DATA._filteredBets.slice(0, 100).map(function(b, i) {
     var sc = b.side === 'YES' ? 'yes' : 'no';
     var rc = b.settled_result === 'WIN' ? 'win' : b.settled_result === 'LOSS' ? 'loss' :
              b.status === 'DRY_RUN' ? 'dry' : 'pending';
@@ -866,7 +867,7 @@ function renderBets() {
 function toggleReasoning(idx) {
   if (openIdx === idx) { closeReasoning(); return; }
   openIdx = idx;
-  var b = (DATA.bets || [])[idx];
+  var b = (DATA._filteredBets || DATA.bets || [])[idx];
   if (!b) return;
 
   document.getElementById('reasoningTitle').textContent =
