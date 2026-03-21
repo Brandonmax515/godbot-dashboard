@@ -550,6 +550,18 @@
             <div class="feed-age" id="binanceAge">--</div>
             <div class="feed-price" id="binancePrice">--</div>
           </div>
+          <div class="feed-row">
+            <div class="feed-name" style="color:var(--accent-green)">COINBASE</div>
+            <div class="feed-badge ok" id="coinbaseBadge">--</div>
+            <div class="feed-age" id="coinbaseAge">--</div>
+            <div class="feed-price" id="coinbasePrice">--</div>
+          </div>
+          <div class="feed-row">
+            <div class="feed-name" style="color:var(--accent-purple,#a855f7)">COINCAP</div>
+            <div class="feed-badge ok" id="coincapBadge">--</div>
+            <div class="feed-age" id="coincapAge">--</div>
+            <div class="feed-price" id="coincapPrice">--</div>
+          </div>
           <div style="padding:10px 18px;display:flex;gap:24px;">
             <div><span style="font-size:10px;color:var(--text-muted)">Active BTC:</span> <span id="btcSource" style="font-size:11px;color:var(--accent-cyan)">--</span></div>
             <div><span style="font-size:10px;color:var(--text-muted)">Active ETH:</span> <span id="ethSource" style="font-size:11px;color:var(--accent-cyan)">--</span></div>
@@ -920,6 +932,18 @@ function updateStatus(d) {
              fs.binance.stale ? 'stale' : (fs.binance.ready ? 'ok' : 'down'));
     document.getElementById('binanceAge').textContent = fs.binance.btc_age != null ? fs.binance.btc_age.toFixed(1) + 's ago' : '--';
     document.getElementById('binancePrice').textContent = fs.binance.btc ? '$' + fs.binance.btc.toLocaleString() : '--';
+  }
+  if (fs.coinbase) {
+    setBadge('coinbaseBadge', fs.coinbase.stale ? 'STALE' : (fs.coinbase.ready ? 'OK' : 'DOWN'),
+             fs.coinbase.stale ? 'stale' : (fs.coinbase.ready ? 'ok' : 'down'));
+    document.getElementById('coinbaseAge').textContent = fs.coinbase.btc_age != null ? fs.coinbase.btc_age.toFixed(1) + 's ago' : '--';
+    document.getElementById('coinbasePrice').textContent = fs.coinbase.btc ? '$' + fs.coinbase.btc.toLocaleString() : '--';
+  }
+  if (fs.coincap) {
+    setBadge('coincapBadge', fs.coincap.stale ? 'STALE' : (fs.coincap.ready ? 'OK' : 'DOWN'),
+             fs.coincap.stale ? 'stale' : (fs.coincap.ready ? 'ok' : 'down'));
+    document.getElementById('coincapAge').textContent = fs.coincap.btc_age != null ? fs.coincap.btc_age.toFixed(1) + 's ago' : '--';
+    document.getElementById('coincapPrice').textContent = fs.coincap.btc ? '$' + fs.coincap.btc.toLocaleString() : '--';
   }
   if (fs.active_source) {
     document.getElementById('btcSource').textContent = fs.active_source.BTC || '--';
