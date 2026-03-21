@@ -1,9 +1,9 @@
 {
   "version": "v2",
-  "uptime_seconds": 8584,
-  "cycle_count": 298,
+  "uptime_seconds": 8617,
+  "cycle_count": 299,
   "cycle_interval_sec": 10,
-  "last_cycle_ts": "2026-03-21T07:15:01.359175+00:00",
+  "last_cycle_ts": "2026-03-21T07:15:33.821762+00:00",
   "trading_enabled": true,
   "dry_run": false,
   "kill_switch_armed": false,
@@ -20,17 +20,24 @@
       "predictor": true
     }
   },
-  "total_pnl": -1.25,
-  "pnl_today": -1.25,
-  "win_rate": 20.0,
+  "total_pnl": -1.39,
+  "pnl_today": -1.39,
+  "win_rate": 16.7,
   "wins": 1,
-  "losses": 4,
+  "losses": 5,
   "trades_today": 2,
   "signals_today": 165,
   "bankroll": 58.01,
   "exposure": 0.0,
   "open_positions": 0,
   "events": [
+    {
+      "time": "3:15 AM",
+      "action": "SETTLED LOSS",
+      "ticker": "KXETH15M-26MAR210315-15",
+      "pnl": -0.14,
+      "result": "LOSS"
+    },
     {
       "time": "3:11 AM",
       "action": "TRADE EXECUTED",
@@ -72,11 +79,11 @@
   "markets": [],
   "prices": {
     "BTC": {
-      "spot": 70754.34,
-      "source": "binance"
+      "spot": 70739.57,
+      "source": "coinbase"
     },
     "ETH": {
-      "spot": 2155.48,
+      "spot": 2155.4,
       "source": "coinbase"
     }
   },
@@ -102,32 +109,32 @@
   "feed_status": {
     "kraken": {
       "ready": true,
-      "stale": true,
-      "btc_age": 14.5,
-      "eth_age": 50.9,
+      "stale": false,
+      "btc_age": 4.1,
+      "eth_age": 6.9,
       "btc": 70739.1,
       "eth": 2155.96
     },
     "binance": {
       "ready": true,
-      "stale": false,
-      "btc_age": 2.4,
-      "eth_age": 3.2,
+      "stale": true,
+      "btc_age": 8.8,
+      "eth_age": 19.9,
       "btc": 70754.34,
       "eth": 2156.17
     },
     "coinbase": {
       "ready": true,
       "stale": false,
-      "btc_age": 2.4,
-      "eth_age": 2.3,
-      "btc": 70724.95,
-      "eth": 2155.48
+      "btc_age": 3.1,
+      "eth_age": 3.5,
+      "btc": 70739.57,
+      "eth": 2155.4
     },
     "active_source": {
-      "BTC": "binance",
+      "BTC": "coinbase",
       "ETH": "coinbase"
     }
   },
-  "updated_at": "2026-03-21T07:15:01.359227+00:00"
+  "updated_at": "2026-03-21T07:15:33.821786+00:00"
 }
