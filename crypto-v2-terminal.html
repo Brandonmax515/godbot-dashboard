@@ -882,11 +882,20 @@ function updateStatus(d) {
   var fs = d.feed_status || {};
   var krakenOk = fs.kraken && fs.kraken.ready;
   var binanceOk = fs.binance && fs.binance.ready;
+  var coinbaseOk = fs.coinbase && fs.coinbase.ready;
+  var coincapOk = fs.coincap && fs.coincap.ready;
+  var feedCount = (krakenOk ? 1 : 0) + (binanceOk ? 1 : 0) + (coinbaseOk ? 1 : 0) + (coincapOk ? 1 : 0);
   var feedEl = document.getElementById('feedStatus');
-  if (krakenOk && binanceOk) { feedEl.textContent = 'DUAL'; feedEl.className = 'stat-value green'; }
-  else if (krakenOk || binanceOk) { feedEl.textContent = 'SINGLE'; feedEl.className = 'stat-value amber'; }
+  if (feedCount >= 3) { feedEl.textContent = feedCount + '/4'; feedEl.className = 'stat-value green'; }
+  else if (feedCount >= 2) { feedEl.textContent = feedCount + '/4'; feedEl.className = 'stat-value amber'; }
+  else if (feedCount >= 1) { feedEl.textContent = feedCount + '/4'; feedEl.className = 'stat-value red'; }
   else { feedEl.textContent = 'DOWN'; feedEl.className = 'stat-value red'; }
-  document.getElementById('feedSub').textContent = 'kraken + binance';
+  var feedNames = [];
+  if (krakenOk) feedNames.push('kraken');
+  if (binanceOk) feedNames.push('binance');
+  if (coinbaseOk) feedNames.push('coinbase');
+  if (coincapOk) feedNames.push('coincap');
+  document.getElementById('feedSub').textContent = feedNames.join(' + ') || 'none';
 
   // Scanner status
   if (d.uptime_seconds != null) {
@@ -949,7 +958,7 @@ function updateStatus(d) {
     document.getElementById('btcSource').textContent = fs.active_source.BTC || '--';
     document.getElementById('ethSource').textContent = fs.active_source.ETH || '--';
   }
-  document.getElementById('feedBadge').textContent = krakenOk && binanceOk ? 'DUAL FEED' : krakenOk || binanceOk ? 'SINGLE FEED' : 'DOWN';
+  document.getElementById('feedBadge').textContent = feedCount + '/' + 4 + ' FEEDS';
 
   // Events
   if (d.events && d.events.length > 0) {
