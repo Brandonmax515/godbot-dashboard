@@ -754,17 +754,6 @@ async function detectMode() {
     if (r.ok) { IS_LOCAL = true; LOCAL_BASE = 'http://localhost:8378'; return; }
   } catch(e) {}
   IS_LOCAL = false;
-  showStaticBanner();
-}
-
-function showStaticBanner() {
-  if (document.getElementById('staticBanner')) return;
-  var banner = document.createElement('div');
-  banner.id = 'staticBanner';
-  banner.style.cssText = 'background:rgba(255,183,0,0.12);border-bottom:1px solid rgba(255,183,0,0.2);padding:8px 24px;text-align:center;font-family:"JetBrains Mono",monospace;font-size:11px;color:#ffb700;position:fixed;top:0;left:0;right:0;z-index:9999;';
-  banner.innerHTML = 'Static snapshot \u2014 live dashboard at <a href="http://localhost:8378/crypto-v2" style="color:inherit;text-decoration:underline">localhost:8378</a>';
-  document.body.insertBefore(banner, document.body.firstChild);
-  document.body.style.paddingTop = '32px';
 }
 
 function apiUrl(path) {
@@ -888,10 +877,12 @@ function updateStatus(d) {
   document.getElementById('feedSub').textContent = 'kraken + binance';
 
   // Safety flags
-  var safety = d.safety || {};
-  updateSafetyFlag('flagDryRun', safety.dry_run !== false, safety.dry_run !== false ? 'DRY RUN' : 'LIVE TRADING', safety.dry_run !== false ? 'safe' : 'danger');
-  updateSafetyFlag('flagTrading', !safety.trading_enabled, !safety.trading_enabled ? 'TRADING OFF' : 'TRADING ON', !safety.trading_enabled ? 'safe' : 'warn');
-  updateSafetyFlag('flagKillSwitch', !safety.kill_switch, !safety.kill_switch ? 'KILL SWITCH OK' : 'KILL SWITCH!', !safety.kill_switch ? 'safe' : 'danger');
+  var isDryRun = (d.safety ? d.safety.dry_run : d.dry_run) !== false;
+  var isTradingOn = d.safety ? d.safety.trading_enabled : d.trading_enabled;
+  var isKillSwitch = d.safety ? d.safety.kill_switch : d.kill_switch_armed;
+  updateSafetyFlag('flagDryRun', isDryRun, isDryRun ? 'DRY RUN' : 'LIVE TRADING', isDryRun ? 'safe' : 'danger');
+  updateSafetyFlag('flagTrading', !isTradingOn, !isTradingOn ? 'TRADING OFF' : 'TRADING ON', !isTradingOn ? 'safe' : 'warn');
+  updateSafetyFlag('flagKillSwitch', !isKillSwitch, !isKillSwitch ? 'KILL SWITCH OK' : 'KILL SWITCH!', !isKillSwitch ? 'safe' : 'danger');
 
   // Live tab: feeds detail
   if (fs.kraken) {

@@ -1210,16 +1210,6 @@ async function detectMode() {
   // GitHub Pages / static mode
   IS_LOCAL = false;
   LOCAL_API_CHECKED = true;
-  showStaticBanner();
-}
-
-function showStaticBanner() {
-  if (document.getElementById('staticBanner')) return;
-  var banner = document.createElement('div');
-  banner.id = 'staticBanner';
-  banner.style.cssText = 'background:var(--accent-amber-dim,rgba(255,183,0,0.12));border-bottom:1px solid rgba(255,183,0,0.2);padding:8px 24px;text-align:center;font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--accent-amber,#ffb700);position:relative;z-index:60;';
-  banner.innerHTML = 'Static snapshot \u2014 live dashboard at <a href="http://localhost:8378/godbot" style="color:inherit;text-decoration:underline">localhost:8378</a>';
-  document.body.insertBefore(banner, document.body.firstChild);
 }
 
 function showLastUpdated(ts) {

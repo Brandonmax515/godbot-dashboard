@@ -1,5 +1,8 @@
 {
   "version": "v2",
+  "trading_enabled": true,
+  "dry_run": false,
+  "kill_switch_armed": false,
   "total_pnl": 0.0,
   "pnl_today": 0.0,
   "win_rate": 0.0,
