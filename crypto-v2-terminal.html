@@ -525,7 +525,7 @@
             </div>
             <div>
               <div class="stat-label">Config</div>
-              <div style="font-family:'JetBrains Mono';font-size:12px;color:var(--text-secondary)" id="configSummary">qty=3 max=35c min_edge=5c</div>
+              <div style="font-family:'JetBrains Mono';font-size:12px;color:var(--text-secondary)" id="configSummary">--</div>
             </div>
           </div>
         </div>
@@ -1193,17 +1193,17 @@ function drawDailyPnl(days) {
 (async function init() {
   await detectMode();
   fetchStatus();
+  fetchPortfolio();
   loadTabData();
   if (IS_LOCAL) {
-    fetchPortfolio();
     setInterval(fetchStatus, 10000);
     setInterval(fetchPortfolio, 30000);
     setInterval(loadTabData, 30000);
   } else {
-    // Static mode: slower refresh, no portfolio API
-    document.querySelectorAll('.portfolio-value').forEach(function(el) { el.textContent = '--'; });
-    setInterval(fetchStatus, 5*60*1000);
-    setInterval(loadTabData, 5*60*1000);
+    // Static mode: refresh every 30s (data pushed to GitHub Pages every 30s)
+    setInterval(fetchStatus, 30000);
+    setInterval(fetchPortfolio, 60000);
+    setInterval(loadTabData, 60000);
   }
 })();
 </script>
