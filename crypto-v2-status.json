@@ -1,9 +1,9 @@
 {
   "version": "v2",
-  "uptime_seconds": 41813,
-  "cycle_count": 1064,
+  "uptime_seconds": 22,
+  "cycle_count": 0,
   "cycle_interval_sec": 10,
-  "last_cycle_ts": "2026-03-21T16:28:50.152941+00:00",
+  "last_cycle_ts": "2026-03-21T16:29:26.192551+00:00",
   "trading_enabled": true,
   "dry_run": false,
   "kill_switch_armed": true,
@@ -25,268 +25,24 @@
   "win_rate": 11.1,
   "wins": 1,
   "losses": 8,
-  "trades_today": 5,
+  "trades_today": 0,
   "signals_today": 196,
-  "bankroll": 57.3,
+  "bankroll": 0.0,
   "exposure": 0.0,
   "open_positions": 0,
-  "events": [
-    {
-      "time": "8:45 AM",
-      "action": "SETTLED LOSS",
-      "ticker": "KXETH15M-26MAR210845-45",
-      "pnl": -0.18,
-      "result": "LOSS"
-    },
-    {
-      "time": "8:45 AM",
-      "action": "SETTLED LOSS",
-      "ticker": "KXBTC15M-26MAR210845-45",
-      "pnl": -0.26,
-      "result": "LOSS"
-    },
-    {
-      "time": "8:40 AM",
-      "action": "BLOCKED: window_dedup",
-      "ticker": "KXETH15M-26MAR210845-45",
-      "side": "yes",
-      "price": 13,
-      "edge": 44
-    },
-    {
-      "time": "8:40 AM",
-      "action": "BLOCKED: window_dedup",
-      "ticker": "KXETH15M-26MAR210845-45",
-      "side": "yes",
-      "price": 12,
-      "edge": 45
-    },
-    {
-      "time": "8:37 AM",
-      "action": "BLOCKED: window_dedup",
-      "ticker": "KXETH15M-26MAR210845-45",
-      "side": "yes",
-      "price": 12,
-      "edge": 44
-    },
-    {
-      "time": "8:37 AM",
-      "action": "BLOCKED: window_dedup",
-      "ticker": "KXETH15M-26MAR210845-45",
-      "side": "yes",
-      "price": 17,
-      "edge": 38
-    },
-    {
-      "time": "8:35 AM",
-      "action": "BLOCKED: window_dedup",
-      "ticker": "KXBTC15M-26MAR210845-45",
-      "side": "yes",
-      "price": 11,
-      "edge": 42
-    },
-    {
-      "time": "8:34 AM",
-      "action": "BLOCKED: window_dedup",
-      "ticker": "KXETH15M-26MAR210845-45",
-      "side": "yes",
-      "price": 11,
-      "edge": 44
-    },
-    {
-      "time": "8:34 AM",
-      "action": "BLOCKED: window_dedup",
-      "ticker": "KXETH15M-26MAR210845-45",
-      "side": "yes",
-      "price": 14,
-      "edge": 41
-    },
-    {
-      "time": "8:34 AM",
-      "action": "BLOCKED: window_dedup",
-      "ticker": "KXETH15M-26MAR210845-45",
-      "side": "yes",
-      "price": 23,
-      "edge": 32
-    },
-    {
-      "time": "8:33 AM",
-      "action": "TRADE EXECUTED",
-      "ticker": "KXBTC15M-26MAR210845-45",
-      "side": "yes",
-      "price": 26,
-      "contracts": 1,
-      "edge": 27,
-      "tier": "latency"
-    },
-    {
-      "time": "8:33 AM",
-      "action": "TRADE EXECUTED",
-      "ticker": "KXETH15M-26MAR210845-45",
-      "side": "yes",
-      "price": 18,
-      "contracts": 1,
-      "edge": 36,
-      "tier": "latency"
-    },
-    {
-      "time": "8:30 AM",
-      "action": "SETTLED LOSS",
-      "ticker": "KXETH15M-26MAR210830-30",
-      "pnl": -0.1,
-      "result": "LOSS"
-    },
-    {
-      "time": "8:22 AM",
-      "action": "BLOCKED: window_dedup",
-      "ticker": "KXETH15M-26MAR210830-30",
-      "side": "no",
-      "price": 10,
-      "edge": 33
-    },
-    {
-      "time": "8:22 AM",
-      "action": "BLOCKED: window_dedup",
-      "ticker": "KXETH15M-26MAR210830-30",
-      "side": "no",
-      "price": 11,
-      "edge": 34
-    },
-    {
-      "time": "8:22 AM",
-      "action": "TRADE EXECUTED",
-      "ticker": "KXETH15M-26MAR210830-30",
-      "side": "no",
-      "price": 10,
-      "contracts": 1,
-      "edge": 34,
-      "tier": "latency"
-    },
-    {
-      "time": "3:15 AM",
-      "action": "SETTLED LOSS",
-      "ticker": "KXETH15M-26MAR210315-15",
-      "pnl": -0.14,
-      "result": "LOSS"
-    },
-    {
-      "time": "3:11 AM",
-      "action": "TRADE EXECUTED",
-      "ticker": "KXETH15M-26MAR210315-15",
-      "side": "no",
-      "price": 14,
-      "contracts": 1,
-      "edge": 29,
-      "tier": "latency"
-    },
-    {
-      "time": "2:00 AM",
-      "action": "SETTLED LOSS",
-      "ticker": "KXETH15M-26MAR210200-00",
-      "pnl": -0.25,
-      "result": "LOSS"
-    },
-    {
-      "time": "1:54 AM",
-      "action": "BLOCKED: window_dedup",
-      "ticker": "KXETH15M-26MAR210200-00",
-      "side": "yes",
-      "price": 14,
-      "edge": 41
-    },
-    {
-      "time": "1:48 AM",
-      "action": "TRADE EXECUTED",
-      "ticker": "KXETH15M-26MAR210200-00",
-      "side": "yes",
-      "price": 25,
-      "contracts": 1,
-      "edge": 29,
-      "tier": "latency"
-    }
-  ],
+  "events": [],
   "last_signals": [],
   "positions": [],
   "markets": [],
-  "prices": {
-    "BTC": {
-      "spot": 70745.74,
-      "source": "coinbase"
-    },
-    "ETH": {
-      "spot": 2158.0,
-      "source": "coinbase"
-    }
-  },
+  "prices": {},
   "strategies": {
-    "latency": 21,
+    "latency": 0,
     "calibrated": 0,
     "arbitrage": 0,
     "predictor": 0,
     "skipped": 0
   },
-  "bankroll_history": [
-    58.4,
-    58.4,
-    58.4,
-    58.4,
-    58.23,
-    58.15,
-    58.15,
-    58.15,
-    58.15,
-    58.15,
-    58.01,
-    58.01,
-    58.01,
-    58.01,
-    58.01,
-    58.01,
-    58.01,
-    58.01,
-    58.01,
-    58.01,
-    58.01,
-    58.01,
-    58.01,
-    58.01,
-    58.01,
-    58.01,
-    58.01,
-    57.99,
-    57.99,
-    57.84,
-    57.74
-  ],
-  "feed_status": {
-    "kraken": {
-      "ready": true,
-      "stale": false,
-      "btc_age": 10.9,
-      "eth_age": 5.7,
-      "btc": 70741.4,
-      "eth": 2157.99
-    },
-    "binance": {
-      "ready": true,
-      "stale": true,
-      "btc_age": 19.5,
-      "eth_age": 22.3,
-      "btc": 70764.66,
-      "eth": 2158.61
-    },
-    "coinbase": {
-      "ready": true,
-      "stale": false,
-      "btc_age": 3.3,
-      "eth_age": 3.3,
-      "btc": 70745.74,
-      "eth": 2158.0
-    },
-    "active_source": {
-      "BTC": "coinbase",
-      "ETH": "coinbase"
-    }
-  },
-  "updated_at": "2026-03-21T16:28:50.152969+00:00"
+  "bankroll_history": [],
+  "feed_status": {},
+  "updated_at": "2026-03-21T16:29:26.192576+00:00"
 }
