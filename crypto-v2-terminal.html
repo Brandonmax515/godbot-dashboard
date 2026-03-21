@@ -876,6 +876,30 @@ function updateStatus(d) {
   else { feedEl.textContent = 'DOWN'; feedEl.className = 'stat-value red'; }
   document.getElementById('feedSub').textContent = 'kraken + binance';
 
+  // Scanner status
+  if (d.uptime_seconds != null) {
+    var secs = d.uptime_seconds;
+    var h = Math.floor(secs / 3600);
+    var m = Math.floor((secs % 3600) / 60);
+    var s = Math.floor(secs % 60);
+    document.getElementById('uptime').textContent = (h > 0 ? h + 'h ' : '') + m + 'm ' + s + 's';
+  }
+  if (d.cycle_count != null) {
+    document.getElementById('cycleCount').textContent = d.cycle_count + ' cycles';
+  }
+  if (d.cycle_interval_sec != null) {
+    document.getElementById('cycleInterval').textContent = d.cycle_interval_sec + 's';
+  }
+  if (d.last_cycle_ts) {
+    document.getElementById('lastCycle').textContent = fmtTime(d.last_cycle_ts);
+  }
+  // Config snapshot
+  var cfg = d.config_snapshot || {};
+  if (cfg.quantity != null) {
+    document.getElementById('configSummary').textContent =
+      'qty=' + cfg.quantity + ' max=' + (cfg.max_entry_cents || 35) + 'c min_edge=' + (cfg.min_edge_cents || 5) + 'c';
+  }
+
   // Safety flags
   var isDryRun = (d.safety ? d.safety.dry_run : d.dry_run) !== false;
   var isTradingOn = d.safety ? d.safety.trading_enabled : d.trading_enabled;
