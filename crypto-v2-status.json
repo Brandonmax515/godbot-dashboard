@@ -1,9 +1,9 @@
 {
   "version": "v2",
-  "uptime_seconds": 663,
+  "uptime_seconds": 698,
   "cycle_count": 0,
   "cycle_interval_sec": 10,
-  "last_cycle_ts": "2026-03-21T00:36:36.293235+00:00",
+  "last_cycle_ts": "2026-03-21T00:37:10.892029+00:00",
   "trading_enabled": true,
   "dry_run": false,
   "kill_switch_armed": false,
@@ -25,11 +25,27 @@
   "wins": 0,
   "losses": 2,
   "trades_today": 0,
-  "signals_today": 104,
+  "signals_today": 107,
   "bankroll": 58.4,
   "exposure": 0.0,
   "open_positions": 0,
   "events": [
+    {
+      "time": "8:37 PM",
+      "action": "BLOCKED: hourly_cap",
+      "ticker": "KXETH15M-26MAR202045-45",
+      "side": "no",
+      "price": 11,
+      "edge": 32
+    },
+    {
+      "time": "8:36 PM",
+      "action": "BLOCKED: hourly_cap",
+      "ticker": "KXETH15M-26MAR202045-45",
+      "side": "no",
+      "price": 21,
+      "edge": 26
+    },
     {
       "time": "8:36 PM",
       "action": "BLOCKED: hourly_cap",
@@ -156,17 +172,17 @@
   "markets": [],
   "prices": {
     "BTC": {
-      "spot": 70647.6,
+      "spot": 70647.5,
       "source": "kraken"
     },
     "ETH": {
-      "spot": 2151.58,
+      "spot": 2152.92,
       "source": "kraken"
     }
   },
   "strategies": {
-    "latency": 21,
-    "calibrated": 21,
+    "latency": 23,
+    "calibrated": 23,
     "arbitrage": 0,
     "skipped": 0
   },
@@ -177,17 +193,17 @@
     "kraken": {
       "ready": true,
       "stale": false,
-      "btc_age": 5.3,
-      "eth_age": 4.6,
-      "btc": 70647.6,
-      "eth": 2151.58
+      "btc_age": 3.1,
+      "eth_age": 7.4,
+      "btc": 70647.5,
+      "eth": 2152.92
     },
     "binance": {
       "ready": true,
       "stale": false,
-      "btc_age": 2.3,
-      "eth_age": 2.5,
-      "btc": 70654.04,
+      "btc_age": 4.7,
+      "eth_age": 4.2,
+      "btc": 70675.2,
       "eth": 2151.5
     },
     "active_source": {
@@ -195,5 +211,5 @@
       "ETH": "kraken"
     }
   },
-  "updated_at": "2026-03-21T00:36:36.293249+00:00"
+  "updated_at": "2026-03-21T00:37:10.892076+00:00"
 }
