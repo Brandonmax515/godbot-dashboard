@@ -1,9 +1,9 @@
 {
   "version": "v2",
-  "uptime_seconds": 340,
+  "uptime_seconds": 375,
   "cycle_count": 0,
   "cycle_interval_sec": 10,
-  "last_cycle_ts": "2026-03-21T00:31:12.901646+00:00",
+  "last_cycle_ts": "2026-03-21T00:31:47.524823+00:00",
   "trading_enabled": true,
   "dry_run": false,
   "kill_switch_armed": false,
@@ -25,11 +25,35 @@
   "wins": 0,
   "losses": 2,
   "trades_today": 0,
-  "signals_today": 76,
+  "signals_today": 79,
   "bankroll": 58.4,
   "exposure": 0.0,
   "open_positions": 0,
   "events": [
+    {
+      "time": "8:31 PM",
+      "action": "BLOCKED: hourly_cap",
+      "ticker": "KXETH15M-26MAR202045-45",
+      "side": "yes",
+      "price": 22,
+      "edge": 25
+    },
+    {
+      "time": "8:31 PM",
+      "action": "BLOCKED: hourly_cap",
+      "ticker": "KXETH15M-26MAR202045-45",
+      "side": "yes",
+      "price": 26,
+      "edge": 18
+    },
+    {
+      "time": "8:31 PM",
+      "action": "BLOCKED: hourly_cap",
+      "ticker": "KXETH15M-26MAR202045-45",
+      "side": "yes",
+      "price": 26,
+      "edge": 18
+    },
     {
       "time": "8:31 PM",
       "action": "BLOCKED: hourly_cap",
@@ -48,13 +72,13 @@
       "source": "kraken"
     },
     "ETH": {
-      "spot": 2149.16,
-      "source": "kraken"
+      "spot": 2150.09,
+      "source": "binance"
     }
   },
   "strategies": {
-    "latency": 2,
-    "calibrated": 2,
+    "latency": 8,
+    "calibrated": 8,
     "arbitrage": 0,
     "skipped": 0
   },
@@ -64,24 +88,24 @@
   "feed_status": {
     "kraken": {
       "ready": true,
-      "stale": false,
-      "btc_age": 2.8,
-      "eth_age": 3.2,
+      "stale": true,
+      "btc_age": 1.6,
+      "eth_age": 23.1,
       "btc": 70609.0,
-      "eth": 2149.16
+      "eth": 2149.11
     },
     "binance": {
       "ready": true,
       "stale": false,
-      "btc_age": 7.4,
-      "eth_age": 4.2,
+      "btc_age": 8.5,
+      "eth_age": 1.8,
       "btc": 70631.98,
-      "eth": 2149.57
+      "eth": 2150.09
     },
     "active_source": {
       "BTC": "kraken",
-      "ETH": "kraken"
+      "ETH": "binance"
     }
   },
-  "updated_at": "2026-03-21T00:31:12.901672+00:00"
+  "updated_at": "2026-03-21T00:31:47.524841+00:00"
 }
