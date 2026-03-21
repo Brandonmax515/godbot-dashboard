@@ -989,18 +989,78 @@ window.GODBOT_DATA = {
 // ── EMBEDDED DATA (injected by godbot_export.py) ──
 window.GODBOT_DATA = {
   "mode": "LIVE",
-  "generated_at": "2026-03-21T13:54:19.884684Z",
-  "total_runs": 7,
-  "total_bets": 4,
+  "generated_at": "2026-03-21T13:54:52.122952Z",
+  "total_runs": 8,
+  "total_bets": 6,
   "wins": 0,
   "losses": 0,
-  "pending": 4,
+  "pending": 6,
   "win_rate": null,
   "total_pnl_cents": 0,
-  "total_staked_cents": 800,
+  "total_staked_cents": 1200,
   "roi": null,
-  "avg_edge": 0.21499999999999997,
+  "avg_edge": 0.24916666666666665,
   "bets": [
+    {
+      "id": 39,
+      "run_date": "2026-03-21",
+      "ticker": "KXHIGHLAX-26MAR21-T83",
+      "event_ticker": "KXHIGHLAX-26MAR21",
+      "station": "KLAX",
+      "city": "Los Angeles",
+      "variable": "HIGH",
+      "bracket_low": 83.0,
+      "bracket_high": null,
+      "strike_type": "greater",
+      "side": "NO",
+      "bet_type": "NO_DISPLACED",
+      "our_prob": 0.995,
+      "market_prob": 0.93,
+      "edge_pct": 0.07499999999999996,
+      "multiplier": 1.08,
+      "bet_cents": 200,
+      "order_id": "f7f45b29-668b-490d-9fb5-ce7bdebedb3c",
+      "status": "PLACED",
+      "ai_reasoning": "NO on displaced bracket: Claude=0.5% YES, market=9\u00a2 YES. The GEFS ensemble heavily favors 76\u00b0F, but the NWS official forecast explicitly calls for 75\u00b0F today with clear sunny conditions. The hourly forecast shows multiple hours at exactly 75\u00b0F during peak heating (11 AM-3 PM), which strongly supports the lower end. I'm shifting probability from the 76\u00b0F bracket to the \u226475\u00b0F bracket while maintaining some probability for 76\u00b0F given ensemble uncertainty.",
+      "ai_temp_estimate": 75.0,
+      "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
+      "settled_result": null,
+      "pnl_cents": null,
+      "notes": "raw_edge=6.5% fee=1\u00a2 net_edge=7.5%",
+      "key_factor": "",
+      "uncertainties": "",
+      "confidence": ""
+    },
+    {
+      "id": 34,
+      "run_date": "2026-03-21",
+      "ticker": "KXHIGHAUS-26MAR21-T91",
+      "event_ticker": "KXHIGHAUS-26MAR21",
+      "station": "KAUS",
+      "city": "Austin",
+      "variable": "HIGH",
+      "bracket_low": null,
+      "bracket_high": 91.0,
+      "strike_type": "less",
+      "side": "YES",
+      "bet_type": "YES_BEST_BRACKET",
+      "our_prob": 0.65,
+      "market_prob": 0.08,
+      "edge_pct": 0.56,
+      "multiplier": 12.5,
+      "bet_cents": 200,
+      "order_id": "37ba3996-903d-4125-8b46-2c25a4f5a145",
+      "status": "PLACED",
+      "ai_reasoning": "The AFD explicitly states models are running cool and NWS adjusted highs up 2-3 degrees, forecasting 93\u00b0F vs GEFS mean of 88.5\u00b0F. The hourly forecast shows peak temps 91-92\u00b0F but NWS daily high is 93\u00b0F, suggesting afternoon heating beyond the 12-hour window. I'm shifting probability mass from \u226490\u00b0F bracket toward 91-93\u00b0F brackets while maintaining some probability in higher brackets given record-threatening conditions.",
+      "ai_temp_estimate": 92.0,
+      "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
+      "settled_result": null,
+      "pnl_cents": null,
+      "notes": "raw_edge=57.0% fee=1\u00a2 net_edge=56.0%",
+      "key_factor": "",
+      "uncertainties": "",
+      "confidence": ""
+    },
     {
       "id": 31,
       "run_date": "2026-03-20",
@@ -1124,13 +1184,13 @@ window.GODBOT_DATA = {
   ],
   "by_side": {
     "YES": {
-      "bets": 4,
+      "bets": 5,
       "wins": 0,
       "settled": 0,
       "pnl": 0
     },
     "NO": {
-      "bets": 0,
+      "bets": 1,
       "wins": 0,
       "settled": 0,
       "pnl": 0
@@ -1138,7 +1198,7 @@ window.GODBOT_DATA = {
   },
   "by_variable": {
     "HIGH": {
-      "bets": 4,
+      "bets": 6,
       "wins": 0,
       "settled": 0,
       "pnl": 0
@@ -1146,18 +1206,18 @@ window.GODBOT_DATA = {
   },
   "by_city": {
     "Los Angeles": {
+      "bets": 3,
+      "wins": 0,
+      "settled": 0,
+      "pnl": 0
+    },
+    "Austin": {
       "bets": 2,
       "wins": 0,
       "settled": 0,
       "pnl": 0
     },
     "Miami": {
-      "bets": 1,
-      "wins": 0,
-      "settled": 0,
-      "pnl": 0
-    },
-    "Austin": {
       "bets": 1,
       "wins": 0,
       "settled": 0,
