@@ -1,9 +1,9 @@
 {
   "version": "v2",
-  "uptime_seconds": 23785,
-  "cycle_count": 778,
+  "uptime_seconds": 23817,
+  "cycle_count": 779,
   "cycle_interval_sec": 10,
-  "last_cycle_ts": "2026-03-21T11:28:22.470675+00:00",
+  "last_cycle_ts": "2026-03-21T11:28:54.164336+00:00",
   "trading_enabled": true,
   "dry_run": false,
   "kill_switch_armed": false,
@@ -125,24 +125,24 @@
   "feed_status": {
     "kraken": {
       "ready": true,
-      "stale": false,
-      "btc_age": 13.3,
-      "eth_age": 14.8,
-      "btc": 70594.1,
+      "stale": true,
+      "btc_age": 5.8,
+      "eth_age": 46.5,
+      "btc": 70599.2,
       "eth": 2155.19
     },
     "binance": {
       "ready": true,
       "stale": true,
-      "btc_age": 19.5,
-      "eth_age": 3.7,
+      "btc_age": 51.2,
+      "eth_age": 4.3,
       "btc": 70605.91,
       "eth": 2155.81
     },
     "coinbase": {
       "ready": true,
       "stale": false,
-      "btc_age": 1.8,
+      "btc_age": 5.3,
       "eth_age": 1.7,
       "btc": 70599.42,
       "eth": 2155.19
@@ -152,5 +152,5 @@
       "ETH": "coinbase"
     }
   },
-  "updated_at": "2026-03-21T11:28:22.470720+00:00"
+  "updated_at": "2026-03-21T11:28:54.164360+00:00"
 }
