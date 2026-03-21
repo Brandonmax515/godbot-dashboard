@@ -1,9 +1,9 @@
 {
   "version": "v2",
-  "uptime_seconds": 723,
+  "uptime_seconds": 27,
   "cycle_count": 0,
   "cycle_interval_sec": 10,
-  "last_cycle_ts": "2026-03-21T00:18:06.093317+00:00",
+  "last_cycle_ts": "2026-03-21T00:26:00.019341+00:00",
   "trading_enabled": true,
   "dry_run": false,
   "kill_switch_armed": false,
@@ -24,462 +24,55 @@
   "win_rate": 0.0,
   "wins": 0,
   "losses": 2,
-  "trades_today": 4,
-  "signals_today": 74,
-  "bankroll": 0.0,
+  "trades_today": 0,
+  "signals_today": 75,
+  "bankroll": 58.4,
   "exposure": 0.0,
   "open_positions": 0,
-  "events": [
-    {
-      "time": "8:17 PM",
-      "action": "BLOCKED: hourly_cap",
-      "ticker": "KXBTC15M-26MAR202030-30",
-      "side": "no",
-      "price": 11,
-      "edge": 27
-    },
-    {
-      "time": "8:17 PM",
-      "action": "BLOCKED: hourly_cap",
-      "ticker": "KXBTC15M-26MAR202030-30",
-      "side": "no",
-      "price": 10,
-      "edge": 29
-    },
-    {
-      "time": "8:17 PM",
-      "action": "BLOCKED: hourly_cap",
-      "ticker": "KXBTC15M-26MAR202030-30",
-      "side": "no",
-      "price": 11,
-      "edge": 27
-    },
-    {
-      "time": "8:17 PM",
-      "action": "BLOCKED: hourly_cap",
-      "ticker": "KXBTC15M-26MAR202030-30",
-      "side": "no",
-      "price": 11,
-      "edge": 28
-    },
-    {
-      "time": "8:17 PM",
-      "action": "BLOCKED: hourly_cap",
-      "ticker": "KXETH15M-26MAR202030-30",
-      "side": "no",
-      "price": 11,
-      "edge": 29
-    },
-    {
-      "time": "8:16 PM",
-      "action": "BLOCKED: hourly_cap",
-      "ticker": "KXBTC15M-26MAR202030-30",
-      "side": "no",
-      "price": 13,
-      "edge": 27
-    },
-    {
-      "time": "8:16 PM",
-      "action": "BLOCKED: hourly_cap",
-      "ticker": "KXBTC15M-26MAR202030-30",
-      "side": "no",
-      "price": 11,
-      "edge": 29
-    },
-    {
-      "time": "8:16 PM",
-      "action": "BLOCKED: hourly_cap",
-      "ticker": "KXBTC15M-26MAR202030-30",
-      "side": "no",
-      "price": 13,
-      "edge": 28
-    },
-    {
-      "time": "8:16 PM",
-      "action": "BLOCKED: hourly_cap",
-      "ticker": "KXETH15M-26MAR202030-30",
-      "side": "no",
-      "price": 21,
-      "edge": 27
-    },
-    {
-      "time": "8:16 PM",
-      "action": "BLOCKED: hourly_cap",
-      "ticker": "KXBTC15M-26MAR202030-30",
-      "side": "no",
-      "price": 31,
-      "edge": 15
-    },
-    {
-      "time": "8:13 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXBTC15M-26MAR202015-15",
-      "side": "no",
-      "price": 11,
-      "edge": 37
-    },
-    {
-      "time": "8:13 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXBTC15M-26MAR202015-15",
-      "side": "no",
-      "price": 33,
-      "edge": 18
-    },
-    {
-      "time": "8:12 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXBTC15M-26MAR202015-15",
-      "side": "yes",
-      "price": 26,
-      "edge": 25
-    },
-    {
-      "time": "8:12 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXETH15M-26MAR202015-15",
-      "side": "yes",
-      "price": 17,
-      "edge": 22
-    },
-    {
-      "time": "8:12 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXETH15M-26MAR202015-15",
-      "side": "yes",
-      "price": 7,
-      "edge": 52
-    },
-    {
-      "time": "8:12 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXETH15M-26MAR202015-15",
-      "side": "yes",
-      "price": 8,
-      "edge": 32
-    },
-    {
-      "time": "8:12 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXETH15M-26MAR202015-15",
-      "side": "yes",
-      "price": 10,
-      "edge": 31
-    },
-    {
-      "time": "8:11 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXETH15M-26MAR202015-15",
-      "side": "yes",
-      "price": 15,
-      "edge": 43
-    },
-    {
-      "time": "8:11 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXETH15M-26MAR202015-15",
-      "side": "yes",
-      "price": 16,
-      "edge": 42
-    },
-    {
-      "time": "8:11 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXETH15M-26MAR202015-15",
-      "side": "yes",
-      "price": 23,
-      "edge": 34
-    },
-    {
-      "time": "8:11 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXETH15M-26MAR202015-15",
-      "side": "yes",
-      "price": 16,
-      "edge": 27
-    },
-    {
-      "time": "8:11 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXETH15M-26MAR202015-15",
-      "side": "yes",
-      "price": 16,
-      "edge": 27
-    },
-    {
-      "time": "8:10 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXETH15M-26MAR202015-15",
-      "side": "yes",
-      "price": 18,
-      "edge": 20
-    },
-    {
-      "time": "8:10 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXETH15M-26MAR202015-15",
-      "side": "yes",
-      "price": 14,
-      "edge": 24
-    },
-    {
-      "time": "8:10 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXETH15M-26MAR202015-15",
-      "side": "yes",
-      "price": 8,
-      "edge": 30
-    },
-    {
-      "time": "8:10 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXETH15M-26MAR202015-15",
-      "side": "yes",
-      "price": 15,
-      "edge": 31
-    },
-    {
-      "time": "8:10 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXETH15M-26MAR202015-15",
-      "side": "yes",
-      "price": 25,
-      "edge": 21
-    },
-    {
-      "time": "8:10 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXETH15M-26MAR202015-15",
-      "side": "yes",
-      "price": 34,
-      "edge": 12
-    },
-    {
-      "time": "8:09 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXBTC15M-26MAR202015-15",
-      "side": "no",
-      "price": 35,
-      "edge": 13
-    },
-    {
-      "time": "8:09 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXBTC15M-26MAR202015-15",
-      "side": "no",
-      "price": 31,
-      "edge": 16
-    },
-    {
-      "time": "8:09 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXBTC15M-26MAR202015-15",
-      "side": "no",
-      "price": 30,
-      "edge": 17
-    },
-    {
-      "time": "8:09 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXBTC15M-26MAR202015-15",
-      "side": "no",
-      "price": 25,
-      "edge": 22
-    },
-    {
-      "time": "8:09 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXETH15M-26MAR202015-15",
-      "side": "yes",
-      "price": 28,
-      "edge": 22
-    },
-    {
-      "time": "8:08 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXBTC15M-26MAR202015-15",
-      "side": "no",
-      "price": 25,
-      "edge": 19
-    },
-    {
-      "time": "8:08 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXBTC15M-26MAR202015-15",
-      "side": "no",
-      "price": 25,
-      "edge": 19
-    },
-    {
-      "time": "8:08 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXBTC15M-26MAR202015-15",
-      "side": "no",
-      "price": 20,
-      "edge": 24
-    },
-    {
-      "time": "8:08 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXBTC15M-26MAR202015-15",
-      "side": "no",
-      "price": 11,
-      "edge": 33
-    },
-    {
-      "time": "8:08 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXBTC15M-26MAR202015-15",
-      "side": "no",
-      "price": 17,
-      "edge": 27
-    },
-    {
-      "time": "8:07 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXBTC15M-26MAR202015-15",
-      "side": "no",
-      "price": 24,
-      "edge": 20
-    },
-    {
-      "time": "8:07 PM",
-      "action": "TRADE EXECUTED",
-      "ticker": "KXBTC15M-26MAR202015-15",
-      "side": "no",
-      "price": 30,
-      "contracts": 1,
-      "edge": 15,
-      "tier": "latency"
-    },
-    {
-      "time": "8:07 PM",
-      "action": "SETTLED LOSS",
-      "ticker": "KXBTC15M-26MAR202015-15",
-      "pnl": -0.74,
-      "result": "LOSS"
-    },
-    {
-      "time": "8:07 PM",
-      "action": "TRADE EXECUTED",
-      "ticker": "KXBTC15M-26MAR202015-15",
-      "side": "no",
-      "price": 26,
-      "contracts": 1,
-      "edge": 19,
-      "tier": "latency"
-    },
-    {
-      "time": "8:07 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXETH15M-26MAR202015-15",
-      "side": "no",
-      "price": 21,
-      "edge": 23
-    },
-    {
-      "time": "8:07 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXETH15M-26MAR202015-15",
-      "side": "no",
-      "price": 22,
-      "edge": 22
-    },
-    {
-      "time": "8:06 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXETH15M-26MAR202015-15",
-      "side": "no",
-      "price": 10,
-      "edge": 32
-    },
-    {
-      "time": "8:06 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXETH15M-26MAR202015-15",
-      "side": "no",
-      "price": 13,
-      "edge": 29
-    },
-    {
-      "time": "8:06 PM",
-      "action": "BLOCKED: local_dedup",
-      "ticker": "KXETH15M-26MAR202015-15",
-      "side": "no",
-      "price": 12,
-      "edge": 30
-    },
-    {
-      "time": "8:06 PM",
-      "action": "TRADE EXECUTED",
-      "ticker": "KXETH15M-26MAR202015-15",
-      "side": "no",
-      "price": 16,
-      "contracts": 1,
-      "edge": 28,
-      "tier": "latency"
-    },
-    {
-      "time": "8:06 PM",
-      "action": "SETTLED LOSS",
-      "ticker": "KXETH15M-26MAR202015-15",
-      "pnl": -0.8,
-      "result": "LOSS"
-    },
-    {
-      "time": "8:06 PM",
-      "action": "TRADE EXECUTED",
-      "ticker": "KXETH15M-26MAR202015-15",
-      "side": "no",
-      "price": 20,
-      "contracts": 1,
-      "edge": 25,
-      "tier": "latency"
-    }
-  ],
+  "events": [],
   "last_signals": [],
   "positions": [],
   "markets": [],
   "prices": {
     "BTC": {
-      "spot": 70672.3,
+      "spot": 70698.9,
       "source": "kraken"
     },
     "ETH": {
-      "spot": 2148.46,
+      "spot": 2152.7,
       "source": "kraken"
     }
   },
   "strategies": {
-    "latency": 83,
-    "calibrated": 82,
+    "latency": 0,
+    "calibrated": 0,
     "arbitrage": 0,
     "skipped": 0
   },
   "bankroll_history": [
-    57.32
+    58.4
   ],
   "feed_status": {
     "kraken": {
       "ready": true,
       "stale": false,
-      "btc_age": 3.6,
-      "eth_age": 2.7,
-      "btc": 70672.3,
-      "eth": 2148.46
+      "btc_age": 4.9,
+      "eth_age": 1.7,
+      "btc": 70698.9,
+      "eth": 2152.7
     },
     "binance": {
       "ready": true,
       "stale": false,
-      "btc_age": 1.1,
-      "eth_age": 0.5,
-      "btc": 70698.75,
-      "eth": 2149.13
+      "btc_age": 2.5,
+      "eth_age": 2.3,
+      "btc": 70715.67,
+      "eth": 2152.71
     },
     "active_source": {
       "BTC": "kraken",
       "ETH": "kraken"
     }
   },
-  "updated_at": "2026-03-21T00:18:06.093343+00:00"
+  "updated_at": "2026-03-21T00:26:00.019373+00:00"
 }
