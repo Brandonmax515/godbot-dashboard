@@ -1,9 +1,9 @@
 {
   "version": "v2",
-  "uptime_seconds": 4083,
-  "cycle_count": 156,
+  "uptime_seconds": 4116,
+  "cycle_count": 157,
   "cycle_interval_sec": 10,
-  "last_cycle_ts": "2026-03-21T06:00:00.445622+00:00",
+  "last_cycle_ts": "2026-03-21T06:00:32.936322+00:00",
   "trading_enabled": true,
   "dry_run": false,
   "kill_switch_armed": false,
@@ -20,17 +20,24 @@
       "predictor": true
     }
   },
-  "total_pnl": -1.0,
-  "pnl_today": -1.0,
-  "win_rate": 25.0,
+  "total_pnl": -1.25,
+  "pnl_today": -1.25,
+  "win_rate": 20.0,
   "wins": 1,
-  "losses": 3,
+  "losses": 4,
   "trades_today": 1,
   "signals_today": 164,
-  "bankroll": 58.16,
+  "bankroll": 58.15,
   "exposure": 0.0,
   "open_positions": 0,
   "events": [
+    {
+      "time": "2:00 AM",
+      "action": "SETTLED LOSS",
+      "ticker": "KXETH15M-26MAR210200-00",
+      "pnl": -0.25,
+      "result": "LOSS"
+    },
     {
       "time": "1:54 AM",
       "action": "BLOCKED: window_dedup",
@@ -55,12 +62,12 @@
   "markets": [],
   "prices": {
     "BTC": {
-      "spot": 70695.3,
+      "spot": 70704.89,
       "source": "coinbase"
     },
     "ETH": {
-      "spot": 2152.68,
-      "source": "kraken"
+      "spot": 2153.08,
+      "source": "coinbase"
     }
   },
   "strategies": {
@@ -81,31 +88,31 @@
     "kraken": {
       "ready": true,
       "stale": false,
-      "btc_age": 8.7,
-      "eth_age": 2.7,
+      "btc_age": 4.5,
+      "eth_age": 5.4,
       "btc": 70692.2,
-      "eth": 2152.68
+      "eth": 2152.69
     },
     "binance": {
       "ready": true,
       "stale": false,
-      "btc_age": 2.8,
-      "eth_age": 3.4,
+      "btc_age": 4.7,
+      "eth_age": 4.7,
       "btc": 70735.64,
       "eth": 2153.6
     },
     "coinbase": {
       "ready": true,
       "stale": false,
-      "btc_age": 2.7,
-      "eth_age": 2.9,
-      "btc": 70695.3,
-      "eth": 2152.93
+      "btc_age": 3.2,
+      "eth_age": 2.7,
+      "btc": 70704.89,
+      "eth": 2153.08
     },
     "active_source": {
       "BTC": "coinbase",
-      "ETH": "kraken"
+      "ETH": "coinbase"
     }
   },
-  "updated_at": "2026-03-21T06:00:00.445645+00:00"
+  "updated_at": "2026-03-21T06:00:32.936345+00:00"
 }
