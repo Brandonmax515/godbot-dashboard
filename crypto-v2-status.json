@@ -1,9 +1,9 @@
 {
   "version": "v2",
-  "uptime_seconds": 609,
+  "uptime_seconds": 643,
   "cycle_count": 0,
   "cycle_interval_sec": 10,
-  "last_cycle_ts": "2026-03-21T00:16:11.884724+00:00",
+  "last_cycle_ts": "2026-03-21T00:16:46.567288+00:00",
   "trading_enabled": true,
   "dry_run": false,
   "kill_switch_armed": false,
@@ -25,11 +25,35 @@
   "wins": 0,
   "losses": 2,
   "trades_today": 4,
-  "signals_today": 65,
+  "signals_today": 68,
   "bankroll": 58.4,
   "exposure": 0.0,
   "open_positions": 0,
   "events": [
+    {
+      "time": "8:16 PM",
+      "action": "BLOCKED: hourly_cap",
+      "ticker": "KXBTC15M-26MAR202030-30",
+      "side": "no",
+      "price": 11,
+      "edge": 29
+    },
+    {
+      "time": "8:16 PM",
+      "action": "BLOCKED: hourly_cap",
+      "ticker": "KXBTC15M-26MAR202030-30",
+      "side": "no",
+      "price": 13,
+      "edge": 28
+    },
+    {
+      "time": "8:16 PM",
+      "action": "BLOCKED: hourly_cap",
+      "ticker": "KXETH15M-26MAR202030-30",
+      "side": "no",
+      "price": 21,
+      "edge": 27
+    },
     {
       "time": "8:16 PM",
       "action": "BLOCKED: hourly_cap",
@@ -370,17 +394,17 @@
   "markets": [],
   "prices": {
     "BTC": {
-      "spot": 70599.5,
+      "spot": 70683.8,
       "source": "kraken"
     },
     "ETH": {
-      "spot": 2146.33,
+      "spot": 2149.6,
       "source": "kraken"
     }
   },
   "strategies": {
-    "latency": 65,
-    "calibrated": 64,
+    "latency": 71,
+    "calibrated": 70,
     "arbitrage": 0,
     "skipped": 0
   },
@@ -391,23 +415,23 @@
     "kraken": {
       "ready": true,
       "stale": false,
-      "btc_age": 9.4,
-      "eth_age": 7.8,
-      "btc": 70599.5,
-      "eth": 2146.33
+      "btc_age": 2.7,
+      "eth_age": 3.4,
+      "btc": 70683.8,
+      "eth": 2149.6
     },
     "binance": {
       "ready": true,
       "stale": false,
-      "btc_age": 2.0,
-      "eth_age": 3.0,
+      "btc_age": 1.6,
+      "eth_age": 1.6,
       "btc": 70582.98,
-      "eth": 2146.29
+      "eth": 2149.13
     },
     "active_source": {
       "BTC": "kraken",
       "ETH": "kraken"
     }
   },
-  "updated_at": "2026-03-21T00:16:11.884766+00:00"
+  "updated_at": "2026-03-21T00:16:46.567319+00:00"
 }
