@@ -1,17 +1,47 @@
 {
   "mode": "LIVE",
-  "generated_at": "2026-03-21T14:04:31.345303Z",
-  "total_runs": 8,
-  "total_bets": 6,
+  "generated_at": "2026-03-21T14:05:03.464448Z",
+  "total_runs": 9,
+  "total_bets": 7,
   "wins": 0,
   "losses": 0,
-  "pending": 6,
+  "pending": 7,
   "win_rate": null,
   "total_pnl_cents": 0,
-  "total_staked_cents": 1200,
+  "total_staked_cents": 1400,
   "roi": null,
-  "avg_edge": 0.24916666666666665,
+  "avg_edge": 0.2592857142857143,
   "bets": [
+    {
+      "id": 41,
+      "run_date": "2026-03-21",
+      "ticker": "KXHIGHLAX-26MAR21-T76",
+      "event_ticker": "KXHIGHLAX-26MAR21",
+      "station": "KLAX",
+      "city": "Los Angeles",
+      "variable": "HIGH",
+      "bracket_low": null,
+      "bracket_high": 76.0,
+      "strike_type": "less",
+      "side": "YES",
+      "bet_type": "YES_BEST_BRACKET",
+      "our_prob": 0.7,
+      "market_prob": 0.36,
+      "edge_pct": 0.31999999999999995,
+      "multiplier": 2.78,
+      "bet_cents": 200,
+      "order_id": "2bbf7a74-1147-4ae9-b679-5eab08b641dd",
+      "status": "PLACED",
+      "ai_reasoning": "The NWS forecast of 75\u00b0F directly contradicts GEFS clustering around 76-77\u00b0F, but the AFD explicitly discusses 8-12 degrees of cooling today due to onshore flow and flattening ridge. The hourly forecast shows peak temperatures of 75\u00b0F multiple times but never exceeding this. Given the strong meteorological reasoning in the AFD and NWS local expertise, I'm shifting probability heavily toward the \u226475\u00b0F bracket.",
+      "ai_temp_estimate": 75.0,
+      "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
+      "settled_result": null,
+      "pnl_cents": null,
+      "notes": "raw_edge=34.0% fee=2\u00a2 net_edge=32.0%",
+      "key_factor": "",
+      "uncertainties": "",
+      "confidence": ""
+    },
     {
       "id": 39,
       "run_date": "2026-03-21",
@@ -195,7 +225,7 @@
   ],
   "by_side": {
     "YES": {
-      "bets": 5,
+      "bets": 6,
       "wins": 0,
       "settled": 0,
       "pnl": 0
@@ -209,7 +239,7 @@
   },
   "by_variable": {
     "HIGH": {
-      "bets": 6,
+      "bets": 7,
       "wins": 0,
       "settled": 0,
       "pnl": 0
@@ -217,7 +247,7 @@
   },
   "by_city": {
     "Los Angeles": {
-      "bets": 3,
+      "bets": 4,
       "wins": 0,
       "settled": 0,
       "pnl": 0
