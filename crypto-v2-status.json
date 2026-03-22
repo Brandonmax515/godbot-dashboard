@@ -1,9 +1,9 @@
 {
   "version": "v2",
-  "uptime_seconds": 4346,
-  "cycle_count": 302,
+  "uptime_seconds": 4378,
+  "cycle_count": 303,
   "cycle_interval_sec": 10,
-  "last_cycle_ts": "2026-03-22T05:19:01.958009+00:00",
+  "last_cycle_ts": "2026-03-22T05:19:34.529653+00:00",
   "trading_enabled": true,
   "dry_run": false,
   "kill_switch_armed": false,
@@ -26,8 +26,8 @@
   "wins": 0,
   "losses": 3,
   "trades_today": 4,
-  "signals_today": 1088,
-  "bankroll": 53.43,
+  "signals_today": 1089,
+  "bankroll": 53.49,
   "exposure": 0.0,
   "open_positions": 0,
   "events": [
@@ -440,11 +440,11 @@
   "markets": [],
   "prices": {
     "BTC": {
-      "spot": 69238.96,
+      "spot": 69238.0,
       "source": "coinbase"
     },
     "ETH": {
-      "spot": 2118.49,
+      "spot": 2118.21,
       "source": "coinbase"
     }
   },
@@ -466,31 +466,31 @@
     "kraken": {
       "ready": true,
       "stale": false,
-      "btc_age": 12.0,
-      "eth_age": 9.0,
-      "btc": 69227.3,
-      "eth": 2118.78
+      "btc_age": 5.4,
+      "eth_age": 10.1,
+      "btc": 69255.9,
+      "eth": 2118.47
     },
     "binance": {
       "ready": true,
       "stale": false,
-      "btc_age": 12.1,
-      "eth_age": 5.3,
+      "btc_age": 3.5,
+      "eth_age": 3.5,
       "btc": 69194.44,
       "eth": 2117.27
     },
     "coinbase": {
       "ready": true,
       "stale": false,
-      "btc_age": 2.5,
-      "eth_age": 2.6,
-      "btc": 69238.96,
-      "eth": 2118.49
+      "btc_age": 2.9,
+      "eth_age": 2.7,
+      "btc": 69238.0,
+      "eth": 2118.21
     },
     "active_source": {
       "BTC": "coinbase",
       "ETH": "coinbase"
     }
   },
-  "updated_at": "2026-03-22T05:19:01.958052+00:00"
+  "updated_at": "2026-03-22T05:19:34.529671+00:00"
 }
