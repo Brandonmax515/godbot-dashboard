@@ -1,9 +1,9 @@
 {
   "version": "v2",
-  "uptime_seconds": 924,
-  "cycle_count": 78,
+  "uptime_seconds": 960,
+  "cycle_count": 81,
   "cycle_interval_sec": 10,
-  "last_cycle_ts": "2026-03-22T01:20:48.132329+00:00",
+  "last_cycle_ts": "2026-03-22T01:21:23.886019+00:00",
   "trading_enabled": true,
   "dry_run": false,
   "kill_switch_armed": false,
@@ -26,11 +26,19 @@
   "wins": 0,
   "losses": 0,
   "trades_today": 0,
-  "signals_today": 275,
+  "signals_today": 278,
   "bankroll": 53.87,
   "exposure": 0.0,
   "open_positions": 0,
   "events": [
+    {
+      "time": "9:20 PM",
+      "action": "BLOCKED: min_edge",
+      "ticker": "KXBTC15M-26MAR212130-30",
+      "side": "no",
+      "price": 25,
+      "edge": 7.4285687032580885
+    },
     {
       "time": "9:20 PM",
       "action": "BLOCKED: min_edge",
@@ -311,11 +319,11 @@
   "markets": [],
   "prices": {
     "BTC": {
-      "spot": 69031.96,
+      "spot": 69080.05,
       "source": "coinbase"
     },
     "ETH": {
-      "spot": 2090.57,
+      "spot": 2092.23,
       "source": "coinbase"
     }
   },
@@ -324,7 +332,7 @@
     "calibrated": 0,
     "arbitrage": 0,
     "predictor": 0,
-    "skipped": 35
+    "skipped": 36
   },
   "bankroll_history": [
     53.87,
@@ -334,16 +342,16 @@
     "kraken": {
       "ready": true,
       "stale": false,
-      "btc_age": 12.0,
-      "eth_age": 4.5,
-      "btc": 69014.4,
-      "eth": 2090.42
+      "btc_age": 8.9,
+      "eth_age": 10.8,
+      "btc": 69080.9,
+      "eth": 2091.95
     },
     "binance": {
       "ready": true,
       "stale": false,
-      "btc_age": 4.8,
-      "eth_age": 5.2,
+      "btc_age": 4.3,
+      "eth_age": 2.4,
       "btc": 69045.77,
       "eth": 2086.58
     },
@@ -351,14 +359,14 @@
       "ready": true,
       "stale": false,
       "btc_age": 2.3,
-      "eth_age": 2.5,
-      "btc": 69031.96,
-      "eth": 2090.57
+      "eth_age": 1.9,
+      "btc": 69080.05,
+      "eth": 2092.23
     },
     "active_source": {
       "BTC": "coinbase",
       "ETH": "coinbase"
     }
   },
-  "updated_at": "2026-03-22T01:20:48.132360+00:00"
+  "updated_at": "2026-03-22T01:21:23.886047+00:00"
 }
