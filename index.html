@@ -989,18 +989,78 @@ window.GODBOT_DATA = {
 // ── EMBEDDED DATA (injected by godbot_export.py) ──
 window.GODBOT_DATA = {
   "mode": "LIVE",
-  "generated_at": "2026-03-22T12:59:26.015510Z",
-  "total_runs": 12,
-  "total_bets": 10,
+  "generated_at": "2026-03-22T12:59:57.481583Z",
+  "total_runs": 13,
+  "total_bets": 12,
   "wins": 0,
   "losses": 0,
-  "pending": 10,
+  "pending": 12,
   "win_rate": null,
   "total_pnl_cents": 0,
-  "total_staked_cents": 2000,
+  "total_staked_cents": 2400,
   "roi": null,
-  "avg_edge": 0.4103,
+  "avg_edge": 0.40191666666666664,
   "bets": [
+    {
+      "id": 55,
+      "run_date": "2026-03-22",
+      "ticker": "KXHIGHMIA-26MAR22-B79.5",
+      "event_ticker": "KXHIGHMIA-26MAR22",
+      "station": "KMIA",
+      "city": "Miami",
+      "variable": "HIGH",
+      "bracket_low": 79.0,
+      "bracket_high": 80.0,
+      "strike_type": "between",
+      "side": "YES",
+      "bet_type": "YES_BEST_BRACKET",
+      "our_prob": 0.45,
+      "market_prob": 0.15,
+      "edge_pct": 0.29000000000000004,
+      "multiplier": 6.67,
+      "bet_cents": 200,
+      "order_id": "c33e17a3-26a5-4333-8c57-2eea587c7e83",
+      "status": "PLACED",
+      "ai_reasoning": "The GEFS ensemble is overly concentrated in the 79\u00b0F bracket (75.7%) but deterministic models average 81.9\u00b0F with GFS at 81.8\u00b0F and ECMWF at 80.5\u00b0F. The AFD mentions efficient daytime heating pushing highs into low-mid 80s for east coast areas, supporting the warmer deterministic guidance. I'm shifting probability from the 79\u00b0F bracket to the 81\u00b0F and 83\u00b0F brackets while maintaining some weight on 79\u00b0F given the strong ensemble signal.",
+      "ai_temp_estimate": 80.0,
+      "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
+      "settled_result": null,
+      "pnl_cents": null,
+      "notes": "raw_edge=30.0% fee=1\u00a2 net_edge=29.0%",
+      "key_factor": "",
+      "uncertainties": "",
+      "confidence": ""
+    },
+    {
+      "id": 54,
+      "run_date": "2026-03-22",
+      "ticker": "KXHIGHDEN-26MAR22-B65.5",
+      "event_ticker": "KXHIGHDEN-26MAR22",
+      "station": "KDEN",
+      "city": "Denver",
+      "variable": "HIGH",
+      "bracket_low": 65.0,
+      "bracket_high": 66.0,
+      "strike_type": "between",
+      "side": "YES",
+      "bet_type": "YES_BEST_BRACKET",
+      "our_prob": 0.45,
+      "market_prob": 0.01,
+      "edge_pct": 0.43,
+      "multiplier": 100.0,
+      "bet_cents": 200,
+      "order_id": "aff7d01e-e336-458b-92ea-5d1c91d83b08",
+      "status": "PLACED",
+      "ai_reasoning": "The GEFS ensemble appears significantly biased warm compared to all other guidance. NWS explicitly forecasts 65\u00b0F high, hourly forecast peaks at 65\u00b0F, and AFD describes a 'brief cooldown' to 'near normal temperatures' after yesterday's record heat. The deterministic model spread includes GFS at 67\u00b0F which aligns better with local guidance than the 72\u00b0F GEFS mean.",
+      "ai_temp_estimate": 65.0,
+      "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
+      "settled_result": null,
+      "pnl_cents": null,
+      "notes": "raw_edge=44.0% fee=1\u00a2 net_edge=43.0%",
+      "key_factor": "",
+      "uncertainties": "",
+      "confidence": ""
+    },
     {
       "id": 52,
       "run_date": "2026-03-22",
@@ -1304,7 +1364,7 @@ window.GODBOT_DATA = {
   ],
   "by_side": {
     "YES": {
-      "bets": 8,
+      "bets": 10,
       "wins": 0,
       "settled": 0,
       "pnl": 0
@@ -1318,7 +1378,7 @@ window.GODBOT_DATA = {
   },
   "by_variable": {
     "HIGH": {
-      "bets": 10,
+      "bets": 12,
       "wins": 0,
       "settled": 0,
       "pnl": 0
@@ -1327,6 +1387,12 @@ window.GODBOT_DATA = {
   "by_city": {
     "Los Angeles": {
       "bets": 4,
+      "wins": 0,
+      "settled": 0,
+      "pnl": 0
+    },
+    "Miami": {
+      "bets": 2,
       "wins": 0,
       "settled": 0,
       "pnl": 0
@@ -1349,7 +1415,7 @@ window.GODBOT_DATA = {
       "settled": 0,
       "pnl": 0
     },
-    "Miami": {
+    "Denver": {
       "bets": 1,
       "wins": 0,
       "settled": 0,
