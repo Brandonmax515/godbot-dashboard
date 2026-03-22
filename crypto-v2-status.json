@@ -1,9 +1,9 @@
 {
   "version": "v2",
-  "uptime_seconds": 7583,
-  "cycle_count": 635,
+  "uptime_seconds": 7619,
+  "cycle_count": 638,
   "cycle_interval_sec": 10,
-  "last_cycle_ts": "2026-03-22T03:11:47.481864+00:00",
+  "last_cycle_ts": "2026-03-22T03:12:23.290989+00:00",
   "trading_enabled": true,
   "dry_run": false,
   "kill_switch_armed": false,
@@ -26,11 +26,43 @@
   "wins": 0,
   "losses": 0,
   "trades_today": 0,
-  "signals_today": 676,
+  "signals_today": 679,
   "bankroll": 53.87,
   "exposure": 0.0,
   "open_positions": 0,
   "events": [
+    {
+      "time": "11:12 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXETH15M-26MAR212315-15",
+      "side": "no",
+      "price": 35,
+      "edge": 16.541647893471488
+    },
+    {
+      "time": "11:12 PM",
+      "action": "BLOCKED: min_edge",
+      "ticker": "KXBTC15M-26MAR212315-15",
+      "side": "no",
+      "price": 54,
+      "edge": 6.47725596228342
+    },
+    {
+      "time": "11:12 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXETH15M-26MAR212315-15",
+      "side": "no",
+      "price": 37,
+      "edge": 14.907478839195655
+    },
+    {
+      "time": "11:11 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXETH15M-26MAR212315-15",
+      "side": "no",
+      "price": 36,
+      "edge": 14.24128901148789
+    },
     {
       "time": "11:11 PM",
       "action": "BLOCKED: window_dedup",
@@ -398,38 +430,6 @@
       "side": "yes",
       "price": 17,
       "edge": 9.107688552369085
-    },
-    {
-      "time": "11:06 PM",
-      "action": "BLOCKED: window_dedup",
-      "ticker": "KXETH15M-26MAR212315-15",
-      "side": "yes",
-      "price": 19,
-      "edge": 9.395703201789228
-    },
-    {
-      "time": "11:05 PM",
-      "action": "BLOCKED: window_dedup",
-      "ticker": "KXETH15M-26MAR212315-15",
-      "side": "yes",
-      "price": 17,
-      "edge": 9.069601956870086
-    },
-    {
-      "time": "11:05 PM",
-      "action": "BLOCKED: window_dedup",
-      "ticker": "KXETH15M-26MAR212315-15",
-      "side": "yes",
-      "price": 15,
-      "edge": 8.742104611853858
-    },
-    {
-      "time": "11:05 PM",
-      "action": "BLOCKED: min_edge",
-      "ticker": "KXETH15M-26MAR212315-15",
-      "side": "yes",
-      "price": 12,
-      "edge": 7.726725156605759
     }
   ],
   "last_signals": [],
@@ -437,11 +437,11 @@
   "markets": [],
   "prices": {
     "BTC": {
-      "spot": 69299.98,
+      "spot": 69299.47,
       "source": "coinbase"
     },
     "ETH": {
-      "spot": 2104.68,
+      "spot": 2104.3,
       "source": "coinbase"
     }
   },
@@ -450,7 +450,7 @@
     "calibrated": 0,
     "arbitrage": 0,
     "predictor": 0,
-    "skipped": 574
+    "skipped": 578
   },
   "bankroll_history": [
     53.87,
@@ -466,32 +466,32 @@
   "feed_status": {
     "kraken": {
       "ready": true,
-      "stale": true,
-      "btc_age": 5.0,
-      "eth_age": 29.5,
+      "stale": false,
+      "btc_age": 3.4,
+      "eth_age": 3.9,
       "btc": 69301.2,
-      "eth": 2104.84
+      "eth": 2104.53
     },
     "binance": {
       "ready": true,
       "stale": false,
-      "btc_age": 3.8,
-      "eth_age": 2.9,
+      "btc_age": 3.5,
+      "eth_age": 4.3,
       "btc": 69310.84,
-      "eth": 2099.96
+      "eth": 2105.25
     },
     "coinbase": {
       "ready": true,
       "stale": false,
-      "btc_age": 2.0,
+      "btc_age": 2.1,
       "eth_age": 2.3,
-      "btc": 69299.98,
-      "eth": 2104.68
+      "btc": 69299.47,
+      "eth": 2104.3
     },
     "active_source": {
       "BTC": "coinbase",
       "ETH": "coinbase"
     }
   },
-  "updated_at": "2026-03-22T03:11:47.481916+00:00"
+  "updated_at": "2026-03-22T03:12:23.291015+00:00"
 }
