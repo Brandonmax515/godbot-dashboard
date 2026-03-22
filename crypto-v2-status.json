@@ -1,9 +1,9 @@
 {
   "version": "v2",
-  "uptime_seconds": 997,
-  "cycle_count": 84,
+  "uptime_seconds": 1020,
+  "cycle_count": 86,
   "cycle_interval_sec": 10,
-  "last_cycle_ts": "2026-03-22T01:22:00.522854+00:00",
+  "last_cycle_ts": "2026-03-22T01:22:24.406358+00:00",
   "trading_enabled": true,
   "dry_run": false,
   "kill_switch_armed": false,
@@ -26,11 +26,19 @@
   "wins": 0,
   "losses": 0,
   "trades_today": 0,
-  "signals_today": 281,
+  "signals_today": 283,
   "bankroll": 53.87,
   "exposure": 0.0,
   "open_positions": 0,
   "events": [
+    {
+      "time": "9:22 PM",
+      "action": "BLOCKED: min_edge",
+      "ticker": "KXBTC15M-26MAR212130-30",
+      "side": "no",
+      "price": 27,
+      "edge": 6.9083337736815675
+    },
     {
       "time": "9:21 PM",
       "action": "ORDER FAILED: API error: Kalshi API error 400 on /port",
@@ -324,12 +332,12 @@
   "markets": [],
   "prices": {
     "BTC": {
-      "spot": 69041.71,
+      "spot": 69032.26,
       "source": "coinbase"
     },
     "ETH": {
-      "spot": 2086.58,
-      "source": "binance"
+      "spot": 2090.03,
+      "source": "coinbase"
     }
   },
   "strategies": {
@@ -337,7 +345,7 @@
     "calibrated": 0,
     "arbitrage": 0,
     "predictor": 0,
-    "skipped": 38
+    "skipped": 39
   },
   "bankroll_history": [
     53.87,
@@ -347,31 +355,31 @@
     "kraken": {
       "ready": true,
       "stale": false,
-      "btc_age": 4.0,
-      "eth_age": 7.3,
-      "btc": 69049.5,
-      "eth": 2090.86
+      "btc_age": 14.3,
+      "eth_age": 7.8,
+      "btc": 69049.4,
+      "eth": 2090.2
     },
     "binance": {
       "ready": true,
       "stale": false,
-      "btc_age": 10.5,
-      "eth_age": 3.1,
+      "btc_age": 2.8,
+      "eth_age": 2.5,
       "btc": 69067.52,
       "eth": 2086.58
     },
     "coinbase": {
       "ready": true,
       "stale": false,
-      "btc_age": 2.7,
-      "eth_age": 3.1,
-      "btc": 69041.71,
-      "eth": 2090.44
+      "btc_age": 1.9,
+      "eth_age": 2.0,
+      "btc": 69032.26,
+      "eth": 2090.03
     },
     "active_source": {
       "BTC": "coinbase",
-      "ETH": "binance"
+      "ETH": "coinbase"
     }
   },
-  "updated_at": "2026-03-22T01:22:00.522864+00:00"
+  "updated_at": "2026-03-22T01:22:24.406389+00:00"
 }
