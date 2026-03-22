@@ -1,17 +1,77 @@
 {
-  "mode": "LIVE",
-  "generated_at": "2026-03-22T12:43:25.430315Z",
-  "total_runs": 10,
-  "total_bets": 7,
+  "mode": "DRY RUN",
+  "generated_at": "2026-03-22T12:43:56.676207Z",
+  "total_runs": 11,
+  "total_bets": 9,
   "wins": 0,
   "losses": 0,
-  "pending": 7,
+  "pending": 9,
   "win_rate": null,
   "total_pnl_cents": 0,
-  "total_staked_cents": 1400,
+  "total_staked_cents": 1800,
   "roi": null,
-  "avg_edge": 0.2592857142857143,
+  "avg_edge": 0.41922222222222216,
   "bets": [
+    {
+      "id": 49,
+      "run_date": "2026-03-22",
+      "ticker": "KXHIGHCHI-26MAR22-T65",
+      "event_ticker": "KXHIGHCHI-26MAR22",
+      "station": "KMDW",
+      "city": "Chicago",
+      "variable": "HIGH",
+      "bracket_low": 65.0,
+      "bracket_high": null,
+      "strike_type": "greater",
+      "side": "NO",
+      "bet_type": "NO_DISPLACED",
+      "our_prob": 0.998,
+      "market_prob": 0.01,
+      "edge_pct": 0.998,
+      "multiplier": 100.0,
+      "bet_cents": 200,
+      "order_id": "9d4c8ce4-5484-45bc-a74a-8c0dcccc3b3b",
+      "status": "PLACED",
+      "ai_reasoning": "NO on displaced bracket: Claude=0.2% YES, market=100\u00a2 YES. The AFD confirms temperatures in the 60s this morning represent calendar day highs before the cold front passage causes temperatures to tumble throughout the day. Current observations show 44.6\u00b0F with hourly forecasts showing steady decline to upper 30s. All model guidance (GEFS mean 40.7\u00b0F, deterministic models 38-41\u00b0F) strongly support a high temperature well below 57\u00b0F, making the \u226457\u00b0F bracket essentially certain.",
+      "ai_temp_estimate": 42.0,
+      "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
+      "settled_result": null,
+      "pnl_cents": null,
+      "notes": "raw_edge=98.8% fee=0\u00a2 net_edge=99.8%",
+      "key_factor": "",
+      "uncertainties": "",
+      "confidence": ""
+    },
+    {
+      "id": 46,
+      "run_date": "2026-03-22",
+      "ticker": "KXHIGHCHI-26MAR22-T58",
+      "event_ticker": "KXHIGHCHI-26MAR22",
+      "station": "KMDW",
+      "city": "Chicago",
+      "variable": "HIGH",
+      "bracket_low": null,
+      "bracket_high": 58.0,
+      "strike_type": "less",
+      "side": "YES",
+      "bet_type": "YES_BEST_BRACKET",
+      "our_prob": 0.98,
+      "market_prob": 0.01,
+      "edge_pct": 0.96,
+      "multiplier": 100.0,
+      "bet_cents": 200,
+      "order_id": "8993c7fb-2e35-4ed8-a037-7bc5eeef5131",
+      "status": "PLACED",
+      "ai_reasoning": "The AFD confirms temperatures in the 60s this morning represent calendar day highs before the cold front passage causes temperatures to tumble throughout the day. Current observations show 44.6\u00b0F with hourly forecasts showing steady decline to upper 30s. All model guidance (GEFS mean 40.7\u00b0F, deterministic models 38-41\u00b0F) strongly support a high temperature well below 57\u00b0F, making the \u226457\u00b0F bracket essentially certain.",
+      "ai_temp_estimate": 42.0,
+      "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
+      "settled_result": null,
+      "pnl_cents": null,
+      "notes": "raw_edge=97.0% fee=1\u00a2 net_edge=96.0%",
+      "key_factor": "",
+      "uncertainties": "",
+      "confidence": ""
+    },
     {
       "id": 41,
       "run_date": "2026-03-21",
@@ -225,13 +285,13 @@
   ],
   "by_side": {
     "YES": {
-      "bets": 6,
+      "bets": 7,
       "wins": 0,
       "settled": 0,
       "pnl": 0
     },
     "NO": {
-      "bets": 1,
+      "bets": 2,
       "wins": 0,
       "settled": 0,
       "pnl": 0
@@ -239,7 +299,7 @@
   },
   "by_variable": {
     "HIGH": {
-      "bets": 7,
+      "bets": 9,
       "wins": 0,
       "settled": 0,
       "pnl": 0
@@ -248,6 +308,12 @@
   "by_city": {
     "Los Angeles": {
       "bets": 4,
+      "wins": 0,
+      "settled": 0,
+      "pnl": 0
+    },
+    "Chicago": {
+      "bets": 2,
       "wins": 0,
       "settled": 0,
       "pnl": 0
