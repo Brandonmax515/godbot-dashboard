@@ -1,9 +1,9 @@
 {
   "version": "v2",
-  "uptime_seconds": 10213,
-  "cycle_count": 855,
+  "uptime_seconds": 10237,
+  "cycle_count": 857,
   "cycle_interval_sec": 10,
-  "last_cycle_ts": "2026-03-22T03:55:36.805140+00:00",
+  "last_cycle_ts": "2026-03-22T03:56:00.656023+00:00",
   "trading_enabled": true,
   "dry_run": false,
   "kill_switch_armed": false,
@@ -26,11 +26,27 @@
   "wins": 0,
   "losses": 0,
   "trades_today": 0,
-  "signals_today": 852,
+  "signals_today": 854,
   "bankroll": 53.87,
   "exposure": 0.0,
   "open_positions": 0,
   "events": [
+    {
+      "time": "11:56 PM",
+      "action": "BLOCKED: min_edge",
+      "ticker": "KXBTC15M-26MAR220000-00",
+      "side": "yes",
+      "price": 43,
+      "edge": 7.873287875453318
+    },
+    {
+      "time": "11:55 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXBTC15M-26MAR220000-00",
+      "side": "yes",
+      "price": 38,
+      "edge": 10.819141294144698
+    },
     {
       "time": "11:55 PM",
       "action": "BLOCKED: window_dedup",
@@ -411,22 +427,6 @@
       "side": "yes",
       "price": 44,
       "edge": 33.21868380609664
-    },
-    {
-      "time": "11:48 PM",
-      "action": "BLOCKED: window_dedup",
-      "ticker": "KXETH15M-26MAR220000-00",
-      "side": "yes",
-      "price": 34,
-      "edge": 29.0311192372795
-    },
-    {
-      "time": "11:48 PM",
-      "action": "BLOCKED: window_dedup",
-      "ticker": "KXETH15M-26MAR220000-00",
-      "side": "yes",
-      "price": 39,
-      "edge": 11.395912427283848
     }
   ],
   "last_signals": [],
@@ -434,12 +434,12 @@
   "markets": [],
   "prices": {
     "BTC": {
-      "spot": 69311.33,
+      "spot": 69324.01,
       "source": "coinbase"
     },
     "ETH": {
-      "spot": 2113.3,
-      "source": "binance"
+      "spot": 2113.84,
+      "source": "coinbase"
     }
   },
   "strategies": {
@@ -447,7 +447,7 @@
     "calibrated": 0,
     "arbitrage": 0,
     "predictor": 0,
-    "skipped": 782
+    "skipped": 784
   },
   "bankroll_history": [
     53.87,
@@ -466,32 +466,32 @@
   "feed_status": {
     "kraken": {
       "ready": true,
-      "stale": true,
-      "btc_age": 24.0,
-      "eth_age": 7.5,
+      "stale": false,
+      "btc_age": 3.6,
+      "eth_age": 12.0,
       "btc": 69331.5,
-      "eth": 2113.46
+      "eth": 2113.47
     },
     "binance": {
       "ready": true,
       "stale": false,
-      "btc_age": 7.3,
-      "eth_age": 2.6,
+      "btc_age": 4.3,
+      "eth_age": 2.9,
       "btc": 69328.0,
       "eth": 2113.3
     },
     "coinbase": {
       "ready": true,
       "stale": false,
-      "btc_age": 2.0,
-      "eth_age": 2.9,
-      "btc": 69311.33,
-      "eth": 2113.39
+      "btc_age": 2.2,
+      "eth_age": 2.7,
+      "btc": 69324.01,
+      "eth": 2113.84
     },
     "active_source": {
       "BTC": "coinbase",
-      "ETH": "binance"
+      "ETH": "coinbase"
     }
   },
-  "updated_at": "2026-03-22T03:55:36.805167+00:00"
+  "updated_at": "2026-03-22T03:56:00.656034+00:00"
 }
