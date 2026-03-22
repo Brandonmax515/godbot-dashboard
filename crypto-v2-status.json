@@ -1,9 +1,9 @@
 {
   "version": "v2",
-  "uptime_seconds": 15522,
+  "uptime_seconds": 15552,
   "cycle_count": 407,
   "cycle_interval_sec": 10,
-  "last_cycle_ts": "2026-03-22T08:25:18.191698+00:00",
+  "last_cycle_ts": "2026-03-22T08:25:48.197715+00:00",
   "trading_enabled": true,
   "dry_run": false,
   "kill_switch_armed": false,
@@ -494,5 +494,5 @@
       "ETH": "coinbase"
     }
   },
-  "updated_at": "2026-03-22T08:25:18.191731+00:00"
+  "updated_at": "2026-03-22T08:25:48.197747+00:00"
 }
