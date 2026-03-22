@@ -1,9 +1,9 @@
 {
   "version": "v2",
-  "uptime_seconds": 709,
-  "cycle_count": 57,
+  "uptime_seconds": 745,
+  "cycle_count": 60,
   "cycle_interval_sec": 10,
-  "last_cycle_ts": "2026-03-22T04:18:25.393923+00:00",
+  "last_cycle_ts": "2026-03-22T04:19:01.170593+00:00",
   "trading_enabled": true,
   "dry_run": false,
   "kill_switch_armed": false,
@@ -26,11 +26,51 @@
   "wins": 0,
   "losses": 2,
   "trades_today": 2,
-  "signals_today": 917,
+  "signals_today": 920,
   "bankroll": 53.59,
   "exposure": 0.0,
   "open_positions": 0,
   "events": [
+    {
+      "time": "12:19 AM",
+      "action": "BLOCKED: price_bounds",
+      "ticker": "KXBTC15M-26MAR220030-30",
+      "side": "no",
+      "price": 52,
+      "edge": 8.264250280437508
+    },
+    {
+      "time": "12:19 AM",
+      "action": "BLOCKED: price_bounds",
+      "ticker": "KXETH15M-26MAR220030-30",
+      "side": "no",
+      "price": 41,
+      "edge": 13.147414940431204
+    },
+    {
+      "time": "12:18 AM",
+      "action": "BLOCKED: min_edge",
+      "ticker": "KXBTC15M-26MAR220030-30",
+      "side": "no",
+      "price": 53,
+      "edge": 6.30122106751227
+    },
+    {
+      "time": "12:18 AM",
+      "action": "BLOCKED: price_bounds",
+      "ticker": "KXETH15M-26MAR220030-30",
+      "side": "no",
+      "price": 42,
+      "edge": 11.818066404333939
+    },
+    {
+      "time": "12:18 AM",
+      "action": "BLOCKED: price_bounds",
+      "ticker": "KXETH15M-26MAR220030-30",
+      "side": "no",
+      "price": 43,
+      "edge": 12.54225464824408
+    },
     {
       "time": "12:18 AM",
       "action": "BLOCKED: min_edge",
@@ -388,46 +428,6 @@
       "side": "no",
       "price": 7,
       "edge": 13.241268724132052
-    },
-    {
-      "time": "12:10 AM",
-      "action": "BLOCKED: window_dedup",
-      "ticker": "KXETH15M-26MAR220015-15",
-      "side": "no",
-      "price": 8,
-      "edge": 20.859209895442465
-    },
-    {
-      "time": "12:10 AM",
-      "action": "BLOCKED: window_dedup",
-      "ticker": "KXBTC15M-26MAR220015-15",
-      "side": "no",
-      "price": 9,
-      "edge": 10.96519144548735
-    },
-    {
-      "time": "12:10 AM",
-      "action": "BLOCKED: window_dedup",
-      "ticker": "KXETH15M-26MAR220015-15",
-      "side": "no",
-      "price": 7,
-      "edge": 13.561697136086782
-    },
-    {
-      "time": "12:09 AM",
-      "action": "BLOCKED: window_dedup",
-      "ticker": "KXBTC15M-26MAR220015-15",
-      "side": "no",
-      "price": 12,
-      "edge": 11.304947844866682
-    },
-    {
-      "time": "12:09 AM",
-      "action": "BLOCKED: window_dedup",
-      "ticker": "KXETH15M-26MAR220015-15",
-      "side": "no",
-      "price": 9,
-      "edge": 15.959808873496073
     }
   ],
   "last_signals": [],
@@ -435,11 +435,11 @@
   "markets": [],
   "prices": {
     "BTC": {
-      "spot": 69394.51,
+      "spot": 69403.32,
       "source": "coinbase"
     },
     "ETH": {
-      "spot": 2117.28,
+      "spot": 2117.0,
       "source": "coinbase"
     }
   },
@@ -448,7 +448,7 @@
     "calibrated": 0,
     "arbitrage": 0,
     "predictor": 0,
-    "skipped": 77
+    "skipped": 82
   },
   "bankroll_history": [
     53.87
@@ -457,15 +457,15 @@
     "kraken": {
       "ready": true,
       "stale": false,
-      "btc_age": 10.1,
-      "eth_age": 7.5,
-      "btc": 69417.9,
-      "eth": 2117.78
+      "btc_age": 7.8,
+      "eth_age": 9.2,
+      "btc": 69406.1,
+      "eth": 2117.54
     },
     "binance": {
       "ready": true,
       "stale": false,
-      "btc_age": 2.5,
+      "btc_age": 2.7,
       "eth_age": 2.9,
       "btc": 69512.44,
       "eth": 2122.0
@@ -473,15 +473,15 @@
     "coinbase": {
       "ready": true,
       "stale": false,
-      "btc_age": 2.3,
-      "eth_age": 2.3,
-      "btc": 69394.51,
-      "eth": 2117.28
+      "btc_age": 2.0,
+      "eth_age": 2.1,
+      "btc": 69403.32,
+      "eth": 2117.0
     },
     "active_source": {
       "BTC": "coinbase",
       "ETH": "coinbase"
     }
   },
-  "updated_at": "2026-03-22T04:18:25.393950+00:00"
+  "updated_at": "2026-03-22T04:19:01.170621+00:00"
 }
