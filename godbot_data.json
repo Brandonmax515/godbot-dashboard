@@ -1,17 +1,47 @@
 {
-  "mode": "LIVE",
-  "generated_at": "2026-03-22T12:54:07.873418Z",
-  "total_runs": 11,
-  "total_bets": 9,
+  "mode": "DRY RUN",
+  "generated_at": "2026-03-22T12:54:36.815421Z",
+  "total_runs": 12,
+  "total_bets": 10,
   "wins": 0,
   "losses": 0,
-  "pending": 9,
+  "pending": 10,
   "win_rate": null,
   "total_pnl_cents": 0,
-  "total_staked_cents": 1800,
+  "total_staked_cents": 2000,
   "roi": null,
-  "avg_edge": 0.41922222222222216,
+  "avg_edge": 0.4103,
   "bets": [
+    {
+      "id": 52,
+      "run_date": "2026-03-22",
+      "ticker": "KXHIGHNY-26MAR22-T62",
+      "event_ticker": "KXHIGHNY-26MAR22",
+      "station": "KNYC",
+      "city": "New York",
+      "variable": "HIGH",
+      "bracket_low": null,
+      "bracket_high": 62.0,
+      "strike_type": "less",
+      "side": "YES",
+      "bet_type": "YES_BEST_BRACKET",
+      "our_prob": 0.5,
+      "market_prob": 0.16,
+      "edge_pct": 0.32999999999999996,
+      "multiplier": 6.25,
+      "bet_cents": 200,
+      "order_id": "57748c0d-9f77-4ffa-b0fd-744d1ace5833",
+      "status": "PLACED",
+      "ai_reasoning": "GEFS ensemble is extremely tight (52.5-59\u00b0F range) but hourly forecast shows 62-63\u00b0F peak before rain arrives. Deterministic models are even colder (51-53\u00b0F). The AFD confirms rain timing aligns with hourly forecast, suggesting afternoon warming to 62-63\u00b0F is plausible before frontal passage. Adjusting probabilities upward from GEFS baseline to account for this warming potential.",
+      "ai_temp_estimate": 59.0,
+      "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
+      "settled_result": null,
+      "pnl_cents": null,
+      "notes": "raw_edge=34.0% fee=1\u00a2 net_edge=33.0%",
+      "key_factor": "",
+      "uncertainties": "",
+      "confidence": ""
+    },
     {
       "id": 49,
       "run_date": "2026-03-22",
@@ -285,7 +315,7 @@
   ],
   "by_side": {
     "YES": {
-      "bets": 7,
+      "bets": 8,
       "wins": 0,
       "settled": 0,
       "pnl": 0
@@ -299,7 +329,7 @@
   },
   "by_variable": {
     "HIGH": {
-      "bets": 9,
+      "bets": 10,
       "wins": 0,
       "settled": 0,
       "pnl": 0
@@ -320,6 +350,12 @@
     },
     "Austin": {
       "bets": 2,
+      "wins": 0,
+      "settled": 0,
+      "pnl": 0
+    },
+    "New York": {
+      "bets": 1,
       "wins": 0,
       "settled": 0,
       "pnl": 0
