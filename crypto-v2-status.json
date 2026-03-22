@@ -1,9 +1,9 @@
 {
   "version": "v2",
-  "uptime_seconds": 64,
-  "cycle_count": 6,
+  "uptime_seconds": 88,
+  "cycle_count": 8,
   "cycle_interval_sec": 10,
-  "last_cycle_ts": "2026-03-22T01:06:27.935772+00:00",
+  "last_cycle_ts": "2026-03-22T01:06:51.809142+00:00",
   "trading_enabled": true,
   "dry_run": false,
   "kill_switch_armed": false,
@@ -26,11 +26,19 @@
   "wins": 0,
   "losses": 0,
   "trades_today": 0,
-  "signals_today": 216,
+  "signals_today": 218,
   "bankroll": 53.87,
   "exposure": 0.0,
   "open_positions": 0,
   "events": [
+    {
+      "time": "9:06 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXETH15M-26MAR212115-15",
+      "side": "no",
+      "price": 40,
+      "edge": 8.874975828125333
+    },
     {
       "time": "9:06 PM",
       "action": "BLOCKED: min_edge",
@@ -66,11 +74,11 @@
   "markets": [],
   "prices": {
     "BTC": {
-      "spot": 69008.0,
+      "spot": 68999.32,
       "source": "coinbase"
     },
     "ETH": {
-      "spot": 2088.89,
+      "spot": 2089.13,
       "source": "coinbase"
     }
   },
@@ -79,7 +87,7 @@
     "calibrated": 0,
     "arbitrage": 0,
     "predictor": 0,
-    "skipped": 4
+    "skipped": 5
   },
   "bankroll_history": [
     53.87
@@ -88,31 +96,31 @@
     "kraken": {
       "ready": true,
       "stale": false,
-      "btc_age": 4.5,
-      "eth_age": 7.9,
-      "btc": 68995.4,
-      "eth": 2089.07
+      "btc_age": 6.9,
+      "eth_age": 11.9,
+      "btc": 69000.1,
+      "eth": 2089.0
     },
     "binance": {
       "ready": true,
       "stale": false,
-      "btc_age": 2.3,
-      "eth_age": 7.6,
+      "btc_age": 5.6,
+      "eth_age": 4.3,
       "btc": 69051.61,
       "eth": 2087.73
     },
     "coinbase": {
       "ready": true,
       "stale": false,
-      "btc_age": 1.9,
-      "eth_age": 2.0,
-      "btc": 69008.0,
-      "eth": 2088.89
+      "btc_age": 2.0,
+      "eth_age": 2.1,
+      "btc": 68999.32,
+      "eth": 2089.13
     },
     "active_source": {
       "BTC": "coinbase",
       "ETH": "coinbase"
     }
   },
-  "updated_at": "2026-03-22T01:06:27.935796+00:00"
+  "updated_at": "2026-03-22T01:06:51.809169+00:00"
 }
