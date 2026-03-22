@@ -1,9 +1,9 @@
 {
   "version": "v2",
-  "uptime_seconds": 768,
-  "cycle_count": 65,
+  "uptime_seconds": 792,
+  "cycle_count": 67,
   "cycle_interval_sec": 10,
-  "last_cycle_ts": "2026-03-22T01:18:12.289118+00:00",
+  "last_cycle_ts": "2026-03-22T01:18:36.231180+00:00",
   "trading_enabled": true,
   "dry_run": false,
   "kill_switch_armed": false,
@@ -26,11 +26,27 @@
   "wins": 0,
   "losses": 0,
   "trades_today": 0,
-  "signals_today": 262,
+  "signals_today": 264,
   "bankroll": 53.87,
   "exposure": 0.0,
   "open_positions": 0,
   "events": [
+    {
+      "time": "9:18 PM",
+      "action": "BLOCKED: min_edge",
+      "ticker": "KXBTC15M-26MAR212130-30",
+      "side": "no",
+      "price": 51,
+      "edge": 6.033733575845009
+    },
+    {
+      "time": "9:18 PM",
+      "action": "BLOCKED: price_bounds",
+      "ticker": "KXETH15M-26MAR212130-30",
+      "side": "no",
+      "price": 55,
+      "edge": 15.842070715650422
+    },
     {
       "time": "9:18 PM",
       "action": "BLOCKED: price_bounds",
@@ -266,11 +282,11 @@
   "markets": [],
   "prices": {
     "BTC": {
-      "spot": 68952.4,
-      "source": "kraken"
+      "spot": 68974.0,
+      "source": "coinbase"
     },
     "ETH": {
-      "spot": 2088.46,
+      "spot": 2088.81,
       "source": "coinbase"
     }
   },
@@ -279,7 +295,7 @@
     "calibrated": 0,
     "arbitrage": 0,
     "predictor": 0,
-    "skipped": 29
+    "skipped": 31
   },
   "bankroll_history": [
     53.87
@@ -287,17 +303,17 @@
   "feed_status": {
     "kraken": {
       "ready": true,
-      "stale": false,
-      "btc_age": 2.1,
-      "eth_age": 9.1,
-      "btc": 68952.4,
+      "stale": true,
+      "btc_age": 2.2,
+      "eth_age": 33.1,
+      "btc": 68976.5,
       "eth": 2087.92
     },
     "binance": {
       "ready": true,
       "stale": false,
-      "btc_age": 2.2,
-      "eth_age": 2.6,
+      "btc_age": 2.9,
+      "eth_age": 2.9,
       "btc": 68953.05,
       "eth": 2086.58
     },
@@ -305,14 +321,14 @@
       "ready": true,
       "stale": false,
       "btc_age": 2.2,
-      "eth_age": 2.2,
-      "btc": 68975.09,
-      "eth": 2088.46
+      "eth_age": 2.6,
+      "btc": 68974.0,
+      "eth": 2088.81
     },
     "active_source": {
-      "BTC": "kraken",
+      "BTC": "coinbase",
       "ETH": "coinbase"
     }
   },
-  "updated_at": "2026-03-22T01:18:12.289144+00:00"
+  "updated_at": "2026-03-22T01:18:36.231232+00:00"
 }
