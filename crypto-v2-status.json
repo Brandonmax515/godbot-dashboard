@@ -1,9 +1,9 @@
 {
   "version": "v2",
-  "uptime_seconds": 816,
-  "cycle_count": 66,
+  "uptime_seconds": 840,
+  "cycle_count": 68,
   "cycle_interval_sec": 10,
-  "last_cycle_ts": "2026-03-22T04:20:12.767963+00:00",
+  "last_cycle_ts": "2026-03-22T04:20:36.568397+00:00",
   "trading_enabled": true,
   "dry_run": false,
   "kill_switch_armed": false,
@@ -26,11 +26,27 @@
   "wins": 0,
   "losses": 2,
   "trades_today": 2,
-  "signals_today": 926,
+  "signals_today": 928,
   "bankroll": 53.59,
   "exposure": 0.0,
   "open_positions": 0,
   "events": [
+    {
+      "time": "12:20 AM",
+      "action": "BLOCKED: price_bounds",
+      "ticker": "KXETH15M-26MAR220030-30",
+      "side": "no",
+      "price": 55,
+      "edge": 12.03423049420095
+    },
+    {
+      "time": "12:20 AM",
+      "action": "BLOCKED: price_bounds",
+      "ticker": "KXETH15M-26MAR220030-30",
+      "side": "no",
+      "price": 55,
+      "edge": 12.091778315647485
+    },
     {
       "time": "12:20 AM",
       "action": "BLOCKED: min_edge",
@@ -412,22 +428,6 @@
       "side": "no",
       "price": 15,
       "edge": 20.702955059993183
-    },
-    {
-      "time": "12:11 AM",
-      "action": "BLOCKED: window_dedup",
-      "ticker": "KXETH15M-26MAR220015-15",
-      "side": "no",
-      "price": 19,
-      "edge": 26.717543184439403
-    },
-    {
-      "time": "12:11 AM",
-      "action": "BLOCKED: window_dedup",
-      "ticker": "KXETH15M-26MAR220015-15",
-      "side": "no",
-      "price": 19,
-      "edge": 24.295230834953323
     }
   ],
   "last_signals": [],
@@ -435,11 +435,11 @@
   "markets": [],
   "prices": {
     "BTC": {
-      "spot": 69384.1,
-      "source": "kraken"
+      "spot": 69378.02,
+      "source": "coinbase"
     },
     "ETH": {
-      "spot": 2115.27,
+      "spot": 2115.61,
       "source": "coinbase"
     }
   },
@@ -448,7 +448,7 @@
     "calibrated": 0,
     "arbitrage": 0,
     "predictor": 0,
-    "skipped": 93
+    "skipped": 95
   },
   "bankroll_history": [
     53.87
@@ -457,31 +457,31 @@
     "kraken": {
       "ready": true,
       "stale": false,
-      "btc_age": 2.0,
-      "eth_age": 3.1,
-      "btc": 69384.1,
-      "eth": 2115.71
+      "btc_age": 6.1,
+      "eth_age": 5.0,
+      "btc": 69381.5,
+      "eth": 2115.7
     },
     "binance": {
       "ready": true,
       "stale": false,
-      "btc_age": 2.3,
-      "eth_age": 2.3,
+      "btc_age": 11.9,
+      "eth_age": 11.9,
       "btc": 69512.44,
       "eth": 2117.54
     },
     "coinbase": {
       "ready": true,
       "stale": false,
-      "btc_age": 2.1,
-      "eth_age": 2.2,
-      "btc": 69369.31,
-      "eth": 2115.27
+      "btc_age": 2.2,
+      "eth_age": 2.5,
+      "btc": 69378.02,
+      "eth": 2115.61
     },
     "active_source": {
-      "BTC": "kraken",
+      "BTC": "coinbase",
       "ETH": "coinbase"
     }
   },
-  "updated_at": "2026-03-22T04:20:12.767991+00:00"
+  "updated_at": "2026-03-22T04:20:36.568406+00:00"
 }
