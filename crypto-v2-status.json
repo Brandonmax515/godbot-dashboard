@@ -1,9 +1,9 @@
 {
   "version": "v2",
-  "uptime_seconds": 2278,
-  "cycle_count": 195,
+  "uptime_seconds": 2310,
+  "cycle_count": 196,
   "cycle_interval_sec": 10,
-  "last_cycle_ts": "2026-03-23T01:30:01.203999+00:00",
+  "last_cycle_ts": "2026-03-23T01:30:33.727660+00:00",
   "trading_enabled": true,
   "dry_run": false,
   "kill_switch_armed": false,
@@ -20,17 +20,24 @@
       "predictor": false
     }
   },
-  "total_pnl": -3.4,
-  "pnl_today": 0.0,
+  "total_pnl": -3.64,
+  "pnl_today": -0.24,
   "win_rate": 0.0,
   "wins": 0,
-  "losses": 0,
+  "losses": 1,
   "trades_today": 1,
   "signals_today": 130,
   "bankroll": 44.79,
   "exposure": 0.0,
   "open_positions": 0,
   "events": [
+    {
+      "time": "9:30 PM",
+      "action": "SETTLED LOSS",
+      "ticker": "KXETH15M-26MAR222130-30",
+      "pnl": -0.24,
+      "result": "LOSS"
+    },
     {
       "time": "9:22 PM",
       "action": "BLOCKED: window_dedup",
@@ -255,11 +262,11 @@
   "markets": [],
   "prices": {
     "BTC": {
-      "spot": 68069.02,
+      "spot": 68099.94,
       "source": "coinbase"
     },
     "ETH": {
-      "spot": 2059.28,
+      "spot": 2059.56,
       "source": "coinbase"
     }
   },
@@ -279,31 +286,31 @@
     "kraken": {
       "ready": true,
       "stale": false,
-      "btc_age": 7.4,
-      "eth_age": 3.0,
-      "btc": 68091.0,
-      "eth": 2058.71
+      "btc_age": 10.2,
+      "eth_age": 4.1,
+      "btc": 68077.4,
+      "eth": 2058.78
     },
     "binance": {
       "ready": true,
       "stale": false,
-      "btc_age": 2.2,
-      "eth_age": 3.1,
+      "btc_age": 3.3,
+      "eth_age": 3.3,
       "btc": 68100.86,
       "eth": 2060.28
     },
     "coinbase": {
       "ready": true,
       "stale": false,
-      "btc_age": 2.2,
-      "eth_age": 2.1,
-      "btc": 68069.02,
-      "eth": 2059.28
+      "btc_age": 2.5,
+      "eth_age": 2.3,
+      "btc": 68099.94,
+      "eth": 2059.56
     },
     "active_source": {
       "BTC": "coinbase",
       "ETH": "coinbase"
     }
   },
-  "updated_at": "2026-03-23T01:30:01.204056+00:00"
+  "updated_at": "2026-03-23T01:30:33.727701+00:00"
 }
