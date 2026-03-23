@@ -1,17 +1,47 @@
 {
-  "mode": "LIVE",
-  "generated_at": "2026-03-23T02:23:23.924392Z",
-  "total_runs": 15,
-  "total_bets": 14,
+  "mode": "DRY RUN",
+  "generated_at": "2026-03-23T02:23:54.277453Z",
+  "total_runs": 16,
+  "total_bets": 15,
   "wins": 3,
   "losses": 4,
-  "pending": 7,
+  "pending": 8,
   "win_rate": 0.42857142857142855,
   "total_pnl_cents": -434,
-  "total_staked_cents": 3200,
+  "total_staked_cents": 3600,
   "roi": -0.31,
-  "avg_edge": 0.3787857142857143,
+  "avg_edge": 0.35819999999999996,
   "bets": [
+    {
+      "id": 58,
+      "run_date": "2026-03-22",
+      "ticker": "KXHIGHCHI-26MAR23-B44.5",
+      "event_ticker": "KXHIGHCHI-26MAR23",
+      "station": "KMDW",
+      "city": "Chicago",
+      "variable": "HIGH",
+      "bracket_low": 44.0,
+      "bracket_high": 45.0,
+      "strike_type": "between",
+      "side": "NO",
+      "bet_type": "NO_DISPLACED",
+      "our_prob": 0.98,
+      "market_prob": 0.91,
+      "edge_pct": 0.06999999999999995,
+      "multiplier": 1.1,
+      "bet_cents": 400,
+      "order_id": "DRYRUN_1774232608_23-B44.5",
+      "status": "DRY_RUN",
+      "ai_reasoning": "NO on displaced bracket: Claude=2.0% YES, market=10\u00a2 YES. GEFS ensemble shows unrealistic clustering around 40-42\u00b0F given the strong deterministic model consensus at 38-40\u00b0F and current cold conditions. The AFD confirms post-frontal cooling with light winds and temperatures only reaching the 40s. I'm shifting probability mass downward from the 41-42\u00b0F brackets to the \u226439\u00b0F bracket, reflecting the colder deterministic guidance and limited warming potential.",
+      "ai_temp_estimate": 39.0,
+      "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
+      "settled_result": null,
+      "pnl_cents": null,
+      "notes": "raw_edge=7.0% fee=1\u00a2 net_edge=7.0% kelly_size=400\u00a2",
+      "key_factor": "",
+      "uncertainties": "",
+      "confidence": ""
+    },
     {
       "id": 57,
       "run_date": "2026-03-22",
@@ -441,7 +471,7 @@
       "pnl": -620
     },
     "NO": {
-      "bets": 3,
+      "bets": 4,
       "wins": 1,
       "settled": 1,
       "pnl": 186
@@ -449,7 +479,7 @@
   },
   "by_variable": {
     "HIGH": {
-      "bets": 14,
+      "bets": 15,
       "wins": 3,
       "settled": 7,
       "pnl": -434
@@ -462,17 +492,17 @@
       "settled": 4,
       "pnl": 166
     },
+    "Chicago": {
+      "bets": 4,
+      "wins": 0,
+      "settled": 0,
+      "pnl": 0
+    },
     "Miami": {
       "bets": 3,
       "wins": 0,
       "settled": 1,
       "pnl": -200
-    },
-    "Chicago": {
-      "bets": 3,
-      "wins": 0,
-      "settled": 0,
-      "pnl": 0
     },
     "Austin": {
       "bets": 2,
