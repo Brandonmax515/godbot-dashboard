@@ -988,19 +988,49 @@ window.GODBOT_DATA = {
 <script>
 // ── EMBEDDED DATA (injected by godbot_export.py) ──
 window.GODBOT_DATA = {
-  "mode": "LIVE",
-  "generated_at": "2026-03-23T02:17:01.884615Z",
-  "total_runs": 13,
-  "total_bets": 12,
+  "mode": "DRY RUN",
+  "generated_at": "2026-03-23T02:17:31.739070Z",
+  "total_runs": 14,
+  "total_bets": 13,
   "wins": 3,
   "losses": 4,
-  "pending": 5,
+  "pending": 6,
   "win_rate": 0.42857142857142855,
   "total_pnl_cents": -434,
-  "total_staked_cents": 2400,
+  "total_staked_cents": 2800,
   "roi": -0.31,
-  "avg_edge": 0.40191666666666664,
+  "avg_edge": 0.38099999999999995,
   "bets": [
+    {
+      "id": 56,
+      "run_date": "2026-03-22",
+      "ticker": "KXHIGHMIA-26MAR23-B85.5",
+      "event_ticker": "KXHIGHMIA-26MAR23",
+      "station": "KMIA",
+      "city": "Miami",
+      "variable": "HIGH",
+      "bracket_low": 85.0,
+      "bracket_high": 86.0,
+      "strike_type": "between",
+      "side": "NO",
+      "bet_type": "NO_DISPLACED",
+      "our_prob": 0.98,
+      "market_prob": 0.87,
+      "edge_pct": 0.13,
+      "multiplier": 1.15,
+      "bet_cents": 400,
+      "order_id": "DRYRUN_1774232228_23-B85.5",
+      "status": "DRY_RUN",
+      "ai_reasoning": "NO on displaced bracket: Claude=2.0% YES, market=16\u00a2 YES. GEFS ensemble heavily clusters around 79\u00b0F but deterministic models (GFS 81.8\u00b0F, ECMWF 80.5\u00b0F) and NWS forecast (83\u00b0F) suggest meaningful warm bias. AFD mentions temperatures 'gradually warming up' with ridge pattern supporting clear, sunny conditions favorable for heating. Adjusting probability mass from \u226478\u00b0F bracket toward 81\u00b0F and 83\u00b0F brackets while maintaining some probability in 79\u00b0F given ensemble concentration.",
+      "ai_temp_estimate": 81.0,
+      "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
+      "settled_result": null,
+      "pnl_cents": null,
+      "notes": "raw_edge=11.0% fee=1\u00a2 net_edge=13.0% kelly_size=400\u00a2",
+      "key_factor": "",
+      "uncertainties": "",
+      "confidence": ""
+    },
     {
       "id": 55,
       "run_date": "2026-03-22",
@@ -1370,7 +1400,7 @@ window.GODBOT_DATA = {
       "pnl": -620
     },
     "NO": {
-      "bets": 2,
+      "bets": 3,
       "wins": 1,
       "settled": 1,
       "pnl": 186
@@ -1378,7 +1408,7 @@ window.GODBOT_DATA = {
   },
   "by_variable": {
     "HIGH": {
-      "bets": 12,
+      "bets": 13,
       "wins": 3,
       "settled": 7,
       "pnl": -434
@@ -1392,7 +1422,7 @@ window.GODBOT_DATA = {
       "pnl": 166
     },
     "Miami": {
-      "bets": 2,
+      "bets": 3,
       "wins": 0,
       "settled": 1,
       "pnl": -200
