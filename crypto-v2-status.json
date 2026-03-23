@@ -1,9 +1,9 @@
 {
   "version": "v2",
-  "uptime_seconds": 1,
+  "uptime_seconds": 31,
   "cycle_count": 0,
   "cycle_interval_sec": 10,
-  "last_cycle_ts": "2026-03-23T00:51:11.129426+00:00",
+  "last_cycle_ts": "2026-03-23T00:51:41.418040+00:00",
   "trading_enabled": true,
   "dry_run": false,
   "kill_switch_armed": false,
@@ -44,5 +44,5 @@
   },
   "bankroll_history": [],
   "feed_status": {},
-  "updated_at": "2026-03-23T00:51:11.129444+00:00"
+  "updated_at": "2026-03-23T00:51:41.418068+00:00"
 }
