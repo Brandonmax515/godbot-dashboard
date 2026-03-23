@@ -988,19 +988,49 @@ window.GODBOT_DATA = {
 <script>
 // ── EMBEDDED DATA (injected by godbot_export.py) ──
 window.GODBOT_DATA = {
-  "mode": "LIVE",
-  "generated_at": "2026-03-23T11:01:52.013138Z",
-  "total_runs": 16,
-  "total_bets": 15,
+  "mode": "DRY RUN",
+  "generated_at": "2026-03-23T11:02:08.766936Z",
+  "total_runs": 17,
+  "total_bets": 16,
   "wins": 3,
   "losses": 4,
-  "pending": 8,
+  "pending": 9,
   "win_rate": 0.42857142857142855,
   "total_pnl_cents": -434,
-  "total_staked_cents": 3600,
+  "total_staked_cents": 3900,
   "roi": -0.31,
-  "avg_edge": 0.35819999999999996,
+  "avg_edge": 0.34831249999999997,
   "bets": [
+    {
+      "id": 59,
+      "run_date": "2026-03-23",
+      "ticker": "KXHIGHDEN-26MAR23-B70.5",
+      "event_ticker": "KXHIGHDEN-26MAR23",
+      "station": "KDEN",
+      "city": "Denver",
+      "variable": "HIGH",
+      "bracket_low": 70.0,
+      "bracket_high": 71.0,
+      "strike_type": "between",
+      "side": "NO",
+      "bet_type": "NO_DISPLACED",
+      "our_prob": 0.98,
+      "market_prob": 0.77,
+      "edge_pct": 0.19999999999999996,
+      "multiplier": 1.3,
+      "bet_cents": 300,
+      "order_id": "11cc9fcc-0744-47a9-816a-12b6ec9b258a",
+      "status": "PLACED",
+      "ai_reasoning": "NO on displaced bracket: Claude=2.0% YES, market=24\u00a2 YES. The GEFS ensemble strongly favors \u226577\u00b0F (69% probability) but the NWS official forecast explicitly calls for 73\u00b0F Monday, suggesting meteorologists see cooling factors not captured in raw model output. Given this fundamental disagreement, I'm shifting probability mass down from the T77 bracket toward the 74-76\u00b0F range while keeping some weight on the official NWS forecast temperature.",
+      "ai_temp_estimate": 75.0,
+      "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
+      "settled_result": null,
+      "pnl_cents": null,
+      "notes": "raw_edge=21.0% fee=2\u00a2 net_edge=20.0% kelly_size=300\u00a2",
+      "key_factor": "",
+      "uncertainties": "",
+      "confidence": ""
+    },
     {
       "id": 58,
       "run_date": "2026-03-22",
@@ -1460,7 +1490,7 @@ window.GODBOT_DATA = {
       "pnl": -620
     },
     "NO": {
-      "bets": 4,
+      "bets": 5,
       "wins": 1,
       "settled": 1,
       "pnl": 186
@@ -1468,7 +1498,7 @@ window.GODBOT_DATA = {
   },
   "by_variable": {
     "HIGH": {
-      "bets": 15,
+      "bets": 16,
       "wins": 3,
       "settled": 7,
       "pnl": -434
@@ -1493,6 +1523,12 @@ window.GODBOT_DATA = {
       "settled": 1,
       "pnl": -200
     },
+    "Denver": {
+      "bets": 2,
+      "wins": 0,
+      "settled": 0,
+      "pnl": 0
+    },
     "Austin": {
       "bets": 2,
       "wins": 0,
@@ -1500,12 +1536,6 @@ window.GODBOT_DATA = {
       "pnl": -400
     },
     "New York": {
-      "bets": 1,
-      "wins": 0,
-      "settled": 0,
-      "pnl": 0
-    },
-    "Denver": {
       "bets": 1,
       "wins": 0,
       "settled": 0,
