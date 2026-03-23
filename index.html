@@ -988,19 +988,49 @@ window.GODBOT_DATA = {
 <script>
 // ── EMBEDDED DATA (injected by godbot_export.py) ──
 window.GODBOT_DATA = {
-  "mode": "LIVE",
-  "generated_at": "2026-03-23T02:20:12.759884Z",
-  "total_runs": 14,
-  "total_bets": 13,
+  "mode": "DRY RUN",
+  "generated_at": "2026-03-23T02:20:43.063268Z",
+  "total_runs": 15,
+  "total_bets": 14,
   "wins": 3,
   "losses": 4,
-  "pending": 6,
+  "pending": 7,
   "win_rate": 0.42857142857142855,
   "total_pnl_cents": -434,
-  "total_staked_cents": 2800,
+  "total_staked_cents": 3200,
   "roi": -0.31,
-  "avg_edge": 0.38099999999999995,
+  "avg_edge": 0.3787857142857143,
   "bets": [
+    {
+      "id": 57,
+      "run_date": "2026-03-22",
+      "ticker": "KXHIGHCHI-26MAR23-T40",
+      "event_ticker": "KXHIGHCHI-26MAR23",
+      "station": "KMDW",
+      "city": "Chicago",
+      "variable": "HIGH",
+      "bracket_low": null,
+      "bracket_high": 40.0,
+      "strike_type": "less",
+      "side": "YES",
+      "bet_type": "YES_BEST_BRACKET",
+      "our_prob": 0.58,
+      "market_prob": 0.21,
+      "edge_pct": 0.35,
+      "multiplier": 4.76,
+      "bet_cents": 400,
+      "order_id": "DRYRUN_1774232437_AR23-T40",
+      "status": "DRY_RUN",
+      "ai_reasoning": "GEFS mean of 40.1\u00b0F appears slightly warm given deterministic model consensus around 38-40\u00b0F and AFD emphasizing cooler conditions. The forecast shows clear morning conditions which should allow good warming, but starting from very cold overnight lows around 29\u00b0F. Adjusting probabilities toward lower brackets given model consensus below GEFS mean.",
+      "ai_temp_estimate": 39.0,
+      "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
+      "settled_result": null,
+      "pnl_cents": null,
+      "notes": "raw_edge=37.0% fee=2\u00a2 net_edge=35.0% kelly_size=400\u00a2 conf=HIGH",
+      "key_factor": "",
+      "uncertainties": "",
+      "confidence": ""
+    },
     {
       "id": 56,
       "run_date": "2026-03-22",
@@ -1394,7 +1424,7 @@ window.GODBOT_DATA = {
   ],
   "by_side": {
     "YES": {
-      "bets": 10,
+      "bets": 11,
       "wins": 2,
       "settled": 6,
       "pnl": -620
@@ -1408,7 +1438,7 @@ window.GODBOT_DATA = {
   },
   "by_variable": {
     "HIGH": {
-      "bets": 13,
+      "bets": 14,
       "wins": 3,
       "settled": 7,
       "pnl": -434
@@ -1428,7 +1458,7 @@ window.GODBOT_DATA = {
       "pnl": -200
     },
     "Chicago": {
-      "bets": 2,
+      "bets": 3,
       "wins": 0,
       "settled": 0,
       "pnl": 0
