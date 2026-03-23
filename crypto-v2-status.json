@@ -1,9 +1,9 @@
 {
   "version": "v2",
-  "uptime_seconds": 1578,
-  "cycle_count": 137,
+  "uptime_seconds": 1615,
+  "cycle_count": 140,
   "cycle_interval_sec": 10,
-  "last_cycle_ts": "2026-03-23T01:18:21.764497+00:00",
+  "last_cycle_ts": "2026-03-23T01:18:57.968387+00:00",
   "trading_enabled": true,
   "dry_run": false,
   "kill_switch_armed": false,
@@ -26,11 +26,19 @@
   "wins": 0,
   "losses": 0,
   "trades_today": 1,
-  "signals_today": 102,
-  "bankroll": 43.25,
+  "signals_today": 105,
+  "bankroll": 43.31,
   "exposure": 0.0,
   "open_positions": 0,
   "events": [
+    {
+      "time": "9:18 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXETH15M-26MAR222130-30",
+      "side": "no",
+      "price": 28,
+      "edge": 20.288322922148073
+    },
     {
       "time": "9:17 PM",
       "action": "BLOCKED: window_dedup",
@@ -95,11 +103,11 @@
   "markets": [],
   "prices": {
     "BTC": {
-      "spot": 67904.54,
-      "source": "coinbase"
+      "spot": 68055.29,
+      "source": "binance"
     },
     "ETH": {
-      "spot": 2053.26,
+      "spot": 2054.94,
       "source": "coinbase"
     }
   },
@@ -108,7 +116,7 @@
     "calibrated": 0,
     "arbitrage": 0,
     "predictor": 0,
-    "skipped": 8
+    "skipped": 9
   },
   "bankroll_history": [
     45.34,
@@ -118,31 +126,31 @@
     "kraken": {
       "ready": true,
       "stale": false,
-      "btc_age": 2.1,
-      "eth_age": 5.3,
-      "btc": 67897.6,
-      "eth": 2052.6
+      "btc_age": 2.5,
+      "eth_age": 8.0,
+      "btc": 67890.1,
+      "eth": 2054.37
     },
     "binance": {
       "ready": true,
       "stale": false,
-      "btc_age": 2.2,
-      "eth_age": 2.4,
+      "btc_age": 2.1,
+      "eth_age": 4.0,
       "btc": 68055.29,
       "eth": 2056.17
     },
     "coinbase": {
       "ready": true,
       "stale": false,
-      "btc_age": 2.1,
-      "eth_age": 2.1,
-      "btc": 67904.54,
-      "eth": 2053.26
+      "btc_age": 2.2,
+      "eth_age": 3.8,
+      "btc": 67882.0,
+      "eth": 2054.94
     },
     "active_source": {
-      "BTC": "coinbase",
+      "BTC": "binance",
       "ETH": "coinbase"
     }
   },
-  "updated_at": "2026-03-23T01:18:21.764521+00:00"
+  "updated_at": "2026-03-23T01:18:57.968416+00:00"
 }
