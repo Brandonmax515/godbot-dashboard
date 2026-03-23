@@ -1,9 +1,9 @@
 {
   "version": "v2",
-  "uptime_seconds": 71575,
+  "uptime_seconds": 71605,
   "cycle_count": 407,
   "cycle_interval_sec": 10,
-  "last_cycle_ts": "2026-03-22T23:59:31.570820+00:00",
+  "last_cycle_ts": "2026-03-23T00:00:01.588640+00:00",
   "trading_enabled": true,
   "dry_run": false,
   "kill_switch_armed": false,
@@ -21,12 +21,12 @@
     }
   },
   "total_pnl": -3.4,
-  "pnl_today": -1.48,
+  "pnl_today": 0.0,
   "win_rate": 0.0,
   "wins": 0,
-  "losses": 5,
+  "losses": 0,
   "trades_today": 5,
-  "signals_today": 1167,
+  "signals_today": 0,
   "bankroll": 52.74,
   "exposure": 0.0,
   "open_positions": 0,
@@ -494,5 +494,5 @@
       "ETH": "coinbase"
     }
   },
-  "updated_at": "2026-03-22T23:59:31.570857+00:00"
+  "updated_at": "2026-03-23T00:00:01.588699+00:00"
 }
