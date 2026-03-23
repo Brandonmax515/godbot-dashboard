@@ -1,15 +1,15 @@
 {
   "mode": "LIVE",
-  "generated_at": "2026-03-23T02:13:50.692492Z",
+  "generated_at": "2026-03-23T02:14:22.228075Z",
   "total_runs": 13,
   "total_bets": 12,
-  "wins": 0,
-  "losses": 0,
-  "pending": 12,
-  "win_rate": null,
-  "total_pnl_cents": 0,
+  "wins": 3,
+  "losses": 4,
+  "pending": 5,
+  "win_rate": 0.42857142857142855,
+  "total_pnl_cents": -434,
   "total_staked_cents": 2400,
-  "roi": null,
+  "roi": -0.31,
   "avg_edge": 0.40191666666666664,
   "bets": [
     {
@@ -185,8 +185,8 @@
       "ai_reasoning": "The NWS forecast of 75\u00b0F directly contradicts GEFS clustering around 76-77\u00b0F, but the AFD explicitly discusses 8-12 degrees of cooling today due to onshore flow and flattening ridge. The hourly forecast shows peak temperatures of 75\u00b0F multiple times but never exceeding this. Given the strong meteorological reasoning in the AFD and NWS local expertise, I'm shifting probability heavily toward the \u226475\u00b0F bracket.",
       "ai_temp_estimate": 75.0,
       "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
-      "settled_result": null,
-      "pnl_cents": null,
+      "settled_result": "WIN",
+      "pnl_cents": 128,
       "notes": "raw_edge=34.0% fee=2\u00a2 net_edge=32.0%",
       "key_factor": "",
       "uncertainties": "",
@@ -215,8 +215,8 @@
       "ai_reasoning": "NO on displaced bracket: Claude=0.5% YES, market=9\u00a2 YES. The GEFS ensemble heavily favors 76\u00b0F, but the NWS official forecast explicitly calls for 75\u00b0F today with clear sunny conditions. The hourly forecast shows multiple hours at exactly 75\u00b0F during peak heating (11 AM-3 PM), which strongly supports the lower end. I'm shifting probability from the 76\u00b0F bracket to the \u226475\u00b0F bracket while maintaining some probability for 76\u00b0F given ensemble uncertainty.",
       "ai_temp_estimate": 75.0,
       "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
-      "settled_result": null,
-      "pnl_cents": null,
+      "settled_result": "WIN",
+      "pnl_cents": 186,
       "notes": "raw_edge=6.5% fee=1\u00a2 net_edge=7.5%",
       "key_factor": "",
       "uncertainties": "",
@@ -245,8 +245,8 @@
       "ai_reasoning": "The AFD explicitly states models are running cool and NWS adjusted highs up 2-3 degrees, forecasting 93\u00b0F vs GEFS mean of 88.5\u00b0F. The hourly forecast shows peak temps 91-92\u00b0F but NWS daily high is 93\u00b0F, suggesting afternoon heating beyond the 12-hour window. I'm shifting probability mass from \u226490\u00b0F bracket toward 91-93\u00b0F brackets while maintaining some probability in higher brackets given record-threatening conditions.",
       "ai_temp_estimate": 92.0,
       "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
-      "settled_result": null,
-      "pnl_cents": null,
+      "settled_result": "LOSS",
+      "pnl_cents": -200,
       "notes": "raw_edge=57.0% fee=1\u00a2 net_edge=56.0%",
       "key_factor": "",
       "uncertainties": "",
@@ -275,8 +275,8 @@
       "ai_reasoning": "NO on displaced bracket: Claude=3.0% YES, market=30\u00a2 YES. The multi-model ensemble mean of 85\u00b0F is heavily skewed by ECMWF's outlier 95\u00b0F forecast, while GFS (79.5\u00b0F) and JMA (80.1\u00b0F) align closely with the NWS official forecast of 79\u00b0F and hourly trajectory peaking at 79\u00b0F. The NWS AFD indicates this is a cooling day with marine layer influence bringing relief from extreme heat, supporting the lower temperature solutions over the ensemble mean. The large model spread warrants some probability in higher brackets, but the convergence of NWS expertise, official forecast, and hourly data strongly favors the 79-80\u00b0F range.",
       "ai_temp_estimate": 79.0,
       "data_sources": "NWS_POINT,NWS_AFD,NWS_CLI,NWS_HOURLY,OPEN_METEO_ENSEMBLE,claude-sonnet-4-20250514",
-      "settled_result": null,
-      "pnl_cents": null,
+      "settled_result": "WIN",
+      "pnl_cents": 52,
       "notes": null,
       "key_factor": "",
       "uncertainties": "",
@@ -305,8 +305,8 @@
       "ai_reasoning": "Multi-model ensemble mean of 86\u00b0F appears too cool based on NWS forecaster expertise noting models have a cool bias and adjusting Saturday highs upward. The strong upper-level high and southerly flow support warming, but hourly trajectory shows peak around 90\u00b0F rather than mid-90s. Given the 10.7\u00b0F model spread and conflicting signals, I'm centering probability around 90\u00b0F with wider distribution.",
       "ai_temp_estimate": 90.0,
       "data_sources": "NWS_POINT,NWS_AFD,NWS_CLI,NWS_HOURLY,OPEN_METEO_ENSEMBLE,claude-sonnet-4-20250514",
-      "settled_result": null,
-      "pnl_cents": null,
+      "settled_result": "LOSS",
+      "pnl_cents": -200,
       "notes": null,
       "key_factor": "",
       "uncertainties": "",
@@ -335,8 +335,8 @@
       "ai_reasoning": "The multi-model ensemble mean of 85\u00b0F is heavily skewed by ECMWF's outlier 95\u00b0F forecast, while GFS (79.5\u00b0F) and JMA (80.1\u00b0F) align closely with the NWS official forecast of 79\u00b0F and hourly trajectory peaking at 79\u00b0F. The NWS AFD indicates this is a cooling day with marine layer influence bringing relief from extreme heat, supporting the lower temperature solutions over the ensemble mean. The large model spread warrants some probability in higher brackets, but the convergence of NWS expertise, official forecast, and hourly data strongly favors the 79-80\u00b0F range.",
       "ai_temp_estimate": 79.0,
       "data_sources": "NWS_POINT,NWS_AFD,NWS_CLI,NWS_HOURLY,OPEN_METEO_ENSEMBLE,claude-sonnet-4-20250514",
-      "settled_result": null,
-      "pnl_cents": null,
+      "settled_result": "LOSS",
+      "pnl_cents": -200,
       "notes": null,
       "key_factor": "",
       "uncertainties": "",
@@ -365,8 +365,8 @@
       "ai_reasoning": "The multi-model ensemble mean of 73.7\u00b0F provides a solid baseline, but the NWS forecaster's emphasis on 'efficient daytime heating' and 'decreasing cloud cover' with highs in the 'mid-upper 70s' suggests temperatures could reach 75-76\u00b0F. The hourly trajectory shows a peak around 75\u00b0F at 17:00, which aligns with this slightly warmer assessment than the raw model output.",
       "ai_temp_estimate": 75.0,
       "data_sources": "NWS_POINT,NWS_AFD,NWS_CLI,NWS_HOURLY,OPEN_METEO_ENSEMBLE,claude-sonnet-4-20250514",
-      "settled_result": null,
-      "pnl_cents": null,
+      "settled_result": "LOSS",
+      "pnl_cents": -200,
       "notes": null,
       "key_factor": "",
       "uncertainties": "",
@@ -376,37 +376,37 @@
   "by_side": {
     "YES": {
       "bets": 10,
-      "wins": 0,
-      "settled": 0,
-      "pnl": 0
+      "wins": 2,
+      "settled": 6,
+      "pnl": -620
     },
     "NO": {
       "bets": 2,
-      "wins": 0,
-      "settled": 0,
-      "pnl": 0
+      "wins": 1,
+      "settled": 1,
+      "pnl": 186
     }
   },
   "by_variable": {
     "HIGH": {
       "bets": 12,
-      "wins": 0,
-      "settled": 0,
-      "pnl": 0
+      "wins": 3,
+      "settled": 7,
+      "pnl": -434
     }
   },
   "by_city": {
     "Los Angeles": {
       "bets": 4,
-      "wins": 0,
-      "settled": 0,
-      "pnl": 0
+      "wins": 3,
+      "settled": 4,
+      "pnl": 166
     },
     "Miami": {
       "bets": 2,
       "wins": 0,
-      "settled": 0,
-      "pnl": 0
+      "settled": 1,
+      "pnl": -200
     },
     "Chicago": {
       "bets": 2,
@@ -417,8 +417,8 @@
     "Austin": {
       "bets": 2,
       "wins": 0,
-      "settled": 0,
-      "pnl": 0
+      "settled": 2,
+      "pnl": -400
     },
     "New York": {
       "bets": 1,
@@ -433,5 +433,31 @@
       "pnl": 0
     }
   },
-  "calibration": []
+  "calibration": [
+    {
+      "bucket": "0-20%",
+      "count": 1,
+      "actual_wr": 0
+    },
+    {
+      "bucket": "20-40%",
+      "count": 1,
+      "actual_wr": 0
+    },
+    {
+      "bucket": "40-60%",
+      "count": 1,
+      "actual_wr": 0
+    },
+    {
+      "bucket": "60-80%",
+      "count": 2,
+      "actual_wr": 0.5
+    },
+    {
+      "bucket": "80-100%",
+      "count": 1,
+      "actual_wr": 1.0
+    }
+  ]
 }
