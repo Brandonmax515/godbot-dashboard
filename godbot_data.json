@@ -1,15 +1,15 @@
 {
-  "mode": "LIVE",
-  "generated_at": "2026-03-24T10:59:45.601713Z",
+  "mode": "DRY RUN",
+  "generated_at": "2026-03-24T11:00:14.876114Z",
   "total_runs": 17,
   "total_bets": 16,
   "wins": 3,
-  "losses": 4,
-  "pending": 9,
-  "win_rate": 0.42857142857142855,
-  "total_pnl_cents": -434,
+  "losses": 9,
+  "pending": 4,
+  "win_rate": 0.25,
+  "total_pnl_cents": -1434,
   "total_staked_cents": 3900,
-  "roi": -0.31,
+  "roi": -0.5975,
   "avg_edge": 0.34831249999999997,
   "bets": [
     {
@@ -155,8 +155,8 @@
       "ai_reasoning": "The GEFS ensemble is overly concentrated in the 79\u00b0F bracket (75.7%) but deterministic models average 81.9\u00b0F with GFS at 81.8\u00b0F and ECMWF at 80.5\u00b0F. The AFD mentions efficient daytime heating pushing highs into low-mid 80s for east coast areas, supporting the warmer deterministic guidance. I'm shifting probability from the 79\u00b0F bracket to the 81\u00b0F and 83\u00b0F brackets while maintaining some weight on 79\u00b0F given the strong ensemble signal.",
       "ai_temp_estimate": 80.0,
       "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
-      "settled_result": null,
-      "pnl_cents": null,
+      "settled_result": "LOSS",
+      "pnl_cents": -200,
       "notes": "raw_edge=30.0% fee=1\u00a2 net_edge=29.0%",
       "key_factor": "",
       "uncertainties": "",
@@ -185,8 +185,8 @@
       "ai_reasoning": "The GEFS ensemble appears significantly biased warm compared to all other guidance. NWS explicitly forecasts 65\u00b0F high, hourly forecast peaks at 65\u00b0F, and AFD describes a 'brief cooldown' to 'near normal temperatures' after yesterday's record heat. The deterministic model spread includes GFS at 67\u00b0F which aligns better with local guidance than the 72\u00b0F GEFS mean.",
       "ai_temp_estimate": 65.0,
       "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
-      "settled_result": null,
-      "pnl_cents": null,
+      "settled_result": "LOSS",
+      "pnl_cents": -200,
       "notes": "raw_edge=44.0% fee=1\u00a2 net_edge=43.0%",
       "key_factor": "",
       "uncertainties": "",
@@ -215,8 +215,8 @@
       "ai_reasoning": "GEFS ensemble is extremely tight (52.5-59\u00b0F range) but hourly forecast shows 62-63\u00b0F peak before rain arrives. Deterministic models are even colder (51-53\u00b0F). The AFD confirms rain timing aligns with hourly forecast, suggesting afternoon warming to 62-63\u00b0F is plausible before frontal passage. Adjusting probabilities upward from GEFS baseline to account for this warming potential.",
       "ai_temp_estimate": 59.0,
       "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
-      "settled_result": null,
-      "pnl_cents": null,
+      "settled_result": "LOSS",
+      "pnl_cents": -200,
       "notes": "raw_edge=34.0% fee=1\u00a2 net_edge=33.0%",
       "key_factor": "",
       "uncertainties": "",
@@ -245,8 +245,8 @@
       "ai_reasoning": "NO on displaced bracket: Claude=0.2% YES, market=100\u00a2 YES. The AFD confirms temperatures in the 60s this morning represent calendar day highs before the cold front passage causes temperatures to tumble throughout the day. Current observations show 44.6\u00b0F with hourly forecasts showing steady decline to upper 30s. All model guidance (GEFS mean 40.7\u00b0F, deterministic models 38-41\u00b0F) strongly support a high temperature well below 57\u00b0F, making the \u226457\u00b0F bracket essentially certain.",
       "ai_temp_estimate": 42.0,
       "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
-      "settled_result": null,
-      "pnl_cents": null,
+      "settled_result": "LOSS",
+      "pnl_cents": -200,
       "notes": "raw_edge=98.8% fee=0\u00a2 net_edge=99.8%",
       "key_factor": "",
       "uncertainties": "",
@@ -275,8 +275,8 @@
       "ai_reasoning": "The AFD confirms temperatures in the 60s this morning represent calendar day highs before the cold front passage causes temperatures to tumble throughout the day. Current observations show 44.6\u00b0F with hourly forecasts showing steady decline to upper 30s. All model guidance (GEFS mean 40.7\u00b0F, deterministic models 38-41\u00b0F) strongly support a high temperature well below 57\u00b0F, making the \u226457\u00b0F bracket essentially certain.",
       "ai_temp_estimate": 42.0,
       "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
-      "settled_result": null,
-      "pnl_cents": null,
+      "settled_result": "LOSS",
+      "pnl_cents": -200,
       "notes": "raw_edge=97.0% fee=1\u00a2 net_edge=96.0%",
       "key_factor": "",
       "uncertainties": "",
@@ -497,22 +497,22 @@
     "YES": {
       "bets": 11,
       "wins": 2,
-      "settled": 6,
-      "pnl": -620
+      "settled": 10,
+      "pnl": -1420
     },
     "NO": {
       "bets": 5,
       "wins": 1,
-      "settled": 1,
-      "pnl": 186
+      "settled": 2,
+      "pnl": -14
     }
   },
   "by_variable": {
     "HIGH": {
       "bets": 16,
       "wins": 3,
-      "settled": 7,
-      "pnl": -434
+      "settled": 12,
+      "pnl": -1434
     }
   },
   "by_city": {
@@ -525,20 +525,20 @@
     "Chicago": {
       "bets": 4,
       "wins": 0,
-      "settled": 0,
-      "pnl": 0
+      "settled": 2,
+      "pnl": -400
     },
     "Miami": {
       "bets": 3,
       "wins": 0,
-      "settled": 1,
-      "pnl": -200
+      "settled": 2,
+      "pnl": -400
     },
     "Denver": {
       "bets": 2,
       "wins": 0,
-      "settled": 0,
-      "pnl": 0
+      "settled": 1,
+      "pnl": -200
     },
     "Austin": {
       "bets": 2,
@@ -549,8 +549,8 @@
     "New York": {
       "bets": 1,
       "wins": 0,
-      "settled": 0,
-      "pnl": 0
+      "settled": 1,
+      "pnl": -200
     }
   },
   "calibration": [
@@ -566,7 +566,7 @@
     },
     {
       "bucket": "40-60%",
-      "count": 1,
+      "count": 4,
       "actual_wr": 0
     },
     {
@@ -576,8 +576,8 @@
     },
     {
       "bucket": "80-100%",
-      "count": 1,
-      "actual_wr": 1.0
+      "count": 2,
+      "actual_wr": 0.5
     }
   ]
 }
