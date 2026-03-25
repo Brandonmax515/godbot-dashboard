@@ -1,15 +1,15 @@
 {
-  "mode": "LIVE",
-  "generated_at": "2026-03-25T10:59:48.832997Z",
+  "mode": "DRY RUN",
+  "generated_at": "2026-03-25T11:00:17.932879Z",
   "total_runs": 18,
   "total_bets": 17,
-  "wins": 3,
+  "wins": 4,
   "losses": 9,
-  "pending": 5,
-  "win_rate": 0.25,
-  "total_pnl_cents": -1434,
+  "pending": 4,
+  "win_rate": 0.3076923076923077,
+  "total_pnl_cents": -1203,
   "total_staked_cents": 4100,
-  "roi": -0.5975,
+  "roi": -0.44555555555555554,
   "avg_edge": 0.33252941176470585,
   "bets": [
     {
@@ -65,8 +65,8 @@
       "ai_reasoning": "NO on displaced bracket: Claude=2.0% YES, market=24\u00a2 YES. The GEFS ensemble strongly favors \u226577\u00b0F (69% probability) but the NWS official forecast explicitly calls for 73\u00b0F Monday, suggesting meteorologists see cooling factors not captured in raw model output. Given this fundamental disagreement, I'm shifting probability mass down from the T77 bracket toward the 74-76\u00b0F range while keeping some weight on the official NWS forecast temperature.",
       "ai_temp_estimate": 75.0,
       "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
-      "settled_result": null,
-      "pnl_cents": null,
+      "settled_result": "WIN",
+      "pnl_cents": 231,
       "notes": "raw_edge=21.0% fee=2\u00a2 net_edge=20.0% kelly_size=300\u00a2",
       "key_factor": "",
       "uncertainties": "",
@@ -532,17 +532,17 @@
     },
     "NO": {
       "bets": 6,
-      "wins": 1,
-      "settled": 2,
-      "pnl": -14
+      "wins": 2,
+      "settled": 3,
+      "pnl": 217
     }
   },
   "by_variable": {
     "HIGH": {
       "bets": 17,
-      "wins": 3,
-      "settled": 12,
-      "pnl": -1434
+      "wins": 4,
+      "settled": 13,
+      "pnl": -1203
     }
   },
   "by_city": {
@@ -566,9 +566,9 @@
     },
     "Denver": {
       "bets": 2,
-      "wins": 0,
-      "settled": 1,
-      "pnl": -200
+      "wins": 1,
+      "settled": 2,
+      "pnl": 31
     },
     "Austin": {
       "bets": 2,
