@@ -1,6 +1,6 @@
 {
-  "mode": "LIVE",
-  "generated_at": "2026-03-27T22:26:26.557979Z",
+  "mode": "DRY RUN",
+  "generated_at": "2026-03-27T22:26:58.419520Z",
   "total_runs": 21,
   "total_bets": 22,
   "wins": 5,
@@ -760,5 +760,4 @@
       "actual_wr": 0.5
     }
   ]
-}]
 }
