@@ -1,0 +1,316 @@
+{
+  "version": "v2",
+  "uptime_seconds": 3051,
+  "cycle_count": 196,
+  "cycle_interval_sec": 10,
+  "last_cycle_ts": "2026-03-23T01:42:54.092330+00:00",
+  "trading_enabled": true,
+  "dry_run": false,
+  "kill_switch_armed": false,
+  "config_snapshot": {
+    "quantity": 1,
+    "max_entry_cents": 40,
+    "min_edge_cents": 8,
+    "daily_loss_limit_cents": 500,
+    "consecutive_loss_breaker": 5,
+    "strategies": {
+      "latency": false,
+      "calibrated": false,
+      "arbitrage": false,
+      "predictor": false
+    }
+  },
+  "total_pnl": -3.64,
+  "pnl_today": -0.24,
+  "win_rate": 0.0,
+  "wins": 0,
+  "losses": 1,
+  "trades_today": 1,
+  "signals_today": 130,
+  "bankroll": 44.79,
+  "exposure": 0.0,
+  "open_positions": 0,
+  "events": [
+    {
+      "time": "9:30 PM",
+      "action": "SETTLED LOSS",
+      "ticker": "KXETH15M-26MAR222130-30",
+      "pnl": -0.24,
+      "result": "LOSS"
+    },
+    {
+      "time": "9:22 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXETH15M-26MAR222130-30",
+      "side": "no",
+      "price": 6,
+      "edge": 20.61177751194462
+    },
+    {
+      "time": "9:22 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXETH15M-26MAR222130-30",
+      "side": "no",
+      "price": 9,
+      "edge": 18.29113333921302
+    },
+    {
+      "time": "9:22 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXETH15M-26MAR222130-30",
+      "side": "no",
+      "price": 9,
+      "edge": 18.200706796501844
+    },
+    {
+      "time": "9:22 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXETH15M-26MAR222130-30",
+      "side": "no",
+      "price": 12,
+      "edge": 17.70819870033185
+    },
+    {
+      "time": "9:22 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXETH15M-26MAR222130-30",
+      "side": "no",
+      "price": 17,
+      "edge": 18.703211965791084
+    },
+    {
+      "time": "9:21 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXETH15M-26MAR222130-30",
+      "side": "no",
+      "price": 16,
+      "edge": 17.862567482667362
+    },
+    {
+      "time": "9:21 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXETH15M-26MAR222130-30",
+      "side": "no",
+      "price": 18,
+      "edge": 19.54043027017712
+    },
+    {
+      "time": "9:21 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXETH15M-26MAR222130-30",
+      "side": "no",
+      "price": 17,
+      "edge": 16.998874157381444
+    },
+    {
+      "time": "9:21 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXETH15M-26MAR222130-30",
+      "side": "no",
+      "price": 13,
+      "edge": 18.317508541574526
+    },
+    {
+      "time": "9:20 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXETH15M-26MAR222130-30",
+      "side": "no",
+      "price": 10,
+      "edge": 16.144473817798158
+    },
+    {
+      "time": "9:20 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXETH15M-26MAR222130-30",
+      "side": "no",
+      "price": 11,
+      "edge": 19.35222625013853
+    },
+    {
+      "time": "9:20 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXETH15M-26MAR222130-30",
+      "side": "no",
+      "price": 11,
+      "edge": 16.877275383985506
+    },
+    {
+      "time": "9:20 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXETH15M-26MAR222130-30",
+      "side": "no",
+      "price": 11,
+      "edge": 14.783653837172054
+    },
+    {
+      "time": "9:20 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXETH15M-26MAR222130-30",
+      "side": "no",
+      "price": 10,
+      "edge": 15.895647013355587
+    },
+    {
+      "time": "9:19 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXETH15M-26MAR222130-30",
+      "side": "no",
+      "price": 16,
+      "edge": 16.10537845147367
+    },
+    {
+      "time": "9:19 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXETH15M-26MAR222130-30",
+      "side": "no",
+      "price": 16,
+      "edge": 17.67431455357596
+    },
+    {
+      "time": "9:19 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXETH15M-26MAR222130-30",
+      "side": "no",
+      "price": 17,
+      "edge": 17.755891043387958
+    },
+    {
+      "time": "9:19 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXETH15M-26MAR222130-30",
+      "side": "no",
+      "price": 18,
+      "edge": 18.074930628878825
+    },
+    {
+      "time": "9:19 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXETH15M-26MAR222130-30",
+      "side": "no",
+      "price": 21,
+      "edge": 19.089415591549205
+    },
+    {
+      "time": "9:18 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXETH15M-26MAR222130-30",
+      "side": "no",
+      "price": 28,
+      "edge": 20.288322922148073
+    },
+    {
+      "time": "9:17 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXETH15M-26MAR222130-30",
+      "side": "no",
+      "price": 23,
+      "edge": 20.62351594977748
+    },
+    {
+      "time": "9:17 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXETH15M-26MAR222130-30",
+      "side": "no",
+      "price": 25,
+      "edge": 20.71620868027827
+    },
+    {
+      "time": "9:17 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXETH15M-26MAR222130-30",
+      "side": "no",
+      "price": 26,
+      "edge": 20.38857007066103
+    },
+    {
+      "time": "9:17 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXETH15M-26MAR222130-30",
+      "side": "no",
+      "price": 24,
+      "edge": 21.48760562830757
+    },
+    {
+      "time": "9:17 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXETH15M-26MAR222130-30",
+      "side": "no",
+      "price": 22,
+      "edge": 20.826294399501485
+    },
+    {
+      "time": "9:16 PM",
+      "action": "BLOCKED: window_dedup",
+      "ticker": "KXETH15M-26MAR222130-30",
+      "side": "no",
+      "price": 21,
+      "edge": 18.663425652300866
+    },
+    {
+      "time": "9:16 PM",
+      "action": "MAKER TRADE fill_wait=0.5s",
+      "ticker": "KXETH15M-26MAR222130-30",
+      "side": "no",
+      "price": 24,
+      "contracts": 1,
+      "edge": 20.26889649057756,
+      "tier": "fair_value"
+    }
+  ],
+  "last_signals": [],
+  "positions": [],
+  "markets": [],
+  "prices": {
+    "BTC": {
+      "spot": 68099.94,
+      "source": "coinbase"
+    },
+    "ETH": {
+      "spot": 2059.56,
+      "source": "coinbase"
+    }
+  },
+  "strategies": {
+    "latency": 0,
+    "calibrated": 0,
+    "arbitrage": 0,
+    "predictor": 0,
+    "skipped": 28
+  },
+  "bankroll_history": [
+    45.34,
+    43.18,
+    42.29
+  ],
+  "feed_status": {
+    "kraken": {
+      "ready": true,
+      "stale": false,
+      "btc_age": 10.2,
+      "eth_age": 4.1,
+      "btc": 68077.4,
+      "eth": 2058.78
+    },
+    "binance": {
+      "ready": true,
+      "stale": false,
+      "btc_age": 3.3,
+      "eth_age": 3.3,
+      "btc": 68100.86,
+      "eth": 2060.28
+    },
+    "coinbase": {
+      "ready": true,
+      "stale": false,
+      "btc_age": 2.5,
+      "eth_age": 2.3,
+      "btc": 68099.94,
+      "eth": 2059.56
+    },
+    "active_source": {
+      "BTC": "coinbase",
+      "ETH": "coinbase"
+    }
+  },
+  "updated_at": "2026-03-23T01:42:54.092353+00:00"
+}
