@@ -988,17 +988,17 @@ window.GODBOT_DATA = {
 <script>
 // ── EMBEDDED DATA (injected by godbot_export.py) ──
 window.GODBOT_DATA = {
-  "mode": "LIVE",
-  "generated_at": "2026-03-28T10:59:43.081312Z",
+  "mode": "DRY RUN",
+  "generated_at": "2026-03-28T11:00:13.725869Z",
   "total_runs": 21,
   "total_bets": 22,
-  "wins": 5,
-  "losses": 9,
-  "pending": 8,
-  "win_rate": 0.35714285714285715,
-  "total_pnl_cents": -1023,
+  "wins": 7,
+  "losses": 10,
+  "pending": 5,
+  "win_rate": 0.4117647058823529,
+  "total_pnl_cents": -735,
   "total_staked_cents": 5900,
-  "roi": -0.3527586206896552,
+  "roi": -0.17926829268292682,
   "avg_edge": 0.31240909090909086,
   "bets": [
     {
@@ -1084,8 +1084,8 @@ window.GODBOT_DATA = {
       "ai_reasoning": "NO on displaced bracket: Claude=3.0% YES, market=16\u00a2 YES. The GEFS ensemble appears too concentrated around 79\u00b0F given that deterministic models (GFS 80.2\u00b0F, ECMWF 79.6\u00b0F, JMA 80.9\u00b0F), NWS forecast (81\u00b0F), and hourly forecast all suggest peak temperatures reaching 80-81\u00b0F. The sunny conditions and high pressure ridge described in the AFD support efficient afternoon heating. I'm shifting probability mass from the 79\u00b0F bracket toward 81\u00b0F bracket while maintaining some probability for the GEFS-favored 79\u00b0F outcome.",
       "ai_temp_estimate": 81.0,
       "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
-      "settled_result": null,
-      "pnl_cents": null,
+      "settled_result": "WIN",
+      "pnl_cents": 340,
       "notes": "raw_edge=12.0% fee=1\u00a2 net_edge=12.0% kelly_size=400\u00a2",
       "key_factor": "",
       "uncertainties": "",
@@ -1114,8 +1114,8 @@ window.GODBOT_DATA = {
       "ai_reasoning": "NO on displaced bracket: Claude=0.0% YES, market=14\u00a2 YES. GEFS ensemble severely underestimated at 54\u00b0F mean versus hourly forecast showing 80-82\u00b0F peak. NWS forecast of 83\u00b0F and AFD describing 'unseasonably warm day' with mid-afternoon cold front supports 80-83\u00b0F range. Current observations at 61\u00b0F align with hourly warming trend.",
       "ai_temp_estimate": 82.0,
       "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
-      "settled_result": null,
-      "pnl_cents": null,
+      "settled_result": "WIN",
+      "pnl_cents": 348,
       "notes": "raw_edge=13.0% fee=1\u00a2 net_edge=13.0% kelly_size=400\u00a2",
       "key_factor": "",
       "uncertainties": "",
@@ -1144,8 +1144,8 @@ window.GODBOT_DATA = {
       "ai_reasoning": "NO on displaced bracket: Claude=0.0% YES, market=29\u00a2 YES. GEFS ensemble severely underestimated at 54\u00b0F mean versus hourly forecast showing 80-82\u00b0F peak. NWS forecast of 83\u00b0F and AFD describing 'unseasonably warm day' with mid-afternoon cold front supports 80-83\u00b0F range. Current observations at 61\u00b0F align with hourly warming trend.",
       "ai_temp_estimate": 82.0,
       "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
-      "settled_result": null,
-      "pnl_cents": null,
+      "settled_result": "LOSS",
+      "pnl_cents": -400,
       "notes": "raw_edge=28.0% fee=2\u00a2 net_edge=27.0% kelly_size=400\u00a2",
       "key_factor": "",
       "uncertainties": "",
@@ -1671,25 +1671,25 @@ window.GODBOT_DATA = {
     },
     "NO": {
       "bets": 11,
-      "wins": 3,
-      "settled": 4,
-      "pnl": 397
+      "wins": 5,
+      "settled": 7,
+      "pnl": 685
     }
   },
   "by_variable": {
     "HIGH": {
       "bets": 22,
-      "wins": 5,
-      "settled": 14,
-      "pnl": -1023
+      "wins": 7,
+      "settled": 17,
+      "pnl": -735
     }
   },
   "by_city": {
     "Miami": {
       "bets": 7,
-      "wins": 1,
-      "settled": 3,
-      "pnl": -220
+      "wins": 2,
+      "settled": 4,
+      "pnl": 120
     },
     "Los Angeles": {
       "bets": 4,
@@ -1699,9 +1699,9 @@ window.GODBOT_DATA = {
     },
     "Denver": {
       "bets": 4,
-      "wins": 1,
-      "settled": 2,
-      "pnl": 31
+      "wins": 2,
+      "settled": 4,
+      "pnl": -21
     },
     "Chicago": {
       "bets": 4,
