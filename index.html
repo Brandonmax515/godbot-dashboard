@@ -988,19 +988,109 @@ window.GODBOT_DATA = {
 <script>
 // ── EMBEDDED DATA (injected by godbot_export.py) ──
 window.GODBOT_DATA = {
-  "mode": "LIVE",
-  "generated_at": "2026-03-28T11:01:17.685319Z",
-  "total_runs": 21,
-  "total_bets": 22,
+  "mode": "DRY RUN",
+  "generated_at": "2026-03-28T11:01:49.136692Z",
+  "total_runs": 22,
+  "total_bets": 25,
   "wins": 7,
   "losses": 10,
-  "pending": 5,
+  "pending": 8,
   "win_rate": 0.4117647058823529,
   "total_pnl_cents": -735,
-  "total_staked_cents": 5900,
+  "total_staked_cents": 6600,
   "roi": -0.17926829268292682,
-  "avg_edge": 0.31240909090909086,
+  "avg_edge": 0.29452,
   "bets": [
+    {
+      "id": 68,
+      "run_date": "2026-03-28",
+      "ticker": "KXHIGHMIA-26MAR28-T86",
+      "event_ticker": "KXHIGHMIA-26MAR28",
+      "station": "KMIA",
+      "city": "Miami",
+      "variable": "HIGH",
+      "bracket_low": 86.0,
+      "bracket_high": null,
+      "strike_type": "greater",
+      "side": "NO",
+      "bet_type": "NO_DISPLACED",
+      "our_prob": 0.98,
+      "market_prob": 0.86,
+      "edge_pct": 0.12,
+      "multiplier": 1.16,
+      "bet_cents": 300,
+      "order_id": "22eb7588-9fec-41e2-be63-6f1de0a8c5eb",
+      "status": "PLACED",
+      "ai_reasoning": "NO on displaced bracket: Claude=2.0% YES, market=15\u00a2 YES. GEFS baseline heavily weighted toward \u226478\u00b0F (84.8%) appears inconsistent with NWS forecast of 84\u00b0F high and hourly forecast showing progression to 83\u00b0F by afternoon. The deterministic models show higher values (ECMWF 78\u00b0F, GEM 81\u00b0F) and sunny conditions favor efficient heating. Adjusting probabilities significantly upward to favor 83-85\u00b0F range while maintaining some probability in lower brackets due to model uncertainty.",
+      "ai_temp_estimate": 83.0,
+      "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
+      "settled_result": null,
+      "pnl_cents": null,
+      "notes": "raw_edge=12.0% fee=1\u00a2 net_edge=12.0% kelly_size=300\u00a2",
+      "key_factor": "",
+      "uncertainties": "",
+      "confidence": ""
+    },
+    {
+      "id": 67,
+      "run_date": "2026-03-28",
+      "ticker": "KXHIGHNY-26MAR28-B44.5",
+      "event_ticker": "KXHIGHNY-26MAR28",
+      "station": "KNYC",
+      "city": "New York",
+      "variable": "HIGH",
+      "bracket_low": 44.0,
+      "bracket_high": 45.0,
+      "strike_type": "between",
+      "side": "YES",
+      "bet_type": "YES_BEST_BRACKET",
+      "our_prob": 0.65,
+      "market_prob": 0.45,
+      "edge_pct": 0.18000000000000005,
+      "multiplier": 2.22,
+      "bet_cents": 300,
+      "order_id": "b1fad01c-57c0-4c39-bc70-3340e4c550ce",
+      "status": "PLACED",
+      "ai_reasoning": "The GEFS ensemble mean of 51\u00b0F appears too warm given the strong AFD emphasis on unseasonably cold conditions with highs 'likely don't get out of the 40s.' The NWS forecast of 45\u00b0F aligns perfectly with the hourly forecast progression peaking at 43-44\u00b0F. The deterministic model spread (51-58\u00b0F) seems disconnected from the local NWS analysis of the cold airmass impact.",
+      "ai_temp_estimate": 45.0,
+      "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
+      "settled_result": null,
+      "pnl_cents": null,
+      "notes": "raw_edge=20.0% fee=2\u00a2 net_edge=18.0% kelly_size=300\u00a2 conf=HIGH",
+      "key_factor": "",
+      "uncertainties": "",
+      "confidence": ""
+    },
+    {
+      "id": 66,
+      "run_date": "2026-03-28",
+      "ticker": "KXHIGHDEN-26MAR28-B77.5",
+      "event_ticker": "KXHIGHDEN-26MAR28",
+      "station": "KDEN",
+      "city": "Denver",
+      "variable": "HIGH",
+      "bracket_low": 77.0,
+      "bracket_high": 78.0,
+      "strike_type": "between",
+      "side": "YES",
+      "bet_type": "YES_BEST_BRACKET",
+      "our_prob": 0.3,
+      "market_prob": 0.1,
+      "edge_pct": 0.19,
+      "multiplier": 10.0,
+      "bet_cents": 100,
+      "order_id": "71bc5692-419c-47ce-b2ee-8a97a6d82f7c",
+      "status": "PLACED",
+      "ai_reasoning": "GEFS heavily favors 76-77\u00b0F (93% combined probability) but this appears too conservative given multiple warming signals. The AFD explicitly mentions overnight southerly winds with compressional warming that could impact Saturday's highs, NWS forecast shows 81\u00b0F vs GEFS 77\u00b0F mean, and deterministic models (GFS 78.6\u00b0F, ECMWF 79.9\u00b0F, GEM 77.9\u00b0F) generally run warmer. The hourly forecast shows steady warming to 79\u00b0F by afternoon, supporting a shift toward the 79-81\u00b0F brackets.",
+      "ai_temp_estimate": 79.0,
+      "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
+      "settled_result": null,
+      "pnl_cents": null,
+      "notes": "raw_edge=20.0% fee=1\u00a2 net_edge=19.0% kelly_size=100\u00a2 conf=MEDIUM",
+      "key_factor": "",
+      "uncertainties": "",
+      "confidence": ""
+    },
     {
       "id": 65,
       "run_date": "2026-03-27",
@@ -1664,13 +1754,13 @@ window.GODBOT_DATA = {
   ],
   "by_side": {
     "YES": {
-      "bets": 11,
+      "bets": 13,
       "wins": 2,
       "settled": 10,
       "pnl": -1420
     },
     "NO": {
-      "bets": 11,
+      "bets": 12,
       "wins": 5,
       "settled": 7,
       "pnl": 685
@@ -1678,7 +1768,7 @@ window.GODBOT_DATA = {
   },
   "by_variable": {
     "HIGH": {
-      "bets": 22,
+      "bets": 25,
       "wins": 7,
       "settled": 17,
       "pnl": -735
@@ -1686,10 +1776,16 @@ window.GODBOT_DATA = {
   },
   "by_city": {
     "Miami": {
-      "bets": 7,
+      "bets": 8,
       "wins": 2,
       "settled": 4,
       "pnl": 120
+    },
+    "Denver": {
+      "bets": 5,
+      "wins": 2,
+      "settled": 4,
+      "pnl": -21
     },
     "Los Angeles": {
       "bets": 4,
@@ -1697,29 +1793,23 @@ window.GODBOT_DATA = {
       "settled": 4,
       "pnl": 166
     },
-    "Denver": {
-      "bets": 4,
-      "wins": 2,
-      "settled": 4,
-      "pnl": -21
-    },
     "Chicago": {
       "bets": 4,
       "wins": 0,
       "settled": 2,
       "pnl": -400
     },
+    "New York": {
+      "bets": 2,
+      "wins": 0,
+      "settled": 1,
+      "pnl": -200
+    },
     "Austin": {
       "bets": 2,
       "wins": 0,
       "settled": 2,
       "pnl": -400
-    },
-    "New York": {
-      "bets": 1,
-      "wins": 0,
-      "settled": 1,
-      "pnl": -200
     }
   },
   "calibration": [
