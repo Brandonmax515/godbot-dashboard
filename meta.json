@@ -1,10 +1,10 @@
 {
-  "last_push": "2026-03-30T23:15:05Z",
-  "last_push_local": "2026-03-30 19:15:04",
+  "last_push": "2026-03-30T23:49:47Z",
+  "last_push_local": "2026-03-30 19:49:46",
   "sources": {
     "weather_predictions": {
       "file": "weather-predictions.json",
-      "source_mtime": "2026-03-29T21:02:24-0400"
+      "source_mtime": "2026-03-30T19:49:46-0400"
     },
     "crypto_v2_status": {
       "file": "crypto-v2-status.json",
@@ -12,7 +12,7 @@
     },
     "godbot_data": {
       "file": "godbot_data.json",
-      "source_mtime": "2026-03-30T19:15:05-0400"
+      "source_mtime": "2026-03-30T19:49:46-0400"
     }
   }
 }
