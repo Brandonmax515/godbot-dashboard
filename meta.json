@@ -1,0 +1,18 @@
+{
+  "last_push": "2026-03-30T22:42:54Z",
+  "last_push_local": "2026-03-30 18:42:54",
+  "sources": {
+    "weather_predictions": {
+      "file": "weather-predictions.json",
+      "source_mtime": "2026-03-29T21:02:24-0400"
+    },
+    "crypto_v2_status": {
+      "file": "crypto-v2-status.json",
+      "source_mtime": "2026-03-22T21:42:54-0400"
+    },
+    "godbot_data": {
+      "file": "godbot_data.json",
+      "source_mtime": "2026-03-30T18:42:54-0400"
+    }
+  }
+}

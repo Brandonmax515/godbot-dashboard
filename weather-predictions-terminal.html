@@ -168,6 +168,28 @@
     color: var(--text-muted); text-align: right; padding: 8px 0;
   }
 
+  /* Staleness banner */
+  .staleness-banner {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    padding: 8px 16px; border-radius: var(--radius); margin-bottom: 16px;
+    display: none; align-items: center; gap: 8px;
+  }
+  .staleness-banner.stale-warn {
+    display: flex;
+    background: var(--accent-amber-dim); color: var(--accent-amber);
+    border: 1px solid rgba(255,183,0,0.25);
+  }
+  .staleness-banner.stale-error {
+    display: flex;
+    background: var(--accent-red-dim); color: var(--accent-red);
+    border: 1px solid rgba(255,61,90,0.25);
+  }
+  .staleness-banner .stale-icon { font-size: 14px; }
+  .last-updated-text {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px;
+    color: var(--text-muted); margin-bottom: 12px;
+  }
+
   @media (max-width: 768px) {
     .summary-row { grid-template-columns: repeat(2, 1fr); }
     .nav-links { display: none; }
@@ -210,6 +232,13 @@
       <span class="badge badge-cyan" id="genBadge">--</span>
     </div>
   </div>
+
+  <!-- Staleness Banner -->
+  <div class="staleness-banner" id="stalenessBanner">
+    <span class="stale-icon">⚠</span>
+    <span id="stalenessText">Data may be stale</span>
+  </div>
+  <div class="last-updated-text" id="lastUpdated"></div>
 
   <!-- Summary Row -->
   <div class="summary-row">
@@ -353,6 +382,42 @@ async function loadData() {
   } catch(e) {}
 
   document.getElementById('statusText').textContent = 'Updated ' + new Date().toLocaleTimeString();
+
+  // Check staleness via meta.json
+  try {
+    var metaUrl = API_BASE ? API_BASE + '/api/meta.json' : 'meta.json';
+    var rm = await fetch(metaUrl + '?t=' + Date.now());
+    if (rm.ok) {
+      var meta = await rm.json();
+      checkStaleness(meta);
+    }
+  } catch(e) {}
+}
+
+function checkStaleness(meta) {
+  var banner = document.getElementById('stalenessBanner');
+  var text = document.getElementById('stalenessText');
+  var updated = document.getElementById('lastUpdated');
+
+  if (!meta || !meta.last_push) { return; }
+
+  var pushTime = new Date(meta.last_push);
+  var now = new Date();
+  var ageMs = now - pushTime;
+  var ageHours = ageMs / (1000 * 60 * 60);
+
+  updated.textContent = 'Last updated: ' + pushTime.toLocaleString();
+
+  if (ageHours >= 12) {
+    banner.className = 'staleness-banner stale-error';
+    text.textContent = 'DATA STALE — last push ' + Math.floor(ageHours) + 'h ago. Dashboard may not reflect current predictions.';
+  } else if (ageHours >= 2) {
+    banner.className = 'staleness-banner stale-warn';
+    text.textContent = 'Data is ' + Math.floor(ageHours) + 'h old. Next push expected soon.';
+  } else {
+    banner.className = 'staleness-banner';
+    banner.style.display = 'none';
+  }
 }
 
 function renderPredictions(data) {
