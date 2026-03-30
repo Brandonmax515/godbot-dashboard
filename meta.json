@@ -1,6 +1,6 @@
 {
-  "last_push": "2026-03-30T22:42:54Z",
-  "last_push_local": "2026-03-30 18:42:54",
+  "last_push": "2026-03-30T23:15:05Z",
+  "last_push_local": "2026-03-30 19:15:04",
   "sources": {
     "weather_predictions": {
       "file": "weather-predictions.json",
@@ -12,7 +12,7 @@
     },
     "godbot_data": {
       "file": "godbot_data.json",
-      "source_mtime": "2026-03-30T18:42:54-0400"
+      "source_mtime": "2026-03-30T19:15:05-0400"
     }
   }
 }
