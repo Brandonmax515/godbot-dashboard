@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-03-31T19:31:57.557434-04:00",
-  "generated_at_unix": 1774999917,
+  "generated_at": "2026-03-31T19:36:14.871019-04:00",
+  "generated_at_unix": 1775000174,
   "account": {
     "cash_balance": 25.81,
-    "portfolio_value": 21.94,
-    "total_equity": 47.75,
-    "today_pnl": 6.88,
-    "today_pnl_pct": 14.41,
-    "unrealized_pnl": 2.48,
+    "portfolio_value": 22.34,
+    "total_equity": 48.15,
+    "today_pnl": 7.28,
+    "today_pnl_pct": 15.12,
+    "unrealized_pnl": 2.88,
     "today_realized_pnl": 4.4
   },
   "positions": [
@@ -52,6 +52,26 @@
       "market_status": "active"
     },
     {
+      "ticker": "KXTRUMPUFC-UFC327",
+      "display_name": "KXTRUMPUFC-UFC327",
+      "city": "",
+      "type": "",
+      "threshold": "",
+      "target_date": "",
+      "category": "event",
+      "side": "YES",
+      "quantity": 20,
+      "avg_entry_price": 0.7285,
+      "current_price": 0.76,
+      "cost_basis": 14.57,
+      "current_value": 15.2,
+      "unrealized_pnl": 0.63,
+      "unrealized_pnl_pct": 4.32,
+      "realized_pnl": 0.0,
+      "fees_paid": 0.28,
+      "market_status": "active"
+    },
+    {
       "ticker": "KXMOLDOVAPRES-28-EGUT",
       "display_name": "KXMOLDOVAPRES-28-EGUT",
       "city": "",
@@ -69,26 +89,6 @@
       "unrealized_pnl_pct": 83.33,
       "realized_pnl": 0.0,
       "fees_paid": 0.02,
-      "market_status": "active"
-    },
-    {
-      "ticker": "KXTRUMPUFC-UFC327",
-      "display_name": "KXTRUMPUFC-UFC327",
-      "city": "",
-      "type": "",
-      "threshold": "",
-      "target_date": "",
-      "category": "event",
-      "side": "YES",
-      "quantity": 20,
-      "avg_entry_price": 0.7285,
-      "current_price": 0.74,
-      "cost_basis": 14.57,
-      "current_value": 14.8,
-      "unrealized_pnl": 0.23,
-      "unrealized_pnl_pct": 1.58,
-      "realized_pnl": 0.0,
-      "fees_paid": 0.28,
       "market_status": "active"
     },
     {
