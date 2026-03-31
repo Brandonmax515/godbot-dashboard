@@ -1,0 +1,161 @@
+{
+  "generated_at": "2026-03-31T18:33:45.950677-04:00",
+  "generated_at_unix": 1774996425,
+  "account": {
+    "cash_balance": 25.81,
+    "portfolio_value": 20.94,
+    "total_equity": 46.75,
+    "today_pnl": 0,
+    "today_pnl_pct": 0.0
+  },
+  "positions": [],
+  "recent_settlements": [
+    {
+      "ticker": "KXHIGHMIA-26MAR30-B82.5",
+      "display_name": "MIA High 82-83\u00b0F Mar 30",
+      "market_result": "no",
+      "settled_at": "",
+      "category": "weather"
+    },
+    {
+      "ticker": "KXHIGHMIA-26MAR30-B78.5",
+      "display_name": "MIA High 78-79\u00b0F Mar 30",
+      "market_result": "yes",
+      "settled_at": "",
+      "category": "weather"
+    },
+    {
+      "ticker": "KXHIGHNY-26MAR28-B44.5",
+      "display_name": "NY High 44-45\u00b0F Mar 28",
+      "market_result": "yes",
+      "settled_at": "",
+      "category": "weather"
+    },
+    {
+      "ticker": "KXHIGHMIA-26MAR28-T86",
+      "display_name": "MIA High \u226586\u00b0F Mar 28",
+      "market_result": "no",
+      "settled_at": "",
+      "category": "weather"
+    },
+    {
+      "ticker": "KXHIGHDEN-26MAR28-B77.5",
+      "display_name": "DEN High 77-78\u00b0F Mar 28",
+      "market_result": "no",
+      "settled_at": "",
+      "category": "weather"
+    },
+    {
+      "ticker": "KXHIGHMIA-26MAR27-T84",
+      "display_name": "MIA High \u226584\u00b0F Mar 27",
+      "market_result": "no",
+      "settled_at": "",
+      "category": "weather"
+    },
+    {
+      "ticker": "KXHIGHMIA-26MAR27-B83.5",
+      "display_name": "MIA High 83-84\u00b0F Mar 27",
+      "market_result": "yes",
+      "settled_at": "",
+      "category": "weather"
+    },
+    {
+      "ticker": "KXHIGHMIA-26MAR27-B81.5",
+      "display_name": "MIA High 81-82\u00b0F Mar 27",
+      "market_result": "no",
+      "settled_at": "",
+      "category": "weather"
+    },
+    {
+      "ticker": "KXHIGHMIA-26MAR26-T84",
+      "display_name": "MIA High \u226584\u00b0F Mar 26",
+      "market_result": "no",
+      "settled_at": "",
+      "category": "weather"
+    },
+    {
+      "ticker": "KXHIGHDEN-26MAR26-T77",
+      "display_name": "DEN High \u226577\u00b0F Mar 26",
+      "market_result": "yes",
+      "settled_at": "",
+      "category": "weather"
+    },
+    {
+      "ticker": "KXHIGHDEN-26MAR26-B77.5",
+      "display_name": "DEN High 77-78\u00b0F Mar 26",
+      "market_result": "no",
+      "settled_at": "",
+      "category": "weather"
+    },
+    {
+      "ticker": "KXHIGHMIA-26MAR24-T85",
+      "display_name": "MIA High \u226585\u00b0F Mar 24",
+      "market_result": "no",
+      "settled_at": "",
+      "category": "weather"
+    },
+    {
+      "ticker": "KXHIGHLAX-26MAR24-T76",
+      "display_name": "LAX High \u226576\u00b0F Mar 24",
+      "market_result": "yes",
+      "settled_at": "",
+      "category": "weather"
+    },
+    {
+      "ticker": "KXHIGHMIA-26MAR23-B81.5",
+      "display_name": "MIA High 81-82\u00b0F Mar 23",
+      "market_result": "yes",
+      "settled_at": "",
+      "category": "weather"
+    },
+    {
+      "ticker": "KXHIGHMIA-26MAR23-B79.5",
+      "display_name": "MIA High 79-80\u00b0F Mar 23",
+      "market_result": "no",
+      "settled_at": "",
+      "category": "weather"
+    },
+    {
+      "ticker": "KXHIGHNY-26MAR23-T54",
+      "display_name": "NY High \u226554\u00b0F Mar 23",
+      "market_result": "yes",
+      "settled_at": "",
+      "category": "weather"
+    },
+    {
+      "ticker": "KXHIGHNY-26MAR23-B54.5",
+      "display_name": "NY High 54-55\u00b0F Mar 23",
+      "market_result": "no",
+      "settled_at": "",
+      "category": "weather"
+    },
+    {
+      "ticker": "KXHIGHLAX-26MAR23-B76.5",
+      "display_name": "LAX High 76-77\u00b0F Mar 23",
+      "market_result": "no",
+      "settled_at": "",
+      "category": "weather"
+    },
+    {
+      "ticker": "KXHIGHDEN-26MAR23-B70.5",
+      "display_name": "DEN High 70-71\u00b0F Mar 23",
+      "market_result": "no",
+      "settled_at": "",
+      "category": "weather"
+    },
+    {
+      "ticker": "KXHIGHNY-26MAR22-T62",
+      "display_name": "NY High \u226562\u00b0F Mar 22",
+      "market_result": "no",
+      "settled_at": "",
+      "category": "weather"
+    }
+  ],
+  "summary": {
+    "total_open_positions": 0,
+    "total_exposure": 0.0,
+    "weather_positions": 0,
+    "crypto_positions": 0,
+    "sports_positions": 0
+  }
+}
