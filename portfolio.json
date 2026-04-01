@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-03-31T21:00:05.850300-04:00",
-  "generated_at_unix": 1775005205,
+  "generated_at": "2026-03-31T22:00:04.965360-04:00",
+  "generated_at_unix": 1775008804,
   "account": {
-    "cash_balance": 25.81,
-    "portfolio_value": 22.14,
-    "total_equity": 47.95,
-    "today_pnl": 7.08,
-    "today_pnl_pct": 14.77,
-    "unrealized_pnl": 2.68,
+    "cash_balance": 22.86,
+    "portfolio_value": 25.66,
+    "total_equity": 48.52,
+    "today_pnl": 7.68,
+    "today_pnl_pct": 15.83,
+    "unrealized_pnl": 3.28,
     "today_realized_pnl": 4.4
   },
   "positions": [
@@ -49,6 +49,26 @@
       "unrealized_pnl_pct": 37.5,
       "realized_pnl": 0.0,
       "fees_paid": 0.05,
+      "market_status": "active"
+    },
+    {
+      "ticker": "KXHIGHAUS-26APR01-T88",
+      "display_name": "AUS High \u226588\u00b0F Apr 01",
+      "city": "AUS",
+      "type": "HIGH",
+      "threshold": "\u226588\u00b0F",
+      "target_date": "2026-04-01",
+      "category": "weather",
+      "side": "YES",
+      "quantity": 56,
+      "avg_entry_price": 0.0493,
+      "current_price": 0.06,
+      "cost_basis": 2.76,
+      "current_value": 3.36,
+      "unrealized_pnl": 0.6,
+      "unrealized_pnl_pct": 21.74,
+      "realized_pnl": 0.0,
+      "fees_paid": 0.19,
       "market_status": "active"
     },
     {
@@ -395,9 +415,9 @@
     }
   ],
   "summary": {
-    "total_open_positions": 5,
-    "total_exposure": 18.91,
-    "weather_positions": 2,
+    "total_open_positions": 6,
+    "total_exposure": 21.67,
+    "weather_positions": 3,
     "crypto_positions": 0,
     "sports_positions": 0,
     "event_positions": 3
