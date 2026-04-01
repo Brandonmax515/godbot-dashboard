@@ -988,19 +988,109 @@ window.GODBOT_DATA = {
 <script>
 // ── EMBEDDED DATA (injected by godbot_export.py) ──
 window.GODBOT_DATA = {
-  "mode": "LIVE",
-  "generated_at": "2026-04-01T11:01:47.403756Z",
-  "total_runs": 25,
-  "total_bets": 29,
+  "mode": "DRY RUN",
+  "generated_at": "2026-04-01T11:02:17.988243Z",
+  "total_runs": 26,
+  "total_bets": 32,
   "wins": 12,
   "losses": 12,
-  "pending": 5,
+  "pending": 8,
   "win_rate": 0.5,
   "total_pnl_cents": 147,
-  "total_staked_cents": 8000,
+  "total_staked_cents": 8600,
   "roi": 0.023709677419354837,
-  "avg_edge": 0.3007931034482758,
+  "avg_edge": 0.29978125,
   "bets": [
+    {
+      "id": 75,
+      "run_date": "2026-04-01",
+      "ticker": "KXHIGHDEN-26APR01-T65",
+      "event_ticker": "KXHIGHDEN-26APR01",
+      "station": "KDEN",
+      "city": "Denver",
+      "variable": "HIGH",
+      "bracket_low": 65.0,
+      "bracket_high": null,
+      "strike_type": "greater",
+      "side": "NO",
+      "bet_type": "NO_DISPLACED",
+      "our_prob": 0.99,
+      "market_prob": 0.88,
+      "edge_pct": 0.10999999999999999,
+      "multiplier": 1.14,
+      "bet_cents": 200,
+      "order_id": "2279cc63-0819-45ec-ab8a-5d28a7614aa7",
+      "status": "PLACED",
+      "ai_reasoning": "NO on displaced bracket: Claude=1.0% YES, market=13\u00a2 YES. The GEFS ensemble shows 92.5% \u226565\u00b0F which is clearly wrong given all other data sources. Hourly forecast peaks at 58\u00b0F at 2-3 PM with storms arriving, NWS forecasts 60\u00b0F high, and even the warmest deterministic models (GFS 71.5\u00b0F, ECMWF 72.4\u00b0F) appear to be significant outliers. The AFD mentions rain showers and storms for Wednesday afternoon which will suppress heating. Adjusting probabilities to heavily favor the 58-60\u00b0F range.",
+      "ai_temp_estimate": 58.0,
+      "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
+      "settled_result": null,
+      "pnl_cents": null,
+      "notes": "raw_edge=11.0% fee=1\u00a2 net_edge=11.0% kelly_size=200\u00a2",
+      "key_factor": "",
+      "uncertainties": "",
+      "confidence": ""
+    },
+    {
+      "id": 74,
+      "run_date": "2026-04-01",
+      "ticker": "KXHIGHLAX-26APR01-B69.5",
+      "event_ticker": "KXHIGHLAX-26APR01",
+      "station": "KLAX",
+      "city": "Los Angeles",
+      "variable": "HIGH",
+      "bracket_low": 69.0,
+      "bracket_high": 70.0,
+      "strike_type": "between",
+      "side": "NO",
+      "bet_type": "NO_DISPLACED",
+      "our_prob": 0.98,
+      "market_prob": 0.69,
+      "edge_pct": 0.28,
+      "multiplier": 1.45,
+      "bet_cents": 200,
+      "order_id": "832a9355-2d81-4d16-bae4-dbed96b11171",
+      "status": "PLACED",
+      "ai_reasoning": "NO on displaced bracket: Claude=2.0% YES, market=32\u00a2 YES. The AFD clearly indicates cooler conditions than models initially suggested, with max temps in the 60s for coastal valleys. The hourly forecast shows temperatures plateauing at 65\u00b0F from noon onward, and the NWS forecast confirms 65\u00b0F for Wednesday. This strongly contradicts the GEFS concentration around 67\u00b0F, shifting probability heavily toward the 65\u00b0F bracket.",
+      "ai_temp_estimate": 65.0,
+      "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
+      "settled_result": null,
+      "pnl_cents": null,
+      "notes": "raw_edge=29.0% fee=2\u00a2 net_edge=28.0% kelly_size=200\u00a2",
+      "key_factor": "",
+      "uncertainties": "",
+      "confidence": ""
+    },
+    {
+      "id": 73,
+      "run_date": "2026-04-01",
+      "ticker": "KXHIGHLAX-26APR01-B65.5",
+      "event_ticker": "KXHIGHLAX-26APR01",
+      "station": "KLAX",
+      "city": "Los Angeles",
+      "variable": "HIGH",
+      "bracket_low": 65.0,
+      "bracket_high": 66.0,
+      "strike_type": "between",
+      "side": "YES",
+      "bet_type": "YES_BEST_BRACKET",
+      "our_prob": 0.7,
+      "market_prob": 0.2,
+      "edge_pct": 0.48,
+      "multiplier": 5.0,
+      "bet_cents": 200,
+      "order_id": "2430235c-ce94-452c-bf4c-1d2feb55383d",
+      "status": "PLACED",
+      "ai_reasoning": "The AFD clearly indicates cooler conditions than models initially suggested, with max temps in the 60s for coastal valleys. The hourly forecast shows temperatures plateauing at 65\u00b0F from noon onward, and the NWS forecast confirms 65\u00b0F for Wednesday. This strongly contradicts the GEFS concentration around 67\u00b0F, shifting probability heavily toward the 65\u00b0F bracket.",
+      "ai_temp_estimate": 65.0,
+      "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
+      "settled_result": null,
+      "pnl_cents": null,
+      "notes": "raw_edge=50.0% fee=2\u00a2 net_edge=48.0% kelly_size=200\u00a2 conf=HIGH",
+      "key_factor": "",
+      "uncertainties": "",
+      "confidence": ""
+    },
     {
       "id": 72,
       "run_date": "2026-03-31",
@@ -1874,13 +1964,13 @@ window.GODBOT_DATA = {
   ],
   "by_side": {
     "YES": {
-      "bets": 15,
+      "bets": 16,
       "wins": 4,
       "settled": 13,
       "pnl": -1039
     },
     "NO": {
-      "bets": 14,
+      "bets": 16,
       "wins": 8,
       "settled": 11,
       "pnl": 1186
@@ -1888,7 +1978,7 @@ window.GODBOT_DATA = {
   },
   "by_variable": {
     "HIGH": {
-      "bets": 29,
+      "bets": 32,
       "wins": 12,
       "settled": 24,
       "pnl": 147
@@ -1901,23 +1991,23 @@ window.GODBOT_DATA = {
       "settled": 9,
       "pnl": 937
     },
+    "Los Angeles": {
+      "bets": 6,
+      "wins": 3,
+      "settled": 4,
+      "pnl": 166
+    },
+    "Denver": {
+      "bets": 6,
+      "wins": 2,
+      "settled": 5,
+      "pnl": -121
+    },
     "Chicago": {
       "bets": 6,
       "wins": 0,
       "settled": 2,
       "pnl": -400
-    },
-    "Denver": {
-      "bets": 5,
-      "wins": 2,
-      "settled": 5,
-      "pnl": -121
-    },
-    "Los Angeles": {
-      "bets": 4,
-      "wins": 3,
-      "settled": 4,
-      "pnl": 166
     },
     "New York": {
       "bets": 2,
