@@ -1,15 +1,15 @@
 {
-  "mode": "LIVE",
-  "generated_at": "2026-04-02T11:00:05.927234Z",
+  "mode": "DRY RUN",
+  "generated_at": "2026-04-02T11:00:35.638624Z",
   "total_runs": 26,
   "total_bets": 32,
-  "wins": 12,
+  "wins": 14,
   "losses": 12,
-  "pending": 8,
-  "win_rate": 0.5,
-  "total_pnl_cents": 147,
+  "pending": 6,
+  "win_rate": 0.5384615384615384,
+  "total_pnl_cents": 498,
   "total_staked_cents": 8600,
-  "roi": 0.023709677419354837,
+  "roi": 0.07323529411764707,
   "avg_edge": 0.29978125,
   "bets": [
     {
@@ -125,8 +125,8 @@
       "ai_reasoning": "NO on displaced bracket: Claude=2.0% YES, market=34\u00a2 YES. There's a massive disconnect between GEFS ensemble (46-53\u00b0F range) and all other data showing current temps of 66\u00b0F with hourly forecast reaching 72\u00b0F. The NWS forecast explicitly calls for 72\u00b0F today, and the hourly progression shows logical warming to 72\u00b0F before storms intensify. The GEFS data appears to be completely wrong for this forecast period.",
       "ai_temp_estimate": 72.0,
       "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
-      "settled_result": null,
-      "pnl_cents": null,
+      "settled_result": "WIN",
+      "pnl_cents": 201,
       "notes": "raw_edge=31.0% fee=2\u00a2 net_edge=30.0% kelly_size=300\u00a2",
       "key_factor": "",
       "uncertainties": "",
@@ -155,8 +155,8 @@
       "ai_reasoning": "There's a massive disconnect between GEFS ensemble (46-53\u00b0F range) and all other data showing current temps of 66\u00b0F with hourly forecast reaching 72\u00b0F. The NWS forecast explicitly calls for 72\u00b0F today, and the hourly progression shows logical warming to 72\u00b0F before storms intensify. The GEFS data appears to be completely wrong for this forecast period.",
       "ai_temp_estimate": 72.0,
       "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
-      "settled_result": null,
-      "pnl_cents": null,
+      "settled_result": "WIN",
+      "pnl_cents": 150,
       "notes": "raw_edge=35.0% fee=2\u00a2 net_edge=33.0% kelly_size=300\u00a2 conf=HIGH",
       "key_factor": "",
       "uncertainties": "",
@@ -976,23 +976,23 @@
   "by_side": {
     "YES": {
       "bets": 16,
-      "wins": 4,
-      "settled": 13,
-      "pnl": -1039
+      "wins": 5,
+      "settled": 14,
+      "pnl": -889
     },
     "NO": {
       "bets": 16,
-      "wins": 8,
-      "settled": 11,
-      "pnl": 1186
+      "wins": 9,
+      "settled": 12,
+      "pnl": 1387
     }
   },
   "by_variable": {
     "HIGH": {
       "bets": 32,
-      "wins": 12,
-      "settled": 24,
-      "pnl": 147
+      "wins": 14,
+      "settled": 26,
+      "pnl": 498
     }
   },
   "by_city": {
@@ -1016,9 +1016,9 @@
     },
     "Chicago": {
       "bets": 6,
-      "wins": 0,
-      "settled": 2,
-      "pnl": -400
+      "wins": 2,
+      "settled": 4,
+      "pnl": -49
     },
     "New York": {
       "bets": 2,
@@ -1056,8 +1056,8 @@
     },
     {
       "bucket": "80-100%",
-      "count": 2,
-      "actual_wr": 0.5
+      "count": 3,
+      "actual_wr": 0.6667
     }
   ]
 }
