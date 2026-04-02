@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-01T22:00:05.583377-04:00",
-  "generated_at_unix": 1775095205,
+  "generated_at": "2026-04-01T23:00:05.109736-04:00",
+  "generated_at_unix": 1775098805,
   "account": {
     "cash_balance": 23.32,
-    "portfolio_value": 17.94,
-    "total_equity": 41.26,
-    "today_pnl": -2.82,
-    "today_pnl_pct": -6.83,
-    "unrealized_pnl": -5.13,
+    "portfolio_value": 20.54,
+    "total_equity": 43.86,
+    "today_pnl": -0.62,
+    "today_pnl_pct": -1.41,
+    "unrealized_pnl": -2.93,
     "today_realized_pnl": 2.31
   },
   "positions": [
@@ -29,6 +29,26 @@
       "unrealized_pnl_pct": 43.48,
       "realized_pnl": 0.0,
       "fees_paid": 0.03,
+      "market_status": "active"
+    },
+    {
+      "ticker": "KXTRUMPUFC-UFC327",
+      "display_name": "KXTRUMPUFC-UFC327",
+      "city": "",
+      "type": "",
+      "threshold": "",
+      "target_date": "",
+      "category": "event",
+      "side": "YES",
+      "quantity": 20,
+      "avg_entry_price": 0.7285,
+      "current_price": 0.75,
+      "cost_basis": 14.57,
+      "current_value": 15.0,
+      "unrealized_pnl": 0.43,
+      "unrealized_pnl_pct": 2.95,
+      "realized_pnl": 0.0,
+      "fees_paid": 0.28,
       "market_status": "active"
     },
     {
@@ -129,26 +149,6 @@
       "unrealized_pnl_pct": -91.67,
       "realized_pnl": 0.0,
       "fees_paid": 0.12,
-      "market_status": "active"
-    },
-    {
-      "ticker": "KXTRUMPUFC-UFC327",
-      "display_name": "KXTRUMPUFC-UFC327",
-      "city": "",
-      "type": "",
-      "threshold": "",
-      "target_date": "",
-      "category": "event",
-      "side": "YES",
-      "quantity": 20,
-      "avg_entry_price": 0.7285,
-      "current_price": 0.64,
-      "cost_basis": 14.57,
-      "current_value": 12.8,
-      "unrealized_pnl": -1.77,
-      "unrealized_pnl_pct": -12.15,
-      "realized_pnl": 0.0,
-      "fees_paid": 0.28,
       "market_status": "active"
     },
     {
