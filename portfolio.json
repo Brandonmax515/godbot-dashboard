@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-04-01T23:00:05.109736-04:00",
-  "generated_at_unix": 1775098805,
+  "generated_at": "2026-04-02T05:00:04.795539-04:00",
+  "generated_at_unix": 1775120404,
   "account": {
     "cash_balance": 23.32,
-    "portfolio_value": 20.54,
-    "total_equity": 43.86,
-    "today_pnl": -0.62,
-    "today_pnl_pct": -1.41,
-    "unrealized_pnl": -2.93,
-    "today_realized_pnl": 2.31
+    "portfolio_value": 16.14,
+    "total_equity": 39.46,
+    "today_pnl": -6.78,
+    "today_pnl_pct": -17.18,
+    "unrealized_pnl": -6.78,
+    "today_realized_pnl": 0.0
   },
   "positions": [
     {
@@ -29,27 +29,7 @@
       "unrealized_pnl_pct": 43.48,
       "realized_pnl": 0.0,
       "fees_paid": 0.03,
-      "market_status": "active"
-    },
-    {
-      "ticker": "KXTRUMPUFC-UFC327",
-      "display_name": "KXTRUMPUFC-UFC327",
-      "city": "",
-      "type": "",
-      "threshold": "",
-      "target_date": "",
-      "category": "event",
-      "side": "YES",
-      "quantity": 20,
-      "avg_entry_price": 0.7285,
-      "current_price": 0.75,
-      "cost_basis": 14.57,
-      "current_value": 15.0,
-      "unrealized_pnl": 0.43,
-      "unrealized_pnl_pct": 2.95,
-      "realized_pnl": 0.0,
-      "fees_paid": 0.28,
-      "market_status": "active"
+      "market_status": "closed"
     },
     {
       "ticker": "KXMOLDOVAPRES-28-EGUT",
@@ -89,7 +69,7 @@
       "unrealized_pnl_pct": 12.5,
       "realized_pnl": 0.0,
       "fees_paid": 0.02,
-      "market_status": "active"
+      "market_status": "closed"
     },
     {
       "ticker": "KXGHANAPRES-28-AKYE",
@@ -102,11 +82,11 @@
       "side": "YES",
       "quantity": 5,
       "avg_entry_price": 0.07,
-      "current_price": 0.03,
+      "current_price": 0.02,
       "cost_basis": 0.35,
-      "current_value": 0.15,
-      "unrealized_pnl": -0.2,
-      "unrealized_pnl_pct": -57.14,
+      "current_value": 0.1,
+      "unrealized_pnl": -0.25,
+      "unrealized_pnl_pct": -71.43,
       "realized_pnl": 0.0,
       "fees_paid": 0.03,
       "market_status": "active"
@@ -129,7 +109,7 @@
       "unrealized_pnl_pct": -95.0,
       "realized_pnl": 0.0,
       "fees_paid": 0.03,
-      "market_status": "active"
+      "market_status": "closed"
     },
     {
       "ticker": "KXHIGHAUS-26APR01-B88.5",
@@ -149,7 +129,7 @@
       "unrealized_pnl_pct": -91.67,
       "realized_pnl": 0.0,
       "fees_paid": 0.12,
-      "market_status": "active"
+      "market_status": "closed"
     },
     {
       "ticker": "KXHIGHAUS-26APR01-T88",
@@ -169,6 +149,26 @@
       "unrealized_pnl_pct": -79.71,
       "realized_pnl": 0.0,
       "fees_paid": 0.19,
+      "market_status": "closed"
+    },
+    {
+      "ticker": "KXTRUMPUFC-UFC327",
+      "display_name": "KXTRUMPUFC-UFC327",
+      "city": "",
+      "type": "",
+      "threshold": "",
+      "target_date": "",
+      "category": "event",
+      "side": "YES",
+      "quantity": 20,
+      "avg_entry_price": 0.7285,
+      "current_price": 0.56,
+      "cost_basis": 14.57,
+      "current_value": 11.2,
+      "unrealized_pnl": -3.37,
+      "unrealized_pnl_pct": -23.13,
+      "realized_pnl": 0.0,
+      "fees_paid": 0.28,
       "market_status": "active"
     }
   ],
