@@ -1,15 +1,15 @@
 {
-  "mode": "LIVE",
-  "generated_at": "2026-04-03T10:59:47.762825Z",
+  "mode": "DRY RUN",
+  "generated_at": "2026-04-03T11:00:17.988443Z",
   "total_runs": 27,
   "total_bets": 32,
-  "wins": 14,
-  "losses": 12,
-  "pending": 6,
-  "win_rate": 0.5384615384615384,
-  "total_pnl_cents": 498,
+  "wins": 16,
+  "losses": 13,
+  "pending": 3,
+  "win_rate": 0.5517241379310345,
+  "total_pnl_cents": 612,
   "total_staked_cents": 8600,
-  "roi": 0.07323529411764707,
+  "roi": 0.0827027027027027,
   "avg_edge": 0.29978125,
   "bets": [
     {
@@ -35,8 +35,8 @@
       "ai_reasoning": "NO on displaced bracket: Claude=1.0% YES, market=13\u00a2 YES. The GEFS ensemble shows 92.5% \u226565\u00b0F which is clearly wrong given all other data sources. Hourly forecast peaks at 58\u00b0F at 2-3 PM with storms arriving, NWS forecasts 60\u00b0F high, and even the warmest deterministic models (GFS 71.5\u00b0F, ECMWF 72.4\u00b0F) appear to be significant outliers. The AFD mentions rain showers and storms for Wednesday afternoon which will suppress heating. Adjusting probabilities to heavily favor the 58-60\u00b0F range.",
       "ai_temp_estimate": 58.0,
       "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
-      "settled_result": null,
-      "pnl_cents": null,
+      "settled_result": "WIN",
+      "pnl_cents": 176,
       "notes": "raw_edge=11.0% fee=1\u00a2 net_edge=11.0% kelly_size=200\u00a2",
       "key_factor": "",
       "uncertainties": "",
@@ -65,8 +65,8 @@
       "ai_reasoning": "NO on displaced bracket: Claude=2.0% YES, market=32\u00a2 YES. The AFD clearly indicates cooler conditions than models initially suggested, with max temps in the 60s for coastal valleys. The hourly forecast shows temperatures plateauing at 65\u00b0F from noon onward, and the NWS forecast confirms 65\u00b0F for Wednesday. This strongly contradicts the GEFS concentration around 67\u00b0F, shifting probability heavily toward the 65\u00b0F bracket.",
       "ai_temp_estimate": 65.0,
       "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
-      "settled_result": null,
-      "pnl_cents": null,
+      "settled_result": "WIN",
+      "pnl_cents": 138,
       "notes": "raw_edge=29.0% fee=2\u00a2 net_edge=28.0% kelly_size=200\u00a2",
       "key_factor": "",
       "uncertainties": "",
@@ -95,8 +95,8 @@
       "ai_reasoning": "The AFD clearly indicates cooler conditions than models initially suggested, with max temps in the 60s for coastal valleys. The hourly forecast shows temperatures plateauing at 65\u00b0F from noon onward, and the NWS forecast confirms 65\u00b0F for Wednesday. This strongly contradicts the GEFS concentration around 67\u00b0F, shifting probability heavily toward the 65\u00b0F bracket.",
       "ai_temp_estimate": 65.0,
       "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
-      "settled_result": null,
-      "pnl_cents": null,
+      "settled_result": "LOSS",
+      "pnl_cents": -200,
       "notes": "raw_edge=50.0% fee=2\u00a2 net_edge=48.0% kelly_size=200\u00a2 conf=HIGH",
       "key_factor": "",
       "uncertainties": "",
@@ -977,22 +977,22 @@
     "YES": {
       "bets": 16,
       "wins": 5,
-      "settled": 14,
-      "pnl": -889
+      "settled": 15,
+      "pnl": -1089
     },
     "NO": {
       "bets": 16,
-      "wins": 9,
-      "settled": 12,
-      "pnl": 1387
+      "wins": 11,
+      "settled": 14,
+      "pnl": 1701
     }
   },
   "by_variable": {
     "HIGH": {
       "bets": 32,
-      "wins": 14,
-      "settled": 26,
-      "pnl": 498
+      "wins": 16,
+      "settled": 29,
+      "pnl": 612
     }
   },
   "by_city": {
@@ -1004,15 +1004,15 @@
     },
     "Los Angeles": {
       "bets": 6,
-      "wins": 3,
-      "settled": 4,
-      "pnl": 166
+      "wins": 4,
+      "settled": 6,
+      "pnl": 104
     },
     "Denver": {
       "bets": 6,
-      "wins": 2,
-      "settled": 5,
-      "pnl": -121
+      "wins": 3,
+      "settled": 6,
+      "pnl": 55
     },
     "Chicago": {
       "bets": 6,
@@ -1051,8 +1051,8 @@
     },
     {
       "bucket": "60-80%",
-      "count": 4,
-      "actual_wr": 0.75
+      "count": 5,
+      "actual_wr": 0.6
     },
     {
       "bucket": "80-100%",
