@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-04-04T05:00:05.315241-04:00",
-  "generated_at_unix": 1775293205,
+  "generated_at": "2026-04-04T06:00:04.723206-04:00",
+  "generated_at_unix": 1775296804,
   "account": {
     "cash_balance": 27.32,
-    "portfolio_value": 15.05,
-    "total_equity": 42.37,
+    "portfolio_value": 14.85,
+    "total_equity": 42.17,
     "today_pnl": -0.37,
-    "today_pnl_pct": -0.87,
+    "today_pnl_pct": -0.88,
     "unrealized_pnl": -0.37,
     "today_realized_pnl": 0.0
   },
