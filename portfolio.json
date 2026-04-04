@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-04T07:00:04.961493-04:00",
-  "generated_at_unix": 1775300404,
+  "generated_at": "2026-04-04T08:00:04.617141-04:00",
+  "generated_at_unix": 1775304004,
   "account": {
-    "cash_balance": 27.32,
-    "portfolio_value": 14.65,
-    "total_equity": 41.97,
-    "today_pnl": -0.77,
-    "today_pnl_pct": -1.83,
-    "unrealized_pnl": -0.77,
+    "cash_balance": 25.79,
+    "portfolio_value": 15.51,
+    "total_equity": 41.3,
+    "today_pnl": -0.97,
+    "today_pnl_pct": -2.35,
+    "unrealized_pnl": -0.97,
     "today_realized_pnl": 0.0
   },
   "positions": [
@@ -29,6 +29,26 @@
       "unrealized_pnl_pct": 83.33,
       "realized_pnl": 0.0,
       "fees_paid": 0.02,
+      "market_status": "active"
+    },
+    {
+      "ticker": "KXHIGHMIA-26APR04-B84.5",
+      "display_name": "MIA High 84-85\u00b0F Apr 04",
+      "city": "MIA",
+      "type": "HIGH",
+      "threshold": "84-85\u00b0F",
+      "target_date": "2026-04-04",
+      "category": "weather",
+      "side": "NO",
+      "quantity": 2,
+      "avg_entry_price": 0.75,
+      "current_price": 0.25,
+      "cost_basis": 1.5,
+      "current_value": 1.5,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "realized_pnl": 0.0,
+      "fees_paid": 0.03,
       "market_status": "active"
     },
     {
@@ -62,11 +82,11 @@
       "side": "YES",
       "quantity": 20,
       "avg_entry_price": 0.7285,
-      "current_price": 0.69,
+      "current_price": 0.68,
       "cost_basis": 14.57,
-      "current_value": 13.8,
-      "unrealized_pnl": -0.77,
-      "unrealized_pnl_pct": -5.28,
+      "current_value": 13.6,
+      "unrealized_pnl": -0.97,
+      "unrealized_pnl_pct": -6.66,
       "realized_pnl": 0.0,
       "fees_paid": 0.28,
       "market_status": "active"
@@ -355,9 +375,9 @@
     }
   ],
   "summary": {
-    "total_open_positions": 3,
-    "total_exposure": 15.22,
-    "weather_positions": 0,
+    "total_open_positions": 4,
+    "total_exposure": 16.72,
+    "weather_positions": 1,
     "crypto_positions": 0,
     "sports_positions": 0,
     "event_positions": 3
