@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-04T23:00:05.034731-04:00",
-  "generated_at_unix": 1775358005,
+  "generated_at": "2026-04-05T05:00:05.738090-04:00",
+  "generated_at_unix": 1775379605,
   "account": {
     "cash_balance": 25.79,
-    "portfolio_value": 16.23,
-    "total_equity": 42.02,
-    "today_pnl": -0.49,
-    "today_pnl_pct": -1.17,
-    "unrealized_pnl": -0.49,
+    "portfolio_value": 15.03,
+    "total_equity": 40.82,
+    "today_pnl": -1.49,
+    "today_pnl_pct": -3.65,
+    "unrealized_pnl": -1.49,
     "today_realized_pnl": 0.0
   },
   "positions": [
@@ -29,7 +29,7 @@
       "unrealized_pnl_pct": 32.0,
       "realized_pnl": 0.0,
       "fees_paid": 0.03,
-      "market_status": "active"
+      "market_status": "closed"
     },
     {
       "ticker": "KXMOLDOVAPRES-28-EGUT",
@@ -82,11 +82,11 @@
       "side": "YES",
       "quantity": 20,
       "avg_entry_price": 0.7285,
-      "current_price": 0.68,
+      "current_price": 0.63,
       "cost_basis": 14.57,
-      "current_value": 13.6,
-      "unrealized_pnl": -0.97,
-      "unrealized_pnl_pct": -6.66,
+      "current_value": 12.6,
+      "unrealized_pnl": -1.97,
+      "unrealized_pnl_pct": -13.52,
       "realized_pnl": 0.0,
       "fees_paid": 0.28,
       "market_status": "active"
