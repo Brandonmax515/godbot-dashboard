@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-06T07:00:03.869138-04:00",
-  "generated_at_unix": 1775473203,
+  "generated_at": "2026-04-06T08:00:03.035865-04:00",
+  "generated_at_unix": 1775476803,
   "account": {
-    "cash_balance": 27.79,
-    "portfolio_value": 13.45,
-    "total_equity": 41.24,
-    "today_pnl": -1.77,
-    "today_pnl_pct": -4.29,
-    "unrealized_pnl": -1.77,
+    "cash_balance": 27.45,
+    "portfolio_value": 13.63,
+    "total_equity": 41.08,
+    "today_pnl": -1.93,
+    "today_pnl_pct": -4.7,
+    "unrealized_pnl": -1.93,
     "today_realized_pnl": 0.0
   },
   "positions": [
@@ -27,6 +27,26 @@
       "current_value": 0.55,
       "unrealized_pnl": 0.25,
       "unrealized_pnl_pct": 83.33,
+      "realized_pnl": 0.0,
+      "fees_paid": 0.02,
+      "market_status": "active"
+    },
+    {
+      "ticker": "KXHIGHNY-26APR06-T54",
+      "display_name": "NY High \u226554\u00b0F Apr 06",
+      "city": "NY",
+      "type": "HIGH",
+      "threshold": "\u226554\u00b0F",
+      "target_date": "2026-04-06",
+      "category": "weather",
+      "side": "YES",
+      "quantity": 2,
+      "avg_entry_price": 0.16,
+      "current_price": 0.08,
+      "cost_basis": 0.32,
+      "current_value": 0.16,
+      "unrealized_pnl": -0.16,
+      "unrealized_pnl_pct": -50.0,
       "realized_pnl": 0.0,
       "fees_paid": 0.02,
       "market_status": "active"
@@ -355,9 +375,9 @@
     }
   ],
   "summary": {
-    "total_open_positions": 3,
-    "total_exposure": 15.22,
-    "weather_positions": 0,
+    "total_open_positions": 4,
+    "total_exposure": 15.54,
+    "weather_positions": 1,
     "crypto_positions": 0,
     "sports_positions": 0,
     "event_positions": 3
