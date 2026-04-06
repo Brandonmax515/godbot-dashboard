@@ -988,19 +988,49 @@ window.GODBOT_DATA = {
 <script>
 // ── EMBEDDED DATA (injected by godbot_export.py) ──
 window.GODBOT_DATA = {
-  "mode": "LIVE",
-  "generated_at": "2026-04-06T11:01:25.767274Z",
-  "total_runs": 30,
-  "total_bets": 33,
+  "mode": "DRY RUN",
+  "generated_at": "2026-04-06T11:01:55.220973Z",
+  "total_runs": 31,
+  "total_bets": 34,
   "wins": 17,
   "losses": 13,
-  "pending": 3,
+  "pending": 4,
   "win_rate": 0.5666666666666667,
   "total_pnl_cents": 762,
-  "total_staked_cents": 8800,
+  "total_staked_cents": 9000,
   "roi": 0.10026315789473685,
-  "avg_edge": 0.297060606060606,
+  "avg_edge": 0.3024411764705882,
   "bets": [
+    {
+      "id": 77,
+      "run_date": "2026-04-06",
+      "ticker": "KXHIGHNY-26APR06-T54",
+      "event_ticker": "KXHIGHNY-26APR06",
+      "station": "KNYC",
+      "city": "New York",
+      "variable": "HIGH",
+      "bracket_low": null,
+      "bracket_high": 54.0,
+      "strike_type": "less",
+      "side": "YES",
+      "bet_type": "YES_BEST_BRACKET",
+      "our_prob": 0.65,
+      "market_prob": 0.16,
+      "edge_pct": 0.48,
+      "multiplier": 6.25,
+      "bet_cents": 200,
+      "order_id": "f63fd3af-55ae-426e-aadb-2d7ec30d56cd",
+      "status": "PLACED",
+      "ai_reasoning": "GEFS probabilities are heavily skewed toward \u226453\u00b0F bracket (87.9%) but hourly forecast shows peak at 56\u00b0F and NWS forecast calls for 57\u00b0F high. The deterministic models (49-51\u00b0F) combined with sunny conditions and current warming trend suggest a high in the 52-55\u00b0F range, shifting probability toward the 54\u00b0F and 56\u00b0F brackets while maintaining some weight on \u226453\u00b0F given the strong GEFS signal.",
+      "ai_temp_estimate": 52.0,
+      "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
+      "settled_result": null,
+      "pnl_cents": null,
+      "notes": "raw_edge=49.0% fee=1\u00a2 net_edge=48.0% kelly_size=200\u00a2 conf=HIGH",
+      "key_factor": "",
+      "uncertainties": "",
+      "confidence": ""
+    },
     {
       "id": 76,
       "run_date": "2026-04-04",
@@ -1994,7 +2024,7 @@ window.GODBOT_DATA = {
   ],
   "by_side": {
     "YES": {
-      "bets": 16,
+      "bets": 17,
       "wins": 5,
       "settled": 15,
       "pnl": -1089
@@ -2008,7 +2038,7 @@ window.GODBOT_DATA = {
   },
   "by_variable": {
     "HIGH": {
-      "bets": 33,
+      "bets": 34,
       "wins": 17,
       "settled": 30,
       "pnl": 762
@@ -2040,7 +2070,7 @@ window.GODBOT_DATA = {
       "pnl": -49
     },
     "New York": {
-      "bets": 2,
+      "bets": 3,
       "wins": 1,
       "settled": 2,
       "pnl": -35
