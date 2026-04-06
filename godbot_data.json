@@ -1,15 +1,15 @@
 {
-  "mode": "LIVE",
-  "generated_at": "2026-04-06T10:59:48.018477Z",
+  "mode": "DRY RUN",
+  "generated_at": "2026-04-06T11:00:19.328252Z",
   "total_runs": 30,
   "total_bets": 33,
-  "wins": 16,
+  "wins": 17,
   "losses": 13,
-  "pending": 4,
-  "win_rate": 0.5517241379310345,
-  "total_pnl_cents": 612,
+  "pending": 3,
+  "win_rate": 0.5666666666666667,
+  "total_pnl_cents": 762,
   "total_staked_cents": 8800,
-  "roi": 0.0827027027027027,
+  "roi": 0.10026315789473685,
   "avg_edge": 0.297060606060606,
   "bets": [
     {
@@ -35,8 +35,8 @@
       "ai_reasoning": "NO on displaced bracket: Claude=3.0% YES, market=26\u00a2 YES. GEFS baseline heavily favors 78-80\u00b0F brackets with tight ensemble spread (std=0.7\u00b0F). Hourly forecast shows clear warming to 80-81\u00b0F by afternoon, supporting the 80-82\u00b0F bracket over GEFS allocation. Minor upward adjustment from deterministic models averaging ~80\u00b0F and NWS official forecast of 82\u00b0F, but thunderstorm potential limits extreme heating.",
       "ai_temp_estimate": 80.0,
       "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
-      "settled_result": null,
-      "pnl_cents": null,
+      "settled_result": "WIN",
+      "pnl_cents": 150,
       "notes": "raw_edge=22.0% fee=2\u00a2 net_edge=21.0% kelly_size=200\u00a2",
       "key_factor": "",
       "uncertainties": "",
@@ -1012,25 +1012,25 @@
     },
     "NO": {
       "bets": 17,
-      "wins": 11,
-      "settled": 14,
-      "pnl": 1701
+      "wins": 12,
+      "settled": 15,
+      "pnl": 1851
     }
   },
   "by_variable": {
     "HIGH": {
       "bets": 33,
-      "wins": 16,
-      "settled": 29,
-      "pnl": 612
+      "wins": 17,
+      "settled": 30,
+      "pnl": 762
     }
   },
   "by_city": {
     "Miami": {
       "bets": 11,
-      "wins": 6,
-      "settled": 9,
-      "pnl": 937
+      "wins": 7,
+      "settled": 10,
+      "pnl": 1087
     },
     "Los Angeles": {
       "bets": 6,
