@@ -1,16 +1,36 @@
 {
-  "generated_at": "2026-04-07T07:00:02.420667-04:00",
-  "generated_at_unix": 1775559602,
+  "generated_at": "2026-04-07T08:00:05.284599-04:00",
+  "generated_at_unix": 1775563205,
   "account": {
-    "cash_balance": 27.45,
-    "portfolio_value": 15.17,
-    "total_equity": 42.62,
-    "today_pnl": -0.72,
-    "today_pnl_pct": -1.69,
-    "unrealized_pnl": -0.72,
+    "cash_balance": 25.63,
+    "portfolio_value": 16.97,
+    "total_equity": 42.6,
+    "today_pnl": -0.92,
+    "today_pnl_pct": -2.16,
+    "unrealized_pnl": -0.92,
     "today_realized_pnl": 0.0
   },
   "positions": [
+    {
+      "ticker": "KXHIGHDEN-26APR07-B66.5",
+      "display_name": "DEN High 66-67\u00b0F Apr 07",
+      "city": "DEN",
+      "type": "HIGH",
+      "threshold": "66-67\u00b0F",
+      "target_date": "2026-04-07",
+      "category": "weather",
+      "side": "NO",
+      "quantity": 2,
+      "avg_entry_price": 0.9,
+      "current_price": 0.1,
+      "cost_basis": 1.8,
+      "current_value": 1.8,
+      "unrealized_pnl": 0.0,
+      "unrealized_pnl_pct": 0.0,
+      "realized_pnl": 0.0,
+      "fees_paid": 0.02,
+      "market_status": "active"
+    },
     {
       "ticker": "KXTRUMPUFC-UFC327",
       "display_name": "KXTRUMPUFC-UFC327",
@@ -22,11 +42,11 @@
       "side": "YES",
       "quantity": 20,
       "avg_entry_price": 0.7285,
-      "current_price": 0.73,
+      "current_price": 0.72,
       "cost_basis": 14.57,
-      "current_value": 14.6,
-      "unrealized_pnl": 0.03,
-      "unrealized_pnl_pct": 0.21,
+      "current_value": 14.4,
+      "unrealized_pnl": -0.17,
+      "unrealized_pnl_pct": -1.17,
       "realized_pnl": 0.0,
       "fees_paid": 0.28,
       "market_status": "active"
@@ -89,7 +109,7 @@
       "unrealized_pnl_pct": -93.75,
       "realized_pnl": 0.0,
       "fees_paid": 0.02,
-      "market_status": "closed"
+      "market_status": "determined"
     }
   ],
   "recent_settlements": [
@@ -375,9 +395,9 @@
     }
   ],
   "summary": {
-    "total_open_positions": 4,
-    "total_exposure": 15.54,
-    "weather_positions": 1,
+    "total_open_positions": 5,
+    "total_exposure": 17.34,
+    "weather_positions": 2,
     "crypto_positions": 0,
     "sports_positions": 0,
     "event_positions": 3
