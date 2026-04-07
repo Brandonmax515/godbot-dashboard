@@ -1,16 +1,36 @@
 {
-  "generated_at": "2026-04-07T05:00:05.719262-04:00",
-  "generated_at_unix": 1775552405,
+  "generated_at": "2026-04-07T06:00:05.529679-04:00",
+  "generated_at_unix": 1775556005,
   "account": {
     "cash_balance": 27.45,
-    "portfolio_value": 14.17,
-    "total_equity": 41.62,
-    "today_pnl": -2.12,
-    "today_pnl_pct": -5.09,
-    "unrealized_pnl": -2.12,
+    "portfolio_value": 15.37,
+    "total_equity": 42.82,
+    "today_pnl": -0.72,
+    "today_pnl_pct": -1.68,
+    "unrealized_pnl": -0.72,
     "today_realized_pnl": 0.0
   },
   "positions": [
+    {
+      "ticker": "KXTRUMPUFC-UFC327",
+      "display_name": "KXTRUMPUFC-UFC327",
+      "city": "",
+      "type": "",
+      "threshold": "",
+      "target_date": "",
+      "category": "event",
+      "side": "YES",
+      "quantity": 20,
+      "avg_entry_price": 0.7285,
+      "current_price": 0.73,
+      "cost_basis": 14.57,
+      "current_value": 14.6,
+      "unrealized_pnl": 0.03,
+      "unrealized_pnl_pct": 0.21,
+      "realized_pnl": 0.0,
+      "fees_paid": 0.28,
+      "market_status": "active"
+    },
     {
       "ticker": "KXGHANAPRES-28-AKYE",
       "display_name": "KXGHANAPRES-28-AKYE",
@@ -70,26 +90,6 @@
       "realized_pnl": 0.0,
       "fees_paid": 0.02,
       "market_status": "closed"
-    },
-    {
-      "ticker": "KXTRUMPUFC-UFC327",
-      "display_name": "KXTRUMPUFC-UFC327",
-      "city": "",
-      "type": "",
-      "threshold": "",
-      "target_date": "",
-      "category": "event",
-      "side": "YES",
-      "quantity": 20,
-      "avg_entry_price": 0.7285,
-      "current_price": 0.66,
-      "cost_basis": 14.57,
-      "current_value": 13.2,
-      "unrealized_pnl": -1.37,
-      "unrealized_pnl_pct": -9.4,
-      "realized_pnl": 0.0,
-      "fees_paid": 0.28,
-      "market_status": "active"
     }
   ],
   "recent_settlements": [
