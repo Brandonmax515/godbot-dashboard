@@ -1,17 +1,47 @@
 {
-  "mode": "LIVE",
-  "generated_at": "2026-04-07T11:09:23.691555Z",
-  "total_runs": 31,
-  "total_bets": 34,
+  "mode": "DRY RUN",
+  "generated_at": "2026-04-07T11:09:53.675164Z",
+  "total_runs": 32,
+  "total_bets": 35,
   "wins": 17,
   "losses": 13,
-  "pending": 4,
+  "pending": 5,
   "win_rate": 0.5666666666666667,
   "total_pnl_cents": 762,
-  "total_staked_cents": 9000,
+  "total_staked_cents": 9200,
   "roi": 0.10026315789473685,
-  "avg_edge": 0.3024411764705882,
+  "avg_edge": 0.2958,
   "bets": [
+    {
+      "id": 78,
+      "run_date": "2026-04-07",
+      "ticker": "KXHIGHDEN-26APR07-B66.5",
+      "event_ticker": "KXHIGHDEN-26APR07",
+      "station": "KDEN",
+      "city": "Denver",
+      "variable": "HIGH",
+      "bracket_low": 66.0,
+      "bracket_high": 67.0,
+      "strike_type": "between",
+      "side": "NO",
+      "bet_type": "NO_DISPLACED",
+      "our_prob": 0.97,
+      "market_prob": 0.9,
+      "edge_pct": 0.06999999999999995,
+      "multiplier": 1.11,
+      "bet_cents": 200,
+      "order_id": "6a01789c-5ccc-4abb-b18f-82ee7d23afa8",
+      "status": "PLACED",
+      "ai_reasoning": "NO on displaced bracket: Claude=3.0% YES, market=11\u00a2 YES. The NWS forecast of 69\u00b0F and hourly progression peaking at 68\u00b0F by 15:00 suggest the GEFS ensemble may be running slightly warm. The mostly cloudy morning conditions followed by partly sunny afternoon support a more constrained warming scenario. Adjusting probabilities down from the higher brackets (72\u00b0F+ and 73\u00b0F+) and concentrating probability mass around the 68-70\u00b0F range.",
+      "ai_temp_estimate": 69.0,
+      "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
+      "settled_result": null,
+      "pnl_cents": null,
+      "notes": "raw_edge=7.0% fee=1\u00a2 net_edge=7.0% kelly_size=200\u00a2",
+      "key_factor": "",
+      "uncertainties": "",
+      "confidence": ""
+    },
     {
       "id": 77,
       "run_date": "2026-04-06",
@@ -1041,7 +1071,7 @@
       "pnl": -1089
     },
     "NO": {
-      "bets": 17,
+      "bets": 18,
       "wins": 12,
       "settled": 15,
       "pnl": 1851
@@ -1049,7 +1079,7 @@
   },
   "by_variable": {
     "HIGH": {
-      "bets": 34,
+      "bets": 35,
       "wins": 17,
       "settled": 30,
       "pnl": 762
@@ -1062,17 +1092,17 @@
       "settled": 10,
       "pnl": 1087
     },
+    "Denver": {
+      "bets": 7,
+      "wins": 3,
+      "settled": 6,
+      "pnl": 55
+    },
     "Los Angeles": {
       "bets": 6,
       "wins": 4,
       "settled": 6,
       "pnl": 104
-    },
-    "Denver": {
-      "bets": 6,
-      "wins": 3,
-      "settled": 6,
-      "pnl": 55
     },
     "Chicago": {
       "bets": 6,
