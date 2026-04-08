@@ -1,7 +1,7 @@
 {
-  "mode": "LIVE",
-  "generated_at": "2026-04-08T22:20:49.919340Z",
-  "total_runs": 33,
+  "mode": "DRY RUN",
+  "generated_at": "2026-04-08T22:21:20.412237Z",
+  "total_runs": 34,
   "total_bets": 36,
   "wins": 18,
   "losses": 14,
