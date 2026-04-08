@@ -1,17 +1,47 @@
 {
-  "mode": "LIVE",
-  "generated_at": "2026-04-08T11:01:40.134092Z",
-  "total_runs": 32,
-  "total_bets": 35,
+  "mode": "DRY RUN",
+  "generated_at": "2026-04-08T11:02:10.411751Z",
+  "total_runs": 33,
+  "total_bets": 36,
   "wins": 17,
   "losses": 14,
-  "pending": 4,
+  "pending": 5,
   "win_rate": 0.5483870967741935,
   "total_pnl_cents": 562,
-  "total_staked_cents": 9200,
+  "total_staked_cents": 9400,
   "roi": 0.07205128205128206,
-  "avg_edge": 0.2958,
+  "avg_edge": 0.29036111111111107,
   "bets": [
+    {
+      "id": 79,
+      "run_date": "2026-04-08",
+      "ticker": "KXHIGHNY-26APR08-T53",
+      "event_ticker": "KXHIGHNY-26APR08",
+      "station": "KNYC",
+      "city": "New York",
+      "variable": "HIGH",
+      "bracket_low": 53.0,
+      "bracket_high": null,
+      "strike_type": "greater",
+      "side": "NO",
+      "bet_type": "NO_DISPLACED",
+      "our_prob": 0.98,
+      "market_prob": 0.88,
+      "edge_pct": 0.09999999999999998,
+      "multiplier": 1.14,
+      "bet_cents": 200,
+      "order_id": "7569cf29-c691-49fd-8f49-e01238b8e45d",
+      "status": "PLACED",
+      "ai_reasoning": "NO on displaced bracket: Claude=2.0% YES, market=13\u00a2 YES. GEFS baseline looks reasonable given the tight ensemble spread (1.6\u00b0F std) and deterministic model consensus mostly between 47-52\u00b0F. The hourly forecast showing peak temps around 50\u00b0F at 3PM aligns well with GEFS median. Adjusting slightly toward the 48-50\u00b0F brackets given the sunny conditions will support efficient heating and the tight model agreement in that range.",
+      "ai_temp_estimate": 49.0,
+      "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
+      "settled_result": null,
+      "pnl_cents": null,
+      "notes": "raw_edge=10.0% fee=1\u00a2 net_edge=10.0% kelly_size=200\u00a2",
+      "key_factor": "",
+      "uncertainties": "",
+      "confidence": ""
+    },
     {
       "id": 78,
       "run_date": "2026-04-07",
@@ -1071,7 +1101,7 @@
       "pnl": -1289
     },
     "NO": {
-      "bets": 18,
+      "bets": 19,
       "wins": 12,
       "settled": 15,
       "pnl": 1851
@@ -1079,7 +1109,7 @@
   },
   "by_variable": {
     "HIGH": {
-      "bets": 35,
+      "bets": 36,
       "wins": 17,
       "settled": 31,
       "pnl": 562
@@ -1111,7 +1141,7 @@
       "pnl": -49
     },
     "New York": {
-      "bets": 3,
+      "bets": 4,
       "wins": 1,
       "settled": 3,
       "pnl": -235
