@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-08T13:00:05.233519-04:00",
-  "generated_at_unix": 1775667605,
+  "generated_at": "2026-04-08T14:00:06.078275-04:00",
+  "generated_at_unix": 1775671206,
   "account": {
     "cash_balance": 25.85,
-    "portfolio_value": 16.49,
-    "total_equity": 42.34,
-    "today_pnl": -0.64,
-    "today_pnl_pct": -1.51,
-    "unrealized_pnl": -0.84,
+    "portfolio_value": 16.13,
+    "total_equity": 41.98,
+    "today_pnl": -1.04,
+    "today_pnl_pct": -2.48,
+    "unrealized_pnl": -1.24,
     "today_realized_pnl": 0.2
   },
   "positions": [
@@ -82,11 +82,11 @@
       "side": "YES",
       "quantity": 20,
       "avg_entry_price": 0.7285,
-      "current_price": 0.7,
+      "current_price": 0.68,
       "cost_basis": 14.57,
-      "current_value": 14.0,
-      "unrealized_pnl": -0.57,
-      "unrealized_pnl_pct": -3.91,
+      "current_value": 13.6,
+      "unrealized_pnl": -0.97,
+      "unrealized_pnl_pct": -6.66,
       "realized_pnl": 0.0,
       "fees_paid": 0.28,
       "market_status": "active"
