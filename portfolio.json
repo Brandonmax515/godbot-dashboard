@@ -1,35 +1,35 @@
 {
-  "generated_at": "2026-04-08T07:00:05.696642-04:00",
-  "generated_at_unix": 1775646005,
+  "generated_at": "2026-04-08T08:00:05.289035-04:00",
+  "generated_at_unix": 1775649605,
   "account": {
-    "cash_balance": 25.63,
-    "portfolio_value": 16.53,
-    "total_equity": 42.16,
-    "today_pnl": -0.88,
-    "today_pnl_pct": -2.09,
-    "unrealized_pnl": -0.88,
-    "today_realized_pnl": 0.0
+    "cash_balance": 25.85,
+    "portfolio_value": 16.75,
+    "total_equity": 42.6,
+    "today_pnl": -0.8,
+    "today_pnl_pct": -1.88,
+    "unrealized_pnl": -1.0,
+    "today_realized_pnl": 0.2
   },
   "positions": [
     {
-      "ticker": "KXHIGHDEN-26APR07-B66.5",
-      "display_name": "DEN High 66-67\u00b0F Apr 07",
-      "city": "DEN",
+      "ticker": "KXHIGHNY-26APR08-T53",
+      "display_name": "NY High \u226553\u00b0F Apr 08",
+      "city": "NY",
       "type": "HIGH",
-      "threshold": "66-67\u00b0F",
-      "target_date": "2026-04-07",
+      "threshold": "\u226553\u00b0F",
+      "target_date": "2026-04-08",
       "category": "weather",
       "side": "NO",
       "quantity": 2,
-      "avg_entry_price": 0.9,
-      "current_price": 0.01,
-      "cost_basis": 1.8,
-      "current_value": 1.98,
-      "unrealized_pnl": 0.18,
-      "unrealized_pnl_pct": 10.0,
+      "avg_entry_price": 0.88,
+      "current_price": 0.09,
+      "cost_basis": 1.76,
+      "current_value": 1.82,
+      "unrealized_pnl": 0.06,
+      "unrealized_pnl_pct": 3.41,
       "realized_pnl": 0.0,
       "fees_paid": 0.02,
-      "market_status": "closed"
+      "market_status": "active"
     },
     {
       "ticker": "KXGHANAPRES-28-AKYE",
@@ -93,6 +93,20 @@
     }
   ],
   "recent_settlements": [
+    {
+      "ticker": "KXHIGHDEN-26APR07-B66.5",
+      "display_name": "DEN High 66-67\u00b0F Apr 07",
+      "category": "weather",
+      "side": "NO",
+      "quantity": 2,
+      "cost": 1.8,
+      "revenue": 2.0,
+      "pnl": 0.2,
+      "fees": 0.02,
+      "result": "won",
+      "market_result": "no",
+      "settled_at": "2026-04-08T11:08:12.336194Z"
+    },
     {
       "ticker": "KXHIGHNY-26APR06-T54",
       "display_name": "NY High \u226554\u00b0F Apr 06",
@@ -358,25 +372,11 @@
       "result": "lost",
       "market_result": "yes",
       "settled_at": "2026-03-27T11:07:17.892838Z"
-    },
-    {
-      "ticker": "KXHIGHDEN-26MAR26-B77.5",
-      "display_name": "DEN High 77-78\u00b0F Mar 26",
-      "category": "weather",
-      "side": "NO",
-      "quantity": 4,
-      "cost": 3.48,
-      "revenue": 4.0,
-      "pnl": 0.52,
-      "fees": 0.04,
-      "result": "won",
-      "market_result": "no",
-      "settled_at": "2026-03-27T11:07:17.892838Z"
     }
   ],
   "summary": {
     "total_open_positions": 4,
-    "total_exposure": 17.02,
+    "total_exposure": 16.98,
     "weather_positions": 1,
     "crypto_positions": 0,
     "sports_positions": 0,
