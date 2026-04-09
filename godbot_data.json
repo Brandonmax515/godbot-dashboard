@@ -1,15 +1,15 @@
 {
-  "mode": "DRY RUN",
-  "generated_at": "2026-04-09T16:59:49.362148Z",
+  "mode": "LIVE",
+  "generated_at": "2026-04-09T17:00:20.809542Z",
   "total_runs": 35,
   "total_bets": 36,
-  "wins": 18,
+  "wins": 19,
   "losses": 14,
-  "pending": 4,
-  "win_rate": 0.5625,
-  "total_pnl_cents": 740,
+  "pending": 3,
+  "win_rate": 0.5757575757575758,
+  "total_pnl_cents": 914,
   "total_staked_cents": 9400,
-  "roi": 0.0925,
+  "roi": 0.11146341463414634,
   "avg_edge": 0.29036111111111107,
   "bets": [
     {
@@ -35,8 +35,8 @@
       "ai_reasoning": "NO on displaced bracket: Claude=2.0% YES, market=13\u00a2 YES. GEFS baseline looks reasonable given the tight ensemble spread (1.6\u00b0F std) and deterministic model consensus mostly between 47-52\u00b0F. The hourly forecast showing peak temps around 50\u00b0F at 3PM aligns well with GEFS median. Adjusting slightly toward the 48-50\u00b0F brackets given the sunny conditions will support efficient heating and the tight model agreement in that range.",
       "ai_temp_estimate": 49.0,
       "data_sources": "GEFS_ENSEMBLE,NWS_POINT,NWS_AFD,NWS_CLI,claude-sonnet-4-20250514",
-      "settled_result": null,
-      "pnl_cents": null,
+      "settled_result": "WIN",
+      "pnl_cents": 174,
       "notes": "raw_edge=10.0% fee=1\u00a2 net_edge=10.0% kelly_size=200\u00a2",
       "key_factor": "",
       "uncertainties": "",
@@ -1102,17 +1102,17 @@
     },
     "NO": {
       "bets": 19,
-      "wins": 13,
-      "settled": 16,
-      "pnl": 2029
+      "wins": 14,
+      "settled": 17,
+      "pnl": 2203
     }
   },
   "by_variable": {
     "HIGH": {
       "bets": 36,
-      "wins": 18,
-      "settled": 32,
-      "pnl": 740
+      "wins": 19,
+      "settled": 33,
+      "pnl": 914
     }
   },
   "by_city": {
@@ -1142,9 +1142,9 @@
     },
     "New York": {
       "bets": 4,
-      "wins": 1,
-      "settled": 3,
-      "pnl": -235
+      "wins": 2,
+      "settled": 4,
+      "pnl": -61
     },
     "Austin": {
       "bets": 2,
