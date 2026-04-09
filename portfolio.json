@@ -1,13 +1,13 @@
 {
-  "generated_at": "2026-04-09T07:00:05.288534-04:00",
-  "generated_at_unix": 1775732405,
+  "generated_at": "2026-04-09T08:00:04.465318-04:00",
+  "generated_at_unix": 1775736004,
   "account": {
     "cash_balance": 25.85,
-    "portfolio_value": 19.93,
-    "total_equity": 45.78,
-    "today_pnl": 1.76,
-    "today_pnl_pct": 3.84,
-    "unrealized_pnl": 1.76,
+    "portfolio_value": 19.73,
+    "total_equity": 45.58,
+    "today_pnl": 1.96,
+    "today_pnl_pct": 4.3,
+    "unrealized_pnl": 1.96,
     "today_realized_pnl": 0.0
   },
   "positions": [
@@ -22,11 +22,11 @@
       "side": "YES",
       "quantity": 20,
       "avg_entry_price": 0.7285,
-      "current_price": 0.83,
+      "current_price": 0.84,
       "cost_basis": 14.57,
-      "current_value": 16.6,
-      "unrealized_pnl": 2.03,
-      "unrealized_pnl_pct": 13.93,
+      "current_value": 16.8,
+      "unrealized_pnl": 2.23,
+      "unrealized_pnl_pct": 15.31,
       "realized_pnl": 0.0,
       "fees_paid": 0.28,
       "market_status": "active"
@@ -49,7 +49,7 @@
       "unrealized_pnl_pct": 12.5,
       "realized_pnl": 0.0,
       "fees_paid": 0.02,
-      "market_status": "closed"
+      "market_status": "determined"
     },
     {
       "ticker": "KXGHANAPRES-28-AKYE",
